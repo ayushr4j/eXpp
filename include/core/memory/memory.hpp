@@ -17,10 +17,11 @@ namespace ar4j
                 size_t offset = 0, size = 0;
 
                 Memory();
-                ~Memory();
+                
 
                 friend class Allocator;
             public:
+                ~Memory();
             
                 /// @brief return byte at given index in memory
                 /// @param i index starts at 0. supports negative indexing. -1 = size - 1, -2 size - 2, so on
@@ -28,6 +29,17 @@ namespace ar4j
                 uint8_t operator[](int64_t i);
                 
                 Memory operator[](int64_t offset, uint64_t size);
+
+                bool operator == (const Memory& mem){
+                    if(alloc == mem.alloc && offset == mem.offset){
+                        return true;
+                    }
+                    return false;
+                }
+
+                void increaseOffset(int offset){
+                    this->offset += offset;
+                }
             
         };
     }
