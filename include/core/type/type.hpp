@@ -5,10 +5,34 @@
 #include "string"
 #include <cstdint>
 #include <bit>
-
+#include "core/stream/bitstream.hpp"
 
 namespace ar4j {
 
+    class MappedType{
+    protected:
+        class Map{
+            public:
+            virtual void map(void* ptr, size_t bits, uint8_t flags); //endianness, bitorder
+        };
+        class InputMap : public Map{
+            BitReader* reader;
+
+            public:
+                virtual void map(void* ptr, size_t bits, uint8_t flags);
+
+        };
+        class OutputMapper : public Map{
+            BitWriter* writer;
+
+            public:
+                virtual void map(void* ptr, size_t bits, uint8_t flags);
+
+        };
+    public:
+        virtual void map(Map map) = 0;
+
+    };
     
     class Type{
 

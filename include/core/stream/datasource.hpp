@@ -13,7 +13,7 @@ namespace ar4j {
         
     public:
 
-        virtual size_t read(void* buf, size_t bytes, uint64_t timeout = -1 ) = 0;
+        
         
         
     };
