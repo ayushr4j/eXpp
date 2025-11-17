@@ -15,12 +15,36 @@ namespace ar4j {
             virtual void readNBits(uint8_t* dst, size_t n, uint8_t flags = DEFAULT){
                 
                 size_t availableBits = 8 - bitOffset;
+                
+                //n = k*8 + m ; k bytes and m bits
+                size_t k = n/8;
+                size_t m = n%8;
 
-                size_t toReadBits = n-availableBits;
+                size_t total = k + (m>0);
 
-                size_t toReadBytes = (toReadBits/8) + (toReadBits%8 > 0);
+                size_t startOffset = m <= availableBits;
+                size_t byteCount = k + (m > availableBits); // if available bits is less than m, we need to read extra byte.
 
-                readNBytes(dst, toReadBytes, flags);
+                dst[0] = 0;
+                readNBytes(dst + startOffset, byteCount );
+
+                size_t shiftCount = abs(availableBits - m);
+
+                uint8_t lastByte = dst[startOffset + byteCount-1];
+
+                dst[total-1] >>= shiftCount;
+                for(int i = total-2; i >= 0; i++){
+
+                    dst[i+1] += dst[i] << (8-shiftCount);  //shifting causes other bits to become 0. preserving old result of dst[i+1]
+                    dst[i] >>= shiftCount;
+
+                }
+
+                //all bits should be now aligned to last bit.
+                //now append available bits to result
+            
+
+                
 
 
             };
