@@ -25,7 +25,7 @@ int main(){
 
 
     uint16_t data;
-    reader.readNBits(data, 13, ar4j::BIG_ENDIAN);
+    reader.readNBits(data, 16, ar4j::BIG_ENDIAN);
     std::cout << data << "\n";
     uint32_t data1;
     reader.readNBits(data1, 2, ar4j::BIG_ENDIAN);

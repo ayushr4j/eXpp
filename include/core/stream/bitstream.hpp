@@ -28,7 +28,8 @@ namespace ar4j {
             Writer* stream;
             uint8_t bitOffset = 0, byte = 0;
         public:
-            virtual void writeNBits(void* dst, size_t n, uint8_t flags = DEFAULT);
+            virtual void writeNBits(Buffer src, size_t n, uint8_t flags = DEFAULT);
+            virtual void writeNBytes(Buffer src, size_t n, uint8_t flags = DEFAULT);
     };
 
 

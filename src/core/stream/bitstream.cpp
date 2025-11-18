@@ -5,6 +5,7 @@
 #include "core/stream/stream.hpp"
 #include "core/buffer/buffer.hpp"
 #include <cstddef>
+#include <cstdint>
 #include <cstdlib>
 #include <iostream>
 
@@ -33,7 +34,7 @@ void ar4j::BitReader::readNBits(ar4j::Buffer dst, size_t n, uint8_t flags){
 
     DST[0] = byte;
     if(byteCount > 0)
-        stream->readNBytes(DST + startOffset, byteCount );
+        stream->readNBytes(DST + startOffset, byteCount, NATIVE_ENDIAN);
 
     
 
@@ -87,7 +88,71 @@ void ar4j::BitReader::readNBits(ar4j::Buffer dst, size_t n, uint8_t flags){
 }
 
 void ar4j::BitReader::readNBytes(ar4j::Buffer dst, size_t n, uint8_t flags){
-    readNBits(dst, n*8, flags);
+    if(bitOffset == 8){
+        stream->readNBytes(dst, n, flags);
+    }else{
+        readNBits(dst, n*8, flags);
+    }
+
+}
+
+void ar4j::BitWriter::writeNBits(ar4j::Buffer src, size_t n, uint8_t flags){
+
+    static thread_local uint8_t bytes[1024*1024*4];
+    Buffer buffer{bytes};
+
+    if((flags & ENDIAN_MASK) != NATIVE_ENDIAN){ //if endianess flag doesn't match native endianess reserve byte order
+        size_t size = src.size();
+        
+        for(int i = 0; i < size/2; i++){
+            uint8_t temp = src[i];
+            src[i] = src[size-1-i];
+            src[size-1-i] = temp;
+        }
+    }
+
+    buffer[0] = byte;
+
+    size_t k = n/8;
+    size_t m = n%8;
+
+    size_t total = k + (m>0);
+
+    size_t availableBits = 8 - bitOffset;
+
+    Buffer SRC = src + (src.size() - total);
+
+    if(m == availableBits){
+        buffer[0] = byte + ((SRC[0] << bitOffset) >> bitOffset);
+        writeNBytes(buffer, 1);
+        writeNBytes(SRC, k);
+
+    }
+
+
+
+    
+    //reconvert endianess back to native
+    if((flags & ENDIAN_MASK) != NATIVE_ENDIAN){ //if endianess flag doesn't match native endianess reserve byte order
+        size_t size = src.size();
+        
+        for(int i = 0; i < size/2; i++){
+            uint8_t temp = src[i];
+            src[i] = src[size-1-i];
+            src[size-1-i] = temp;
+        }
+    }
+
+}
+
+void ar4j::BitWriter::writeNBytes(ar4j::Buffer src, size_t n, uint8_t flags){
+    
+    if(bitOffset == 0){
+        stream->writeNBytes(src, n, flags);
+    }else{
+        writeNBits(src, n*8, flags);
+    }
+
 }
 
 #endif
