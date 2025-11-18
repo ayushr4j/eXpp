@@ -2,7 +2,6 @@
 #define AR4J_STREAM
 
 #include <bit>
-#include <corecrt_malloc.h>
 #include <cstdint>
 #include <stdint.h>
 #include "core/buffer/buffer.hpp"
@@ -10,18 +9,18 @@
 namespace ar4j {
 
     enum StreamFlags : uint8_t{
-        NATIVE_ENDIAN = int(std::endian::native),
-        BIG_ENDIAN =    int(std::endian::big),
-        LITTLE_ENDIAN = int(std::endian::little),
-        ENDIAN_MASK = 0b1,
+        NativeEndian = int(std::endian::native == std::endian::big),
+        BigEndian =    1,
+        LittleEndian = 0,
+        EndianMask = 0b1,
 
-        MSB_FIRST = 0 << 1,
-        LSB_FIRST = 1 << 1,
-        BIT_ORDER_MASK = 0b10,
+        MSBFirst = 0 << 1,
+        LSBFirst = 1 << 1,
+        BitOrderMask = 0b10,
 
         PEEK = 1 << 2,   //only affects read. this causes read to not advance stream's offset
         
-        DEFAULT = NATIVE_ENDIAN | MSB_FIRST
+        DEFAULT = NativeEndian | MSBFirst
     };
     
 

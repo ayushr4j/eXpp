@@ -71,16 +71,16 @@ int main(){
 
 
     uint16_t data;
-    reader.readNBits(data, 5, ar4j::BIG_ENDIAN);
+    reader.readNBits(data, 5, ar4j::BigEndian);
     std::cout << data << "\n";
     uint32_t data1;
-    reader.readNBits(data1, 3, ar4j::BIG_ENDIAN);
+    reader.readNBits(data1, 3, ar4j::BigEndian);
     std::cout << (int)data1 << "\n";
     data1 = 0;
-    reader.readNBits(data1, 8, ar4j::BIG_ENDIAN);
+    reader.readNBits(data1, 8, ar4j::BigEndian);
     std::cout << (int)data1 << "\n";
     data1 = 0;
-    reader.readNBits(data1, 3, ar4j::BIG_ENDIAN);
+    reader.readNBits(data1, 3, ar4j::BigEndian);
     std::cout << (int)data1 << "\n";
 
     

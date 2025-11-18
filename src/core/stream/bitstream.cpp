@@ -37,7 +37,7 @@ void ar4j::BitReader::readNBits(ar4j::Buffer dst, size_t n, uint8_t flags){
 
     DST[0] = byte;
     if(byteCount > 0)
-        stream->readNBytes(DST + startOffset, byteCount, NATIVE_ENDIAN);
+        stream->readNBytes(DST + startOffset, byteCount, NativeEndian);
 
     
 
@@ -79,7 +79,7 @@ void ar4j::BitReader::readNBits(ar4j::Buffer dst, size_t n, uint8_t flags){
 
     //handle endianess and bitOrder
 
-    if((flags & ENDIAN_MASK) != NATIVE_ENDIAN){ //if endianess flag doesn't match native endianess reserve byte order
+    if((flags & EndianMask) != NativeEndian){ //if endianess flag doesn't match native endianess reserve byte order
         size_t size = dst.size();
         
         for(int i = 0; i < size/2; i++){
@@ -113,7 +113,7 @@ void ar4j::BitWriter::writeNBits(ar4j::Buffer src, size_t n, uint8_t flags){
     static thread_local uint8_t bytes[1024*1024*4];
     Buffer buffer{bytes};
 
-    if((flags & ENDIAN_MASK) != BIG_ENDIAN){ //if endianess flag doesn't match native endianess reserve byte order
+    if((flags & EndianMask) != BigEndian){ //if endianess flag doesn't match native endianess reserve byte order
         size_t size = src.size();
         
         for(int i = 0; i < size/2; i++){
@@ -210,7 +210,7 @@ void ar4j::BitWriter::writeNBits(ar4j::Buffer src, size_t n, uint8_t flags){
 
     
     //reconvert endianess back to native
-    if((flags & ENDIAN_MASK) != NATIVE_ENDIAN){ //if endianess flag doesn't match native endianess reserve byte order
+    if((flags & EndianMask) != NativeEndian){ //if endianess flag doesn't match native endianess reserve byte order
         size_t size = src.size();
         
         for(int i = 0; i < size/2; i++){

@@ -3,6 +3,7 @@
 
 #include "core/stream/stream.hpp"
 #include "core/buffer/buffer.hpp"
+#include <algorithm>
 
 namespace ar4j {
 
@@ -14,7 +15,7 @@ namespace ar4j {
             }
 
             void readNBytes(ar4j::Buffer dst, size_t n, uint8_t flags) override{
-                memcpy(dst.data(), buffer.data(), n);
+                std::copy_n(buffer.data(), n, dst.data());
                 buffer = buffer + n;
             }
     };
@@ -27,7 +28,7 @@ namespace ar4j {
             }
 
             void writeNBytes(ar4j::Buffer src, size_t n, uint8_t flags) override{
-                memcpy(buffer.data(), src.data(), n);
+                std::copy_n(src.data(), n, buffer.data());
                 buffer = buffer + n;
             }
 
