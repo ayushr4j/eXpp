@@ -5,7 +5,7 @@
 #include <corecrt_malloc.h>
 #include <cstdint>
 #include <stdint.h>
-
+#include "core/buffer/buffer.hpp"
 
 namespace ar4j {
 
@@ -13,23 +13,25 @@ namespace ar4j {
         NATIVE_ENDIAN = int(std::endian::native),
         BIG_ENDIAN =    int(std::endian::big),
         LITTLE_ENDIAN = int(std::endian::little),
+        ENDIAN_MASK = 0b1,
 
         MSB_FIRST = 0 << 1,
         LSB_FIRST = 1 << 1,
+        BIT_ORDER_MASK = 0b10,
 
         PEEK = 1 << 2,   //only affects read. this causes read to not advance stream's offset
         
-        DEFAULT = BIG_ENDIAN | MSB_FIRST
+        DEFAULT = NATIVE_ENDIAN | MSB_FIRST
     };
     
 
     class Reader{
         public:
-            virtual void readNBytes(void* dst, size_t n, uint8_t flags = DEFAULT);
+            virtual void readNBytes(Buffer dst, size_t n, uint8_t flags = DEFAULT){};
     };
     class Writer{
         public:
-            virtual void writeNBytes(void* src, size_t n, uint8_t flags = DEFAULT);
+            virtual void writeNBytes(Buffer src, size_t n, uint8_t flags = DEFAULT){};
     };
     class Stream : public Reader, public Writer{
 
@@ -50,5 +52,6 @@ namespace ar4j {
     };
 
 }
+
 
 #endif
