@@ -32,7 +32,7 @@ void printBytes(const char* msg, ar4j::Buffer SRC){
     std::cout << "\n";
 }
 
-/// @todo BitOrder change implementation figure out why in endianess does't matter
+/// @todo BitOrder change implementation figure out why in endianess does't matter fix code 
 void ar4j::BitReader::readNBits(ar4j::Buffer dst, size_t n, uint32_t flags){
 
     int inEndianess  = (flags & BitFlags::EndianInMask  ) >> 1;
@@ -43,7 +43,7 @@ void ar4j::BitReader::readNBits(ar4j::Buffer dst, size_t n, uint32_t flags){
     for(int i = 0; i < dst.size(); i++) dst[i] = 0; // zero all bytes of dst
     int reqSize = n/8 + (n%8 > 0);
 
-
+    int lastBitCount = (n%8) + (n%8 == 0)*8;
 
 
     std::cout << "Reading Bits : " << reqSize << " : ";
@@ -78,11 +78,11 @@ void ar4j::BitReader::readNBits(ar4j::Buffer dst, size_t n, uint32_t flags){
         }
 
         if(byteIndex == (reqSize - 1)){
-            std::cout << "*";
-            bitIndex = (n%8) - (k%8) - 1;
+            //std::cout << "*";
+            bitIndex = (lastBitCount) - (k%8) - 1;
         }
         
-        uint8_t mask = 0xff & (bit << bitIndex);
+        std::cout << " (" << byteIndex << ":" << bitIndex << ")   ";
 
         dst[byteIndex] = (dst[byteIndex] & ~(1 << bitIndex)) | (bit << bitIndex);
 
@@ -93,7 +93,7 @@ void ar4j::BitReader::readNBits(ar4j::Buffer dst, size_t n, uint32_t flags){
     }
     std::cout << "\n";
 
-    printBytes("DST Buffer : ", dst);
+    //printBytes("DST Buffer : ", dst);
 
     return;
 

@@ -19,7 +19,7 @@ namespace ar4j {
             
             
             template<typename Type>
-            Buffer(const Type* a){
+            Buffer(Type* a){
                 data_ = (uint8_t*)a;
                 capacity = sizeof(Type);
             }

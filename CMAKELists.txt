@@ -50,6 +50,15 @@ target_sources(type PUBLIC
 )
 
 
+add_library(image_png STATIC)
+target_sources(image_png PUBLIC
+    src/image/png/decoder.cpp
+)
+
+
+add_executable(image_png_test test/image/png/decoder.cpp)
+target_link_libraries(image_png_test PRIVATE image_png stream)
+
 
 
 
