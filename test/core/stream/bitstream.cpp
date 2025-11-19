@@ -1,5 +1,4 @@
 #include "core/stream/bitstream.hpp"
-#include "core/stream/stream.hpp"
 #include "core/stream/memorystream.hpp"
 
 #include <cstdint>
@@ -36,7 +35,7 @@ int main(){
 
     
 
-    uint8_t arr[] = { 0, 0, 0 } ; 
+    uint8_t arr[] = { 0b11011001, 0, 0 } ; 
     ar4j::MemoryReader memReader{ arr };
     ar4j::MemoryWriter memWriter{ arr };
     ar4j::BitReader reader{&memReader};
@@ -44,11 +43,11 @@ int main(){
 
     test.print();
 
-    writer.writeNBits(test.A, 3);
-    writer.writeNBits(test.B, 2);
-    writer.writeNBits(test.C, 1);
-    writer.writeNBits(test.D, 5);
-    writer.writeNBits(test.E, 9);
+    writer.writeNBits(&test.A, 3, ar4j::BitFlags::BigEndianOut);
+    writer.writeNBits(&test.B, 2, ar4j::BitFlags::BigEndianOut);
+    writer.writeNBits(&test.C, 1, ar4j::BitFlags::BigEndianOut);
+    writer.writeNBits(&test.D, 5, ar4j::BitFlags::BigEndianOut);
+    writer.writeNBits(&test.E, 9, ar4j::BitFlags::BigEndianOut);
     writer.flush();
 
     test.A = 0;
@@ -58,29 +57,29 @@ int main(){
     test.E = 0;
     test.print();
 
-    std::cout << (void*) arr[0] << " " << (void*) arr[1] << " " << (void*) arr[2] << "\n";
+    std::cout << (void*) ((uint64_t)arr[0]) << " " << (void*) ((uint64_t)arr[1]) << " " << (void*) ((uint64_t)arr[2]) << "\n";
 
-    reader.readNBits(test.A, 3);
-    reader.readNBits(test.B, 2);
-    reader.readNBits(test.C, 1);
-    reader.readNBits(test.D, 5);
-    reader.readNBits(test.E, 9);
+    reader.readNBits(&test.A, 3, ar4j::BitFlags::BigEndianIn);
+    reader.readNBits(&test.B, 2, ar4j::BitFlags::BigEndianIn);
+    reader.readNBits(&test.C, 1, ar4j::BitFlags::BigEndianIn);
+    reader.readNBits(&test.D, 5, ar4j::BitFlags::BigEndianIn);
+    reader.readNBits(&test.E, 9, ar4j::BitFlags::BigEndianIn);
 
     test.print();
 
 
 
     uint16_t data;
-    reader.readNBits(data, 5, ar4j::BigEndian);
+    reader.readNBits(&data, 5, ar4j::BitFlags::BigEndianIn);
     std::cout << data << "\n";
     uint32_t data1;
-    reader.readNBits(data1, 3, ar4j::BigEndian);
+    reader.readNBits(&data1, 3, ar4j::BitFlags::BigEndianIn);
     std::cout << (int)data1 << "\n";
     data1 = 0;
-    reader.readNBits(data1, 8, ar4j::BigEndian);
+    reader.readNBits(&data1, 8, ar4j::BitFlags::BigEndianIn);
     std::cout << (int)data1 << "\n";
     data1 = 0;
-    reader.readNBits(data1, 3, ar4j::BigEndian);
+    reader.readNBits(&data1, 3, ar4j::BitFlags::BigEndianIn);
     std::cout << (int)data1 << "\n";
 
     

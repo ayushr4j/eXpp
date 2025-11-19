@@ -14,7 +14,7 @@ namespace ar4j {
                 
             }
 
-            void readNBytes(ar4j::Buffer dst, size_t n, uint8_t flags) override{
+            void readNBytes(ar4j::Buffer dst, size_t n, uint32_t flags) override{
                 std::copy_n(buffer.data(), n, dst.data());
                 buffer = buffer + n;
             }
@@ -27,7 +27,7 @@ namespace ar4j {
                 
             }
 
-            void writeNBytes(ar4j::Buffer src, size_t n, uint8_t flags) override{
+            void writeNBytes(ar4j::Buffer src, size_t n, uint32_t flags) override{
                 std::copy_n(src.data(), n, buffer.data());
                 buffer = buffer + n;
             }

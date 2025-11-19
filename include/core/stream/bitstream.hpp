@@ -8,72 +8,82 @@
 #include "core/stream/stream.hpp"
 #include "core/buffer/buffer.hpp"
 
+#include <iostream>
+
+
 
 namespace ar4j {
 
-    class BitHelper{
-        bool BigEndian = (std::endian::native == std::endian::big);
-        bool MSBFirst = true;
-        
-    public:
-        
-        uint8_t& getByte(Buffer buf, size_t index){
-            if(BigEndian){
-                return buf[buf.size()-1-index];
-            }else return buf[index];
-        }
 
-        void readBytes(Buffer dst, size_t offset, Buffer src, size_t bits){
+    namespace BitFlags{
+        enum BitFlags : uint32_t{
+            NativeEndian = int(std::endian::native == std::endian::big) << 8,
+            BigEndian =    1 << 8,
+            LittleEndian = 0 << 8,
+            EndianMask = 0b1 << 8,
+            
+            NativeEndianOut = NativeEndian,
+            BigEndianOut =    BigEndian,
+            LittleEndianOut = LittleEndian,
+            EndianOutMask = EndianMask,
 
-            size_t a = bits/8;
-            size_t b = bits%8;
+            NativeEndianIn = NativeEndianOut << 1,
+            BigEndianIn = BigEndianOut << 1,
+            LittleEndianIn = LittleEndianOut << 1,
+            EndianInMask = EndianOutMask << 1,
 
-            b = 8*(b == 0) + b;
-            a = a - 1*(b==8);
-            size_t total = a + 1;
+            MSBFirst = 0 << 10,
+            LSBFirst = 1 << 10,
+            BitOrderMask = 0b1 << 10,
 
+            MSBFirstOut = MSBFirst,
+            LSBFirstOut = LSBFirst,
+            BitOrderOutMask = BitOrderMask,
 
+            MSBFirstIn = MSBFirst << 1,
+            LSBFirstIn = LSBFirst << 1,
+            BitOrderInMask = BitOrderMask << 1,
 
-            //i need b bits
-            //b[i] refers to ith bit. i goes from 0 to b-1. 0th is least significant bit.
-
+            Peek = 1 << 12,   //only affects read. this causes read to not advance stream's offset
+            
+            Default = NativeEndianIn | NativeEndianOut | MSBFirstIn | MSBFirstOut,
         };
-
-        uint8_t operator[](size_t index){
-
-        }
-        
-    };
-
+    }
+    
     class BitReader : public Reader{
         protected:
             Reader* stream;
-            uint8_t bitOffset = 8, byte = 0;
+            uint8_t bitCount = 0, byte = 0;
         public:
             BitReader(Reader* stream){
                 this->stream = stream;
             }
 
-            virtual void readNBits(Buffer dst, size_t n, uint8_t flags = DEFAULT);
-
-            virtual void readNBytes(Buffer dst, size_t n, uint8_t flags = DEFAULT);
+            virtual void readNBits(Buffer dst, size_t n, uint32_t flags = BitFlags::Default);
+            virtual void readNBytes(Buffer dst, size_t n, uint32_t flags = StreamFlags::Default);
             
     };
     class BitWriter : public Writer{
         protected:
             Writer* stream;
-            uint8_t bitOffset = 0, byte = 0;
+            uint8_t bitCount = 0, byte = 0;
         public:
             BitWriter(Writer* stream){
                 this->stream = stream;
             }
-            virtual void writeNBits(Buffer src, size_t n, uint8_t flags = DEFAULT);
-            virtual void writeNBytes(Buffer src, size_t n, uint8_t flags = DEFAULT);
+            virtual void writeNBits(Buffer src, size_t n, uint32_t flags = BitFlags::Default);
+            virtual void writeNBytes(Buffer src, size_t n, uint32_t flags = StreamFlags::Default);
 
             void flush(){
-                if(bitOffset < 8){
-                    writeNBytes(&byte, 1);
-                    bitOffset = 8;
+                if(bitCount > 0){
+
+                    
+                    std::cout << "Flushing " << (void*)(uint64_t)byte << " BitCount " << (int)bitCount << "\n";
+
+                    byte <<= (8-bitCount);
+
+                    stream->writeNBytes(&byte, 1);
+                    bitCount = 0;
                     byte = 0;
                 }
                     

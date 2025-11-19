@@ -10,94 +10,67 @@
 #include <iostream>
 
 
-void ar4j::BitReader::readNBits(ar4j::Buffer dst, size_t n, uint8_t flags){
-    size_t availableBits = 8 - bitOffset;
+/*
+    we have i+1 bits in n bytes
+    RawIndex    r0 r1 r2 ... ri
 
-    //std::cout << "Reading " << n << "Bits Available " << availableBits << "Bits Value" << (int)byte << "\n";
-    
-    //n = k*8 + m ; k bytes and m bits
-    size_t k = n/8;
-    size_t m = n%8;
+    i -> LE LSB -> LE MSB -> |i/8| *8 +  (7-i%8) 
 
-    m = 8*(m == 0) + m;
-    k = k - 1*(m==8);
 
-    //std::cout << k << "Bytes " << m << "Bits\n"; 
+               byte 0                            byte 1                                             byte n
+    LE , MSB : b7 b6 b5 ... b0                 |  b15 b14 b13 ... b8                        | ... | b(8n+7) .. bi bi-1 .. b(8n)  
+    LE , LSB : b0 b1 b2 ... b7                 |  b8  b9  b10 ... b15                       | ... | b(8n)   .. bi-1 bi   .. b(8n+7)
+    BE , MSB : b(8n+7) .. bi   bi-1 .. b(8n)   |  b(8(n-1)+7) .. bi   bi-1 .. b(8(n-1))     | ... | b7 b6 b5 ... b0
+    BE , LSB : b(8n)   .. bi-1 bi   .. b(8n+7) |  b(8(n-1))   .. bi-1 bi   .. b((8(n-1))+7) | ... | b0 b1 b2 ... b7
+*/
 
-    size_t total = k + 1;
+void ar4j::BitReader::readNBits(ar4j::Buffer dst, size_t n, uint32_t flags){
 
-    Buffer DST = dst + (dst.size()-total); 
+    int inEndianess  = (flags & BitFlags::EndianInMask  ) >> 1;
+    int inBitOrder   = (flags & BitFlags::BitOrderInMask) >> 1;
+    int outEndianess = (flags & BitFlags::EndianOutMask );
+    int outBitOrder  = (flags & BitFlags::BitOrderInMask);
 
-    //std::cout << total << "Bytes in total\n";
+    for(int i = 0; i < dst.size(); i++) dst[i] = 0; // zero all bytes of dst
 
-    size_t startOffset = m <= availableBits;
-    size_t byteCount = k + (m > availableBits); // if available bits is less than m, we need to read extra byte.
+    int reqSize = n/8 + (n%8 > 0);
 
-    //std::cout << "ReadNBytes " << startOffset << " " << byteCount << "\n";
+    std::cout << "Reading Bits : ";
+    for(int i = n-1; i >= 0; i--){
 
-    DST[0] = byte;
-    if(byteCount > 0)
-        stream->readNBytes(DST + startOffset, byteCount, NativeEndian);
-
-    
-
-    //std::cout << "ReadBytes : ";
-    for(int i = 0; i < total; i++){
-        //std::cout << (int)DST[i] << " ";
-    }
-    //std::cout << "\n";
-
-    size_t shiftCount = (((int)availableBits - (int)m)%8 + 8)%8;
-
-    //std::cout << "ShiftCount " << shiftCount << "\n";
-
-    uint8_t lastByte = DST[total-1];
-
-    uint8_t carry = 0;
-    if(m > availableBits){
-        carry = byte << (8-shiftCount);
-    }
-    
-    for(int i = 0; i < total; i++){
-
-        uint64_t nextCarry = DST[i] << (8-shiftCount);
-        DST[i] = (DST[i] >> shiftCount) + carry;
-        carry = nextCarry;
-    }
-
-    
-    bitOffset = 8-shiftCount;
-    byte = carry >> (8-shiftCount);
-
-    //std::cout << "Carry " << (int)byte << " BitOffset " << (int)bitOffset << "\n";
-
-    //std::cout << "FinalBytes : ";
-    for(int i = 0; i < total; i++){
-        //std::cout << (int)DST[i] << " ";
-    }
-    //std::cout << "\n";
-
-    //handle endianess and bitOrder
-
-    if((flags & EndianMask) != NativeEndian){ //if endianess flag doesn't match native endianess reserve byte order
-        size_t size = dst.size();
-        
-        for(int i = 0; i < size/2; i++){
-            uint8_t temp = dst[i];
-            dst[i] = dst[size-1-i];
-            dst[size-1-i] = temp;
+        if(bitCount == 0){
+            stream->readNBytes(&byte, 1);
+            bitCount = 8; 
         }
+
+        uint8_t bit = (byte & (1 << 7)) >> 7;
+        std::cout << (int)bit ;
+
+        size_t byteIndex = i/8;
+        if(inEndianess != outEndianess) byteIndex = dst.size() - 1 - byteIndex;
+
+        size_t bitIndex = i%8;
+        if(inBitOrder != outBitOrder) bitIndex = 7 - bitIndex;
+        
+        uint8_t mask = 0xff & (bit << bitIndex);
+
+        dst[byteIndex] = (dst[byteIndex] & ~(1 << bitIndex)) | (bit << bitIndex);
+
+        byte <<= 1;
+        bitCount--;
+
+
     }
+    std::cout << "\n";
+
+    return;
 
 }
 
-void ar4j::BitReader::readNBytes(ar4j::Buffer dst, size_t n, uint8_t flags){
-    if(bitOffset == 8){
-        stream->readNBytes(dst, n, flags);
-    }else{
-        readNBits(dst, n*8, flags);
-    }
-
+void ar4j::BitReader::readNBytes(ar4j::Buffer dst, size_t n, uint32_t flags){
+    
+    readNBits(dst, n*8, flags);
+    
 }
 
 void printBytes(const char* msg, ar4j::Buffer SRC){
@@ -108,127 +81,64 @@ void printBytes(const char* msg, ar4j::Buffer SRC){
     std::cout << "\n";
 }
 
-void ar4j::BitWriter::writeNBits(ar4j::Buffer src, size_t n, uint8_t flags){
+void ar4j::BitWriter::writeNBits(ar4j::Buffer src, size_t n, uint32_t flags){
 
-    static thread_local uint8_t bytes[1024*1024*4];
-    Buffer buffer{bytes};
+    int inEndianess  = (flags & BitFlags::EndianInMask  ) >> 1;
+    int inBitOrder   = (flags & BitFlags::BitOrderInMask) >> 1;
+    int outEndianess = (flags & BitFlags::EndianOutMask );
+    int outBitOrder  = (flags & BitFlags::BitOrderInMask);
 
-    if((flags & EndianMask) != BigEndian){ //if endianess flag doesn't match native endianess reserve byte order
-        size_t size = src.size();
-        
-        for(int i = 0; i < size/2; i++){
-            uint8_t temp = src[i];
-            src[i] = src[size-1-i];
-            src[size-1-i] = temp;
-        }
-    }
+    int reqSize = n/8 + (n%8 > 0);
 
-    printBytes("src Bytes : ", src);
-
-    buffer[0] = byte;
-
-    size_t k = n/8;
-    size_t m = n%8;
-
-    m = 8*(m == 0) + m;
-    k = k - 1*(m==8);
-    size_t total = k + 1;
-
-    std::cout << total << "Bytes = " << k << "Bytes " << m << "Bits\n"; 
-
+    printBytes("SRC Buffer : ", src);
     
 
-    size_t availableBits = 8 - bitOffset;
+    std::cout << "Byte Order In Out :" << inEndianess << " " << outEndianess << " BitOrder in out : " << inBitOrder << " " << outBitOrder << "\n";
 
-    Buffer SRC = src + (src.size() - total);
+    //for(int i = 0; i < dst.size(); i++) dst[i] = 0; // zero all bytes of dst
 
-    printBytes("SRC Bytes : ", SRC);
+    std::cout << "Writing Bits : ";
 
+    for(int i = n-1; i >= 0; i--){
 
-    return;
-
-
-    if(m > availableBits){
-
-
-
-    }
-
-    if(m == availableBits){
-        std::cout << "CASE 0\n";
-        buffer[0] = byte + ((SRC[0] << bitOffset) >> bitOffset);
-        stream->writeNBytes(buffer, 1);
-        stream->writeNBytes(SRC, k);
-    }else if( m < availableBits){
-        std::cout << "CASE 1\n";
-        size_t shiftCount = (availableBits - m);
-        std::cout << "ShiftCount " << shiftCount << "\n";
-        buffer[0] = byte + (SRC[0] << (shiftCount));
-
-        for(int i = 1; i < SRC.size(); i++){
-
-            buffer[i-1] += (buffer[i] >> (8-shiftCount));
-            buffer[i] <<= shiftCount;
-
+        if(bitCount == 8){
+            stream->writeNBytes(&byte, 1);
+            byte = 0;
+            bitCount = 0;  
         }
 
-        stream->writeNBytes(buffer, SRC.size()-1);
+        size_t byteIndex = i/8;
+        if(inEndianess != outEndianess) byteIndex = src.size() - 1 - byteIndex;
 
-        byte = buffer[SRC.size() - 1];
-        bitOffset = (8-shiftCount);
+        size_t bitIndex = i%8;
+        if(inBitOrder != outBitOrder) bitIndex = 7 - bitIndex;
+            
+        uint8_t mask = (1 << bitIndex);
+        uint8_t bit = (src[byteIndex] & (mask)) >> bitIndex; 
+            
+        std::cout << (int)bit;
 
-    }else{  // m > availableBits
-        std::cout << "CASE 2\n";
-        size_t shiftCount = (m - availableBits);
-        buffer[0] = byte + (SRC[0] >> shiftCount);
+        byte = ((byte << 1) | (bit));
+        bitCount++;
 
-        uint8_t carry = SRC[0] << (8-shiftCount);
-        int i = 1;
-        for(i = 1; i < SRC.size(); i++){
-
-            uint8_t carryNext = buffer[i] << (8-shiftCount);
-
-            buffer[i] = (buffer[i] >> shiftCount) + carry;
-
-            carry = carryNext;
-        }
-        stream->writeNBytes(buffer, SRC.size()-1);
-
-        i--;
-        
-        byte = carry;
-        bitOffset = (shiftCount);
 
     }
 
-    std::cout << "Written Bytes : ";
-    for(int i = 0; i < SRC.size(); i++){
-        std::cout << (int)buffer[i] << " ";
-    }
     std::cout << "\n";
 
+    return;
+    
+
+
 
     
-    //reconvert endianess back to native
-    if((flags & EndianMask) != NativeEndian){ //if endianess flag doesn't match native endianess reserve byte order
-        size_t size = src.size();
-        
-        for(int i = 0; i < size/2; i++){
-            uint8_t temp = src[i];
-            src[i] = src[size-1-i];
-            src[size-1-i] = temp;
-        }
-    }
-
 }
 
-void ar4j::BitWriter::writeNBytes(ar4j::Buffer src, size_t n, uint8_t flags){
+void ar4j::BitWriter::writeNBytes(ar4j::Buffer src, size_t n, uint32_t flags){
     
-    if(bitOffset == 0){
-        stream->writeNBytes(src, n, flags);
-    }else{
-        writeNBits(src, n*8, flags);
-    }
+    
+    writeNBits(src, n*8, flags);
+    
 
 }
 

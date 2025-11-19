@@ -17,13 +17,7 @@ namespace ar4j {
 
             Buffer operator[](size_t offset, size_t size);
             
-
-            template<typename Type>
-            Buffer(const Type& a){
-                data_ = (uint8_t*)&a;
-                capacity = sizeof(Type);
-            }
-
+            
             template<typename Type>
             Buffer(const Type* a){
                 data_ = (uint8_t*)a;

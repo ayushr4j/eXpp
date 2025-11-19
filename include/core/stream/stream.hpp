@@ -1,36 +1,29 @@
 #ifndef AR4J_STREAM
 #define AR4J_STREAM
 
-#include <bit>
+
 #include <cstdint>
 #include <stdint.h>
 #include "core/buffer/buffer.hpp"
 
 namespace ar4j {
-
-    enum StreamFlags : uint8_t{
-        NativeEndian = int(std::endian::native == std::endian::big),
-        BigEndian =    1,
-        LittleEndian = 0,
-        EndianMask = 0b1,
-
-        MSBFirst = 0 << 1,
-        LSBFirst = 1 << 1,
-        BitOrderMask = 0b10,
-
-        PEEK = 1 << 2,   //only affects read. this causes read to not advance stream's offset
+    
+    namespace StreamFlags{
+        enum StreamFlags : uint32_t{
+            
+            Default = 0
+        };
         
-        DEFAULT = NativeEndian | MSBFirst
-    };
+    }
     
 
     class Reader{
         public:
-            virtual void readNBytes(Buffer dst, size_t n, uint8_t flags = DEFAULT){};
+            virtual void readNBytes(Buffer dst, size_t n, uint32_t flags = StreamFlags::Default){};
     };
     class Writer{
         public:
-            virtual void writeNBytes(Buffer src, size_t n, uint8_t flags = DEFAULT){};
+            virtual void writeNBytes(Buffer src, size_t n, uint32_t flags = StreamFlags::Default){};
     };
     class Stream : public Reader, public Writer{
 
