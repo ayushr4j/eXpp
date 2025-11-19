@@ -75,18 +75,16 @@ namespace ar4j {
             virtual void writeNBytes(Buffer src, size_t n, uint32_t flags = StreamFlags::Default);
 
             void flush(){
+
                 if(bitCount > 0){
 
                     
-                    std::cout << "Flushing " << (void*)(uint64_t)byte << " BitCount " << (int)bitCount << "\n";
+                    std::cout << "Flushing " << (int)byte << " BitCount " << (int)bitCount << "\n";
 
-                    byte <<= (8-bitCount);
-
-                    stream->writeNBytes(&byte, 1);
-                    bitCount = 0;
-                    byte = 0;
-                }
+                    uint8_t flushBits = 0;
+                    writeNBits(&flushBits, 8-flushBits);
                     
+                }
                     
             }
     };

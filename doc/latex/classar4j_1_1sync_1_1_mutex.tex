@@ -1,0 +1,81 @@
+\doxysection{ar4j\+::sync\+::Mutex Class Reference}
+\hypertarget{classar4j_1_1sync_1_1_mutex}{}\label{classar4j_1_1sync_1_1_mutex}\index{ar4j::sync::Mutex@{ar4j::sync::Mutex}}
+
+
+Helps synchronise between multiple thread.  
+
+
+
+
+{\ttfamily \#include $<$mutex.\+hpp$>$}
+
+Inheritance diagram for ar4j\+::sync\+::Mutex\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classar4j_1_1sync_1_1_mutex}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{classar4j_1_1sync_1_1_mutex_a541e55b9d7d72e9d32d5536e69cb9bd5}{lock}} (uint64\+\_\+t timeout\+\_\+ms=0) noexcept
+\begin{DoxyCompactList}\small\item\em tries to lock mutex for given amount of time. if aquired returns true; if not returns false; the mutex must not be owned by current thread. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classar4j_1_1sync_1_1_mutex_a9f67bec2483e07e7aa2dcbdf344e351b}{unlock}} () noexcept
+\begin{DoxyCompactList}\small\item\em unlocks the mutex. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classar4j_1_1sync_1_1_mutex_a5d762a96098238478b0df975f7cd20a9}\label{classar4j_1_1sync_1_1_mutex_a5d762a96098238478b0df975f7cd20a9} 
+std\+::mutex {\bfseries mutex}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Helps synchronise between multiple thread. 
+
+\label{doc-func-members}
+\Hypertarget{classar4j_1_1sync_1_1_mutex_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classar4j_1_1sync_1_1_mutex_a541e55b9d7d72e9d32d5536e69cb9bd5}\index{ar4j::sync::Mutex@{ar4j::sync::Mutex}!lock@{lock}}
+\index{lock@{lock}!ar4j::sync::Mutex@{ar4j::sync::Mutex}}
+\doxysubsubsection{\texorpdfstring{lock()}{lock()}}
+{\footnotesize\ttfamily \label{classar4j_1_1sync_1_1_mutex_a541e55b9d7d72e9d32d5536e69cb9bd5} 
+virtual bool ar4j\+::sync\+::\+Mutex\+::lock (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{timeout\+\_\+ms}{ = {\ttfamily 0}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+tries to lock mutex for given amount of time. if aquired returns true; if not returns false; the mutex must not be owned by current thread. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em timeout\+\_\+ms} & timeout time in milliseconds \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classar4j_1_1sync_1_1_sync}{ar4j\+::sync\+::\+Sync}}.
+
+\Hypertarget{classar4j_1_1sync_1_1_mutex_a9f67bec2483e07e7aa2dcbdf344e351b}\index{ar4j::sync::Mutex@{ar4j::sync::Mutex}!unlock@{unlock}}
+\index{unlock@{unlock}!ar4j::sync::Mutex@{ar4j::sync::Mutex}}
+\doxysubsubsection{\texorpdfstring{unlock()}{unlock()}}
+{\footnotesize\ttfamily \label{classar4j_1_1sync_1_1_mutex_a9f67bec2483e07e7aa2dcbdf344e351b} 
+virtual void ar4j\+::sync\+::\+Mutex\+::unlock (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+unlocks the mutex. 
+
+
+
+Implements \mbox{\hyperlink{classar4j_1_1sync_1_1_sync}{ar4j\+::sync\+::\+Sync}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/core/sync/mutex.\+hpp\end{DoxyCompactItemize}

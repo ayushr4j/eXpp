@@ -1,0 +1,69 @@
+\doxysection{ar4j\+::memory\+::Allocator\+::Segment Class Reference}
+\hypertarget{classar4j_1_1memory_1_1_allocator_1_1_segment}{}\label{classar4j_1_1memory_1_1_allocator_1_1_segment}\index{ar4j::memory::Allocator::Segment@{ar4j::memory::Allocator::Segment}}
+
+
+holds reference to \doxylink{classar4j_1_1memory_1_1_allocator_1_1_allocation}{Allocation} allocated by \doxylink{classar4j_1_1memory_1_1_allocator}{Allocator}. This is used to count references for \doxylink{classar4j_1_1memory_1_1_allocator_1_1_segment}{Segment}. Creation of segment object increments Reference\+Count of \doxylink{classar4j_1_1memory_1_1_allocator_1_1_segment}{Segment}. and  
+
+
+
+
+{\ttfamily \#include $<$segment.\+hpp$>$}
+
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classar4j_1_1memory_1_1_allocator_1_1_segment_ab8143531f54f7752f1b3b9742748c857}{set\+Allocation}} (\mbox{\hyperlink{classar4j_1_1memory_1_1_allocator_1_1_allocation}{Allocation}} \texorpdfstring{$\ast$}{*}allocation, size\+\_\+t offset, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Sets the \doxylink{classar4j_1_1memory_1_1_allocator_1_1_allocation}{Allocation} object for this segment. release any previous segment objects and increases current reference count. \end{DoxyCompactList}\item 
+\Hypertarget{classar4j_1_1memory_1_1_allocator_1_1_segment_a69c90edbbf0766fc31b84ab630b4f6bf}\label{classar4j_1_1memory_1_1_allocator_1_1_segment_a69c90edbbf0766fc31b84ab630b4f6bf} 
+void {\bfseries remove\+Allocation} ()
+\begin{DoxyCompactList}\small\item\em remove the currently assigned reference to \doxylink{classar4j_1_1memory_1_1_allocator_1_1_allocation}{Allocation} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classar4j_1_1memory_1_1_allocator_1_1_segment_a84bddc49215da246bc3fe346e9f9e57a}\label{classar4j_1_1memory_1_1_allocator_1_1_segment_a84bddc49215da246bc3fe346e9f9e57a} 
+\mbox{\hyperlink{classar4j_1_1memory_1_1_allocator_1_1_allocation}{Allocation}} \texorpdfstring{$\ast$}{*} {\bfseries allocation} = nullptr
+\item 
+\Hypertarget{classar4j_1_1memory_1_1_allocator_1_1_segment_a1c5c84741b472c8deea7474d82a32159}\label{classar4j_1_1memory_1_1_allocator_1_1_segment_a1c5c84741b472c8deea7474d82a32159} 
+size\+\_\+t {\bfseries offset}
+\item 
+\Hypertarget{classar4j_1_1memory_1_1_allocator_1_1_segment_a9080af6d143744c254c176526831104e}\label{classar4j_1_1memory_1_1_allocator_1_1_segment_a9080af6d143744c254c176526831104e} 
+size\+\_\+t {\bfseries size}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classar4j_1_1memory_1_1_allocator_1_1_segment_a90f642f290db91885e04d6fc295d684c}\label{classar4j_1_1memory_1_1_allocator_1_1_segment_a90f642f290db91885e04d6fc295d684c} 
+class {\bfseries Allocation}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+holds reference to \doxylink{classar4j_1_1memory_1_1_allocator_1_1_allocation}{Allocation} allocated by \doxylink{classar4j_1_1memory_1_1_allocator}{Allocator}. This is used to count references for \doxylink{classar4j_1_1memory_1_1_allocator_1_1_segment}{Segment}. Creation of segment object increments Reference\+Count of \doxylink{classar4j_1_1memory_1_1_allocator_1_1_segment}{Segment}. and 
+
+\label{doc-func-members}
+\Hypertarget{classar4j_1_1memory_1_1_allocator_1_1_segment_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classar4j_1_1memory_1_1_allocator_1_1_segment_ab8143531f54f7752f1b3b9742748c857}\index{ar4j::memory::Allocator::Segment@{ar4j::memory::Allocator::Segment}!setAllocation@{setAllocation}}
+\index{setAllocation@{setAllocation}!ar4j::memory::Allocator::Segment@{ar4j::memory::Allocator::Segment}}
+\doxysubsubsection{\texorpdfstring{setAllocation()}{setAllocation()}}
+{\footnotesize\ttfamily \label{classar4j_1_1memory_1_1_allocator_1_1_segment_ab8143531f54f7752f1b3b9742748c857} 
+void ar4j\+::memory\+::\+Allocator\+::\+Segment\+::set\+Allocation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classar4j_1_1memory_1_1_allocator_1_1_allocation}{Allocation}} \texorpdfstring{$\ast$}{*}}]{allocation}{, }\item[{size\+\_\+t}]{offset}{, }\item[{size\+\_\+t}]{size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Sets the \doxylink{classar4j_1_1memory_1_1_allocator_1_1_allocation}{Allocation} object for this segment. release any previous segment objects and increases current reference count. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em allocation} & new allocation to be associated \\
+\hline
+{\em offset} & offset from which this segment starts in allocation \\
+\hline
+{\em size} & size of segment in allocation this reference points to \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/core/memory/segment.\+hpp\end{DoxyCompactItemize}

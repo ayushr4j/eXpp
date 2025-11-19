@@ -1,0 +1,62 @@
+\doxysection{ar4j\+::Bit\+Writer Class Reference}
+\hypertarget{classar4j_1_1_bit_writer}{}\label{classar4j_1_1_bit_writer}\index{ar4j::BitWriter@{ar4j::BitWriter}}
+Inheritance diagram for ar4j\+::Bit\+Writer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classar4j_1_1_bit_writer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classar4j_1_1_bit_writer_a1bf2c148f77863e9ab90e671e76fd231}\label{classar4j_1_1_bit_writer_a1bf2c148f77863e9ab90e671e76fd231} 
+{\bfseries Bit\+Writer} (\mbox{\hyperlink{classar4j_1_1_writer}{Writer}} \texorpdfstring{$\ast$}{*}stream)
+\item 
+virtual void \mbox{\hyperlink{classar4j_1_1_bit_writer_a99ff3a230cceb3977e8214b381027da3}{write\+NBits}} (\mbox{\hyperlink{classar4j_1_1_buffer}{Buffer}} src, size\+\_\+t n, uint32\+\_\+t flags=Bit\+Flags\+::\+Default)
+\item 
+virtual void \mbox{\hyperlink{classar4j_1_1_bit_writer_a37d24345ec3a218a5e9260f76b138178}{write\+NBytes}} (\mbox{\hyperlink{classar4j_1_1_buffer}{Buffer}} src, size\+\_\+t n, uint32\+\_\+t flags=Stream\+Flags\+::\+Default)
+\item 
+\Hypertarget{classar4j_1_1_bit_writer_af633b0776033897deeddff8f35615a57}\label{classar4j_1_1_bit_writer_af633b0776033897deeddff8f35615a57} 
+void {\bfseries flush} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classar4j_1_1_bit_writer_a1e22e4dc1f9bde396bae502ba565fcfa}\label{classar4j_1_1_bit_writer_a1e22e4dc1f9bde396bae502ba565fcfa} 
+\mbox{\hyperlink{classar4j_1_1_writer}{Writer}} \texorpdfstring{$\ast$}{*} {\bfseries stream}
+\item 
+\Hypertarget{classar4j_1_1_bit_writer_ab05709e9a9439ff2ccfb8070a304abae}\label{classar4j_1_1_bit_writer_ab05709e9a9439ff2ccfb8070a304abae} 
+uint8\+\_\+t {\bfseries bit\+Count} = 0
+\item 
+\Hypertarget{classar4j_1_1_bit_writer_a3094a9f0926c78dd1d5a3f57a1258bbf}\label{classar4j_1_1_bit_writer_a3094a9f0926c78dd1d5a3f57a1258bbf} 
+uint8\+\_\+t {\bfseries byte} = 0
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{classar4j_1_1_bit_writer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classar4j_1_1_bit_writer_a99ff3a230cceb3977e8214b381027da3}\index{ar4j::BitWriter@{ar4j::BitWriter}!writeNBits@{writeNBits}}
+\index{writeNBits@{writeNBits}!ar4j::BitWriter@{ar4j::BitWriter}}
+\doxysubsubsection{\texorpdfstring{writeNBits()}{writeNBits()}}
+{\footnotesize\ttfamily \label{classar4j_1_1_bit_writer_a99ff3a230cceb3977e8214b381027da3} 
+void ar4j\+::\+Bit\+Writer\+::write\+NBits (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classar4j_1_1_buffer}{ar4j\+::\+Buffer}}}]{src}{, }\item[{size\+\_\+t}]{n}{, }\item[{uint32\+\_\+t}]{flags}{ = {\ttfamily BitFlags\+:\+:Default}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000003}{Todo}}]Bit\+Order change implementation \end{DoxyRefDesc}
+\Hypertarget{classar4j_1_1_bit_writer_a37d24345ec3a218a5e9260f76b138178}\index{ar4j::BitWriter@{ar4j::BitWriter}!writeNBytes@{writeNBytes}}
+\index{writeNBytes@{writeNBytes}!ar4j::BitWriter@{ar4j::BitWriter}}
+\doxysubsubsection{\texorpdfstring{writeNBytes()}{writeNBytes()}}
+{\footnotesize\ttfamily \label{classar4j_1_1_bit_writer_a37d24345ec3a218a5e9260f76b138178} 
+void ar4j\+::\+Bit\+Writer\+::write\+NBytes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classar4j_1_1_buffer}{ar4j\+::\+Buffer}}}]{src}{, }\item[{size\+\_\+t}]{n}{, }\item[{uint32\+\_\+t}]{flags}{ = {\ttfamily StreamFlags\+:\+:Default}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classar4j_1_1_writer}{ar4j\+::\+Writer}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/core/stream/bitstream.\+hpp\item 
+src/core/stream/bitstream.\+cpp\end{DoxyCompactItemize}

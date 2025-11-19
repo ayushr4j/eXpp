@@ -4,7 +4,6 @@
 #include "core/stream/bitstream.hpp"
 #include "core/stream/stream.hpp"
 #include "core/buffer/buffer.hpp"
-#include "core/type/type.hpp"
 #include <cstddef>
 #include <cstdint>
 #include <cstdlib>
@@ -25,6 +24,15 @@
     BE , LSB : b(8n)   .. bi-1 bi   .. b(8n+7) |  b(8(n-1))   .. bi-1 bi   .. b((8(n-1))+7) | ... | b0 b1 b2 ... b7
 */
 
+void printBytes(const char* msg, ar4j::Buffer SRC){
+    std::cout << msg ;
+    for(int i = 0; i < SRC.size(); i++){
+        std::cout << (int)SRC[i] << " ";
+    }
+    std::cout << "\n";
+}
+
+/// @todo BitOrder change implementation figure out why in endianess does't matter
 void ar4j::BitReader::readNBits(ar4j::Buffer dst, size_t n, uint32_t flags){
 
     int inEndianess  = (flags & BitFlags::EndianInMask  ) >> 1;
@@ -33,11 +41,26 @@ void ar4j::BitReader::readNBits(ar4j::Buffer dst, size_t n, uint32_t flags){
     int outBitOrder  = (flags & BitFlags::BitOrderInMask);
 
     for(int i = 0; i < dst.size(); i++) dst[i] = 0; // zero all bytes of dst
-
     int reqSize = n/8 + (n%8 > 0);
 
-    std::cout << "Reading Bits : ";
-    for(int i = n-1; i >= 0; i--){
+
+
+
+    std::cout << "Reading Bits : " << reqSize << " : ";
+
+    int start = 0, end = n-1, dir = 1;
+    if(inEndianess == BitFlags::BigEndian){
+        /*int offset = dst.size()*8 - n;
+        start +=  offset;
+        end += offset;*/
+    }
+    if(outEndianess != inEndianess){
+        int temp = start;
+        start = end; end = temp; dir = -1;
+    }
+
+
+    for(int i = start, k = 0; i != end + dir; i+= dir, k++){
 
         if(bitCount == 0){
             stream->readNBytes(&byte, 1);
@@ -48,10 +71,16 @@ void ar4j::BitReader::readNBits(ar4j::Buffer dst, size_t n, uint32_t flags){
         std::cout << (int)bit ;
 
         size_t byteIndex = i/8;
-        if(inEndianess != outEndianess) byteIndex = dst.size() - 1 - byteIndex;
+        size_t bitIndex = (i%8);
 
-        size_t bitIndex = i%8;
-        if(inBitOrder != outBitOrder) bitIndex = 7 - bitIndex;
+        if(dir > 0){
+            bitIndex = 7-bitIndex;
+        }
+
+        if(byteIndex == (reqSize - 1)){
+            std::cout << "*";
+            bitIndex = (n%8) - (k%8) - 1;
+        }
         
         uint8_t mask = 0xff & (bit << bitIndex);
 
@@ -64,6 +93,8 @@ void ar4j::BitReader::readNBits(ar4j::Buffer dst, size_t n, uint32_t flags){
     }
     std::cout << "\n";
 
+    printBytes("DST Buffer : ", dst);
+
     return;
 
 }
@@ -74,14 +105,9 @@ void ar4j::BitReader::readNBytes(ar4j::Buffer dst, size_t n, uint32_t flags){
     
 }
 
-void printBytes(const char* msg, ar4j::Buffer SRC){
-    std::cout << msg ;
-    for(int i = 0; i < SRC.size(); i++){
-        std::cout << (int)SRC[i] << " ";
-    }
-    std::cout << "\n";
-}
 
+
+/// @todo BitOrder change implementation
 void ar4j::BitWriter::writeNBits(ar4j::Buffer src, size_t n, uint32_t flags){
 
     int inEndianess  = (flags & BitFlags::EndianInMask  ) >> 1;
@@ -90,12 +116,12 @@ void ar4j::BitWriter::writeNBits(ar4j::Buffer src, size_t n, uint32_t flags){
     int outBitOrder  = (flags & BitFlags::BitOrderInMask);
 
     int reqSize = n/8 + (n%8 > 0);
-    int offset = src.size() - reqSize;
+    
 
     printBytes("SRC Buffer : ", src);
     
 
-    std::cout << "Byte Order In Out :" << inEndianess << " " << outEndianess << " BitOrder in out : " << inBitOrder << " " << outBitOrder << "\n";
+    //std::cout << "Byte Order In Out :" << inEndianess << " " << outEndianess << " BitOrder in out : " << inBitOrder << " " << outBitOrder << "\n";
 
     //for(int i = 0; i < dst.size(); i++) dst[i] = 0; // zero all bytes of dst
 
@@ -116,12 +142,7 @@ void ar4j::BitWriter::writeNBits(ar4j::Buffer src, size_t n, uint32_t flags){
 
 
     for(int i = start, k = 0; i != end + dir; i+= dir, k++){
-        if(bitCount == 8){
-            stream->writeNBytes(&byte, 1);
-            byte = 0;
-            bitCount = 0; 
-            std::cout << " "; 
-        }
+        
         
 
         size_t byteIndex = i/8;
@@ -132,7 +153,7 @@ void ar4j::BitWriter::writeNBits(ar4j::Buffer src, size_t n, uint32_t flags){
         }
 
         if(byteIndex == reqSize - 1){
-            std::cout << "*";
+            //std::cout << "*";
             bitIndex = (n%8) - (k%8) - 1;
         }
 
@@ -147,6 +168,13 @@ void ar4j::BitWriter::writeNBits(ar4j::Buffer src, size_t n, uint32_t flags){
         
         byte = ((byte << 1) | (bit));
         bitCount++;
+
+        if(bitCount == 8){
+            stream->writeNBytes(&byte, 1);
+            byte = 0;
+            bitCount = 0; 
+            //std::cout << " "; 
+        }
     }
     
     std::cout << "\n";

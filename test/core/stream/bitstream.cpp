@@ -10,7 +10,7 @@ int main(){
 
     struct Test{
 
-        uint32_t A  = 0b101110101101001001;
+        uint32_t A  = 0b10111010110100;
         uint32_t B  = 2;
         uint32_t C  = 0;
         uint32_t D  = 11;
@@ -35,7 +35,7 @@ int main(){
 
     
 
-    uint8_t arr[] = { 0b11110000, 0b00001111, 0b01001001, 0, 0 } ; 
+    uint8_t arr[] = { 0, 0, 0, 0, 0, 0 } ; 
     ar4j::MemoryReader memReader{ arr };
     ar4j::MemoryWriter memWriter{ arr };
     ar4j::BitReader reader{&memReader};
@@ -44,9 +44,9 @@ int main(){
     test.print();
 
     int outFlags = ar4j::BitFlags::LittleEndianOut;
-    int inFlags = ar4j::BitFlags::BigEndianIn;
+    int inFlags = ar4j::BitFlags::LittleEndianIn;
 
-    writer.writeNBits(&test.A, 18, outFlags);
+    writer.writeNBits(&test.A, 14, outFlags);
     writer.writeNBits(&test.B, 2, outFlags);
     writer.writeNBits(&test.C, 1, outFlags);
     writer.writeNBits(&test.D, 5, outFlags);
@@ -60,30 +60,15 @@ int main(){
     test.E = 0;
     test.print();
 
-    std::cout << (void*) ((uint64_t)arr[0]) << " " << (void*) ((uint64_t)arr[1]) << " " << (void*) ((uint64_t)arr[2]) << "\n";
+    std::cout << ((uint64_t)arr[0]) << " " << ((uint64_t)arr[1]) << " " << ((uint64_t)arr[2]) << " " << ((uint64_t)arr[3]) << " " << ((uint64_t)arr[4]) << "\n";
 
-    reader.readNBits(&test.A, 3, inFlags);
+    reader.readNBits(&test.A, 14, inFlags);
     reader.readNBits(&test.B, 2, inFlags);
     reader.readNBits(&test.C, 1, inFlags);
     reader.readNBits(&test.D, 5, inFlags);
     reader.readNBits(&test.E, 9, inFlags);
 
     test.print();
-
-
-
-    uint16_t data;
-    reader.readNBits(&data, 5, ar4j::BitFlags::BigEndianIn);
-    std::cout << data << "\n";
-    uint32_t data1;
-    reader.readNBits(&data1, 3, ar4j::BitFlags::BigEndianIn);
-    std::cout << (int)data1 << "\n";
-    data1 = 0;
-    reader.readNBits(&data1, 8, ar4j::BitFlags::BigEndianIn);
-    std::cout << (int)data1 << "\n";
-    data1 = 0;
-    reader.readNBits(&data1, 3, ar4j::BitFlags::BigEndianIn);
-    std::cout << (int)data1 << "\n";
 
     
 

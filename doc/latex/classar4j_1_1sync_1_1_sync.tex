@@ -1,0 +1,57 @@
+\doxysection{ar4j\+::sync\+::Sync Class Reference}
+\hypertarget{classar4j_1_1sync_1_1_sync}{}\label{classar4j_1_1sync_1_1_sync}\index{ar4j::sync::Sync@{ar4j::sync::Sync}}
+
+
+Base class for synchronization primitives.  
+
+
+
+
+{\ttfamily \#include $<$sync.\+hpp$>$}
+
+Inheritance diagram for ar4j\+::sync\+::Sync\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classar4j_1_1sync_1_1_sync}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{classar4j_1_1sync_1_1_sync_a9ae31a4d1d44c225c73498610ee5e6aa}{lock}} (uint64\+\_\+t timeout=0) noexcept=0
+\item 
+virtual void \mbox{\hyperlink{classar4j_1_1sync_1_1_sync_aab858d501f68a38dc2920e73e4604d39}{unlock}} () noexcept=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for synchronization primitives. 
+
+\label{doc-func-members}
+\Hypertarget{classar4j_1_1sync_1_1_sync_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classar4j_1_1sync_1_1_sync_a9ae31a4d1d44c225c73498610ee5e6aa}\index{ar4j::sync::Sync@{ar4j::sync::Sync}!lock@{lock}}
+\index{lock@{lock}!ar4j::sync::Sync@{ar4j::sync::Sync}}
+\doxysubsubsection{\texorpdfstring{lock()}{lock()}}
+{\footnotesize\ttfamily \label{classar4j_1_1sync_1_1_sync_a9ae31a4d1d44c225c73498610ee5e6aa} 
+virtual bool ar4j\+::sync\+::\+Sync\+::lock (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{timeout}{ = {\ttfamily 0}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Implemented in \mbox{\hyperlink{classar4j_1_1sync_1_1_mutex_a541e55b9d7d72e9d32d5536e69cb9bd5}{ar4j\+::sync\+::\+Mutex}}.
+
+\Hypertarget{classar4j_1_1sync_1_1_sync_aab858d501f68a38dc2920e73e4604d39}\index{ar4j::sync::Sync@{ar4j::sync::Sync}!unlock@{unlock}}
+\index{unlock@{unlock}!ar4j::sync::Sync@{ar4j::sync::Sync}}
+\doxysubsubsection{\texorpdfstring{unlock()}{unlock()}}
+{\footnotesize\ttfamily \label{classar4j_1_1sync_1_1_sync_aab858d501f68a38dc2920e73e4604d39} 
+virtual void ar4j\+::sync\+::\+Sync\+::unlock (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Implemented in \mbox{\hyperlink{classar4j_1_1sync_1_1_mutex_a9f67bec2483e07e7aa2dcbdf344e351b}{ar4j\+::sync\+::\+Mutex}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/core/sync/sync.\+hpp\end{DoxyCompactItemize}

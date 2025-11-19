@@ -1,0 +1,59 @@
+\doxysection{ar4j\+::Bit\+Reader Class Reference}
+\hypertarget{classar4j_1_1_bit_reader}{}\label{classar4j_1_1_bit_reader}\index{ar4j::BitReader@{ar4j::BitReader}}
+Inheritance diagram for ar4j\+::Bit\+Reader\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classar4j_1_1_bit_reader}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classar4j_1_1_bit_reader_a4a364f5952e80a2b44dee9f0e8400d0f}\label{classar4j_1_1_bit_reader_a4a364f5952e80a2b44dee9f0e8400d0f} 
+{\bfseries Bit\+Reader} (\mbox{\hyperlink{classar4j_1_1_reader}{Reader}} \texorpdfstring{$\ast$}{*}stream)
+\item 
+virtual void \mbox{\hyperlink{classar4j_1_1_bit_reader_aee17479fb1910b4dc3838a4d1e3ae69c}{read\+NBits}} (\mbox{\hyperlink{classar4j_1_1_buffer}{Buffer}} dst, size\+\_\+t n, uint32\+\_\+t flags=Bit\+Flags\+::\+Default)
+\item 
+virtual void \mbox{\hyperlink{classar4j_1_1_bit_reader_aadaf50375c4df5586f068e27e05aa187}{read\+NBytes}} (\mbox{\hyperlink{classar4j_1_1_buffer}{Buffer}} dst, size\+\_\+t n, uint32\+\_\+t flags=Stream\+Flags\+::\+Default)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classar4j_1_1_bit_reader_a8690d8c1cfb19d39585798809e0f6870}\label{classar4j_1_1_bit_reader_a8690d8c1cfb19d39585798809e0f6870} 
+\mbox{\hyperlink{classar4j_1_1_reader}{Reader}} \texorpdfstring{$\ast$}{*} {\bfseries stream}
+\item 
+\Hypertarget{classar4j_1_1_bit_reader_a1a7e95de771b3b4fbf6832e7cf9c1b29}\label{classar4j_1_1_bit_reader_a1a7e95de771b3b4fbf6832e7cf9c1b29} 
+uint8\+\_\+t {\bfseries bit\+Count} = 0
+\item 
+\Hypertarget{classar4j_1_1_bit_reader_a5c8af5347567c3e7e83041739e47e6cb}\label{classar4j_1_1_bit_reader_a5c8af5347567c3e7e83041739e47e6cb} 
+uint8\+\_\+t {\bfseries byte} = 0
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{classar4j_1_1_bit_reader_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classar4j_1_1_bit_reader_aee17479fb1910b4dc3838a4d1e3ae69c}\index{ar4j::BitReader@{ar4j::BitReader}!readNBits@{readNBits}}
+\index{readNBits@{readNBits}!ar4j::BitReader@{ar4j::BitReader}}
+\doxysubsubsection{\texorpdfstring{readNBits()}{readNBits()}}
+{\footnotesize\ttfamily \label{classar4j_1_1_bit_reader_aee17479fb1910b4dc3838a4d1e3ae69c} 
+void ar4j\+::\+Bit\+Reader\+::read\+NBits (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classar4j_1_1_buffer}{ar4j\+::\+Buffer}}}]{dst}{, }\item[{size\+\_\+t}]{n}{, }\item[{uint32\+\_\+t}]{flags}{ = {\ttfamily BitFlags\+:\+:Default}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000002}{Todo}}]Bit\+Order change implementation figure out why in endianess does\textquotesingle{}t matter \end{DoxyRefDesc}
+\Hypertarget{classar4j_1_1_bit_reader_aadaf50375c4df5586f068e27e05aa187}\index{ar4j::BitReader@{ar4j::BitReader}!readNBytes@{readNBytes}}
+\index{readNBytes@{readNBytes}!ar4j::BitReader@{ar4j::BitReader}}
+\doxysubsubsection{\texorpdfstring{readNBytes()}{readNBytes()}}
+{\footnotesize\ttfamily \label{classar4j_1_1_bit_reader_aadaf50375c4df5586f068e27e05aa187} 
+void ar4j\+::\+Bit\+Reader\+::read\+NBytes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classar4j_1_1_buffer}{ar4j\+::\+Buffer}}}]{dst}{, }\item[{size\+\_\+t}]{n}{, }\item[{uint32\+\_\+t}]{flags}{ = {\ttfamily StreamFlags\+:\+:Default}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classar4j_1_1_reader}{ar4j\+::\+Reader}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/core/stream/bitstream.\+hpp\item 
+src/core/stream/bitstream.\+cpp\end{DoxyCompactItemize}

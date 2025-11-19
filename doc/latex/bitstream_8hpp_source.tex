@@ -1,0 +1,101 @@
+\doxysection{bitstream.\+hpp}
+\hypertarget{bitstream_8hpp_source}{}\label{bitstream_8hpp_source}\index{include/core/stream/bitstream.hpp@{include/core/stream/bitstream.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ AR4J\_STREAM\_BITSTREAM}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ AR4J\_STREAM\_BITSTREAM}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <bit>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <cstddef>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}core/stream/stream.hpp"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}core/buffer/buffer.hpp"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }ar4j\ \{}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{namespace\ }BitFlags\{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum}\ BitFlags\ :\ uint32\_t\{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ NativeEndian\ =\ int(std::endian::native\ ==\ std::endian::big)\ <<\ 8,}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ BigEndian\ =\ \ \ \ 1\ <<\ 8,}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ LittleEndian\ =\ 0\ <<\ 8,}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ EndianMask\ =\ 0b1\ <<\ 8,}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ NativeEndianOut\ =\ NativeEndian,}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ BigEndianOut\ =\ \ \ \ BigEndian,}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ LittleEndianOut\ =\ LittleEndian,}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ EndianOutMask\ =\ EndianMask,}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ NativeEndianIn\ =\ NativeEndianOut\ <<\ 1,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ BigEndianIn\ =\ BigEndianOut\ <<\ 1,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ LittleEndianIn\ =\ LittleEndianOut\ <<\ 1,}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ EndianInMask\ =\ EndianOutMask\ <<\ 1,}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ MSBFirst\ =\ 0\ <<\ 10,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ LSBFirst\ =\ 1\ <<\ 10,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ BitOrderMask\ =\ 0b1\ <<\ 10,}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ MSBFirstOut\ =\ MSBFirst,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ LSBFirstOut\ =\ LSBFirst,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ BitOrderOutMask\ =\ BitOrderMask,}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ MSBFirstIn\ =\ MSBFirst\ <<\ 1,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ LSBFirstIn\ =\ LSBFirst\ <<\ 1,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ BitOrderInMask\ =\ BitOrderMask\ <<\ 1,}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ Peek\ =\ 1\ <<\ 12,\ \ \ \textcolor{comment}{//only\ affects\ read.\ this\ causes\ read\ to\ not\ advance\ stream's\ offset}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ Default\ =\ NativeEndianIn\ |\ NativeEndianOut\ |\ MSBFirstIn\ |\ MSBFirstOut,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00051\ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \ \ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{class\ }BitReader\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classar4j_1_1_reader}{Reader}}\{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classar4j_1_1_reader}{Reader}}*\ stream;}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ bitCount\ =\ 0,\ \textcolor{keywordtype}{byte}\ =\ 0;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ BitReader(\mbox{\hyperlink{classar4j_1_1_reader}{Reader}}*\ stream)\{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>stream\ =\ stream;}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classar4j_1_1_bit_reader_aee17479fb1910b4dc3838a4d1e3ae69c}{readNBits}}(\mbox{\hyperlink{classar4j_1_1_buffer}{Buffer}}\ dst,\ \textcolor{keywordtype}{size\_t}\ n,\ uint32\_t\ flags\ =\ BitFlags::Default);}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ readNBytes(\mbox{\hyperlink{classar4j_1_1_buffer}{Buffer}}\ dst,\ \textcolor{keywordtype}{size\_t}\ n,\ uint32\_t\ flags\ =\ StreamFlags::Default);}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00065\ \ \ \ \ \};}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{class\ }BitWriter\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classar4j_1_1_writer}{Writer}}\{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classar4j_1_1_writer}{Writer}}*\ stream;}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ bitCount\ =\ 0,\ \textcolor{keywordtype}{byte}\ =\ 0;}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ BitWriter(\mbox{\hyperlink{classar4j_1_1_writer}{Writer}}*\ stream)\{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>stream\ =\ stream;}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classar4j_1_1_bit_writer_a99ff3a230cceb3977e8214b381027da3}{writeNBits}}(\mbox{\hyperlink{classar4j_1_1_buffer}{Buffer}}\ src,\ \textcolor{keywordtype}{size\_t}\ n,\ uint32\_t\ flags\ =\ BitFlags::Default);}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ writeNBytes(\mbox{\hyperlink{classar4j_1_1_buffer}{Buffer}}\ src,\ \textcolor{keywordtype}{size\_t}\ n,\ uint32\_t\ flags\ =\ StreamFlags::Default);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ flush()\{}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(bitCount\ >\ 0)\{}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Flushing\ "{}}\ <<\ (int)\textcolor{keywordtype}{byte}\ <<\ \textcolor{stringliteral}{"{}\ BitCount\ "{}}\ <<\ (\textcolor{keywordtype}{int})bitCount\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ flushBits\ =\ 0;}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classar4j_1_1_bit_writer_a99ff3a230cceb3977e8214b381027da3}{writeNBits}}(\&flushBits,\ 8-\/flushBits);}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00090\ \ \ \ \ \};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

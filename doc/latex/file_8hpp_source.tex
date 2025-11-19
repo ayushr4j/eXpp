@@ -1,0 +1,30 @@
+\doxysection{file.\+hpp}
+\hypertarget{file_8hpp_source}{}\label{file_8hpp_source}\index{include/file/file.hpp@{include/file/file.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ AR4J\_FILE\_FILE}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ AR4J\_FILE\_FILE}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}core/stream/stream.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }ar4j\ \{}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{namespace\ }file\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classar4j_1_1file_1_1_file}{File}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classar4j_1_1_stream}{Stream}},\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classar4j_1_1_seekable}{Seekable}}\{}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ open(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ filepath);}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ readNBytes(\textcolor{keywordtype}{void}*\ dst,\ \textcolor{keywordtype}{size\_t}\ n,\ uint8\_t\ flags);}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

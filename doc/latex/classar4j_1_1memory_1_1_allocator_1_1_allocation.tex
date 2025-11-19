@@ -1,0 +1,93 @@
+\doxysection{ar4j\+::memory\+::Allocator\+::Allocation Class Reference}
+\hypertarget{classar4j_1_1memory_1_1_allocator_1_1_allocation}{}\label{classar4j_1_1memory_1_1_allocator_1_1_allocation}\index{ar4j::memory::Allocator::Allocation@{ar4j::memory::Allocator::Allocation}}
+
+
+this is reperesents raw memory allocation and it also counts number of references to it and automatically deallocates when reference count goes to 0.  
+
+
+
+
+{\ttfamily \#include $<$allocation.\+hpp$>$}
+
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classar4j_1_1memory_1_1_memory}{Memory}} \mbox{\hyperlink{classar4j_1_1memory_1_1_allocator_1_1_allocation_a0329c85c5f35f5696839cf906f9b4ee9}{get\+Reference}} (size\+\_\+t offset, size\+\_\+t \mbox{\hyperlink{classar4j_1_1memory_1_1_allocator_1_1_allocation_acc2abb09820ef93497c1780e8850e0c0}{size}})
+\begin{DoxyCompactList}\small\item\em Returns \doxylink{classar4j_1_1memory_1_1_memory}{Memory} Object for this allocation. also increases refrecene count for the allocation. \end{DoxyCompactList}\item 
+\Hypertarget{classar4j_1_1memory_1_1_allocator_1_1_allocation_a38ba0579070a864ff1ac2bbcfaf1d086}\label{classar4j_1_1memory_1_1_allocator_1_1_allocation_a38ba0579070a864ff1ac2bbcfaf1d086} 
+void {\bfseries release\+Reference} (\mbox{\hyperlink{classar4j_1_1memory_1_1_memory}{Memory}} \&)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classar4j_1_1memory_1_1_allocator_1_1_allocation_a73deb31498ad23edf40c0a8731ebaa6e}\label{classar4j_1_1memory_1_1_allocator_1_1_allocation_a73deb31498ad23edf40c0a8731ebaa6e} 
+\mbox{\hyperlink{classar4j_1_1memory_1_1_allocator}{Allocator}} \texorpdfstring{$\ast$}{*} {\bfseries alloc} = nullptr
+\begin{DoxyCompactList}\small\item\em allocator that was used to allocate this \doxylink{classar4j_1_1memory_1_1_allocator_1_1_allocation}{Allocation} \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classar4j_1_1memory_1_1_allocator_1_1_allocation_acc2abb09820ef93497c1780e8850e0c0}{size}}
+\item 
+\Hypertarget{classar4j_1_1memory_1_1_allocator_1_1_allocation_a74e3185b5446a256a41f92873263e110}\label{classar4j_1_1memory_1_1_allocator_1_1_allocation_a74e3185b5446a256a41f92873263e110} 
+size\+\_\+t {\bfseries alignment} = 1
+\item 
+\Hypertarget{classar4j_1_1memory_1_1_allocator_1_1_allocation_ac7a674e2c99a1b3dce4f2c62bfb76d04}\label{classar4j_1_1memory_1_1_allocator_1_1_allocation_ac7a674e2c99a1b3dce4f2c62bfb76d04} 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries data}
+\begin{DoxyCompactList}\small\item\em raw holds the raw allocated space of this allocation. after which \doxylink{classar4j_1_1memory_1_1_memory}{Memory} Segment resides (may be padded to meet alignment requirement). data refers to address in this memory which fulfils given alignment requirment and is size bytes. \end{DoxyCompactList}\item 
+\Hypertarget{classar4j_1_1memory_1_1_allocator_1_1_allocation_aa0d0f24119c7f8f1e0a888fa7cc380f9}\label{classar4j_1_1memory_1_1_allocator_1_1_allocation_aa0d0f24119c7f8f1e0a888fa7cc380f9} 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries raw}
+\item 
+\Hypertarget{classar4j_1_1memory_1_1_allocator_1_1_allocation_a02018127a5c4fe204b812d1d8c99e90a}\label{classar4j_1_1memory_1_1_allocator_1_1_allocation_a02018127a5c4fe204b812d1d8c99e90a} 
+std\+::atomic$<$ size\+\_\+t $>$ {\bfseries reference\+Count} = 0
+\begin{DoxyCompactList}\small\item\em stores number of references created for this memory. help in automatic garbage collection \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classar4j_1_1memory_1_1_allocator_1_1_allocation_a2743bf0294172086e9384cd82f12c87a}\label{classar4j_1_1memory_1_1_allocator_1_1_allocation_a2743bf0294172086e9384cd82f12c87a} 
+class {\bfseries Memory}
+\item 
+\Hypertarget{classar4j_1_1memory_1_1_allocator_1_1_allocation_a4f7f62a2e2ba965a2aec21613708b95b}\label{classar4j_1_1memory_1_1_allocator_1_1_allocation_a4f7f62a2e2ba965a2aec21613708b95b} 
+class {\bfseries Allocator}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+this is reperesents raw memory allocation and it also counts number of references to it and automatically deallocates when reference count goes to 0. 
+
+\label{doc-func-members}
+\Hypertarget{classar4j_1_1memory_1_1_allocator_1_1_allocation_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classar4j_1_1memory_1_1_allocator_1_1_allocation_a0329c85c5f35f5696839cf906f9b4ee9}\index{ar4j::memory::Allocator::Allocation@{ar4j::memory::Allocator::Allocation}!getReference@{getReference}}
+\index{getReference@{getReference}!ar4j::memory::Allocator::Allocation@{ar4j::memory::Allocator::Allocation}}
+\doxysubsubsection{\texorpdfstring{getReference()}{getReference()}}
+{\footnotesize\ttfamily \label{classar4j_1_1memory_1_1_allocator_1_1_allocation_a0329c85c5f35f5696839cf906f9b4ee9} 
+\mbox{\hyperlink{classar4j_1_1memory_1_1_memory}{Memory}} Allocator\+::\+Allocation\+::get\+Reference (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{offset}{, }\item[{size\+\_\+t}]{size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Returns \doxylink{classar4j_1_1memory_1_1_memory}{Memory} Object for this allocation. also increases refrecene count for the allocation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em offset} & offset from which this reference starts \\
+\hline
+{\em size} & size of memory for this reference. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+\label{doc-variable-members}
+\Hypertarget{classar4j_1_1memory_1_1_allocator_1_1_allocation_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classar4j_1_1memory_1_1_allocator_1_1_allocation_acc2abb09820ef93497c1780e8850e0c0}\index{ar4j::memory::Allocator::Allocation@{ar4j::memory::Allocator::Allocation}!size@{size}}
+\index{size@{size}!ar4j::memory::Allocator::Allocation@{ar4j::memory::Allocator::Allocation}}
+\doxysubsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily \label{classar4j_1_1memory_1_1_allocator_1_1_allocation_acc2abb09820ef93497c1780e8850e0c0} 
+size\+\_\+t ar4j\+::memory\+::\+Allocator\+::\+Allocation\+::size\hspace{0.3cm}{\ttfamily [protected]}}
+
+size is the required size of allocation (excluding any padding, header). alignment is the alignment requirement for this \doxylink{classar4j_1_1memory_1_1_allocator_1_1_allocation}{Allocation}. this might be used when moving this memory to other location. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/core/memory/allocation.\+hpp\item 
+src/core/memory/allocation.\+cpp\end{DoxyCompactItemize}

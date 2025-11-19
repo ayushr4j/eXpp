@@ -1,0 +1,113 @@
+\doxysection{type.\+hpp}
+\hypertarget{type_8hpp_source}{}\label{type_8hpp_source}\index{include/core/type/type.hpp@{include/core/type/type.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ AR4J\_TYPE\_TYPE}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ AR4J\_TYPE\_TYPE}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}core/memory/memory.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}string"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <bit>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}core/stream/bitstream.hpp"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }ar4j\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classar4j_1_1_mapped_type}{MappedType}}\{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classar4j_1_1_mapped_type_1_1_map}{Map}}\{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ map(\textcolor{keywordtype}{void}*\ ptr,\ \textcolor{keywordtype}{size\_t}\ bits,\ uint8\_t\ flags);\ \textcolor{comment}{//endianness,\ bitorder}}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classar4j_1_1_mapped_type_1_1_input_map}{InputMap}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classar4j_1_1_mapped_type_1_1_map}{Map}}\{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classar4j_1_1_bit_reader}{BitReader}}*\ reader;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ map(\textcolor{keywordtype}{void}*\ ptr,\ \textcolor{keywordtype}{size\_t}\ bits,\ uint8\_t\ flags);}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classar4j_1_1_mapped_type_1_1_output_mapper}{OutputMapper}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classar4j_1_1_mapped_type_1_1_map}{Map}}\{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classar4j_1_1_bit_writer}{BitWriter}}*\ writer;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ map(\textcolor{keywordtype}{void}*\ ptr,\ \textcolor{keywordtype}{size\_t}\ bits,\ uint8\_t\ flags);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ map(\mbox{\hyperlink{classar4j_1_1_mapped_type_1_1_map}{Map}}\ map)\ =\ 0;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \};}
+\DoxyCodeLine{00036\ \ \ \ \ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classar4j_1_1_type_ab0de0d1baf9fe3f86c9f6e8fedfd4e3a}{Type}}\{}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{thread\_local}\ Memory\ cur\_mem;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{thread\_local}\ \textcolor{keywordtype}{size\_t}\ offset,\ size;\ \ \ \ \textcolor{comment}{//will\ be\ set\ by\ Constructor;}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ Memory\ memory;}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct}\{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ std::endian\ endianness\ :\ 1\ =\ std::endian::big;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ bitOrder\ :\ 1\ =\ 0;\ \textcolor{comment}{//0\ lsb\ 1st}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ bitOffset\ :\ 3\ =\ 0;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ bitLength\ :\ 3\ =\ 7;\ \textcolor{comment}{//\ length\ is\ actualLength\ -\/\ 1;}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \}\ flags;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{size\_t}\ getAlignment()\{\ \textcolor{keywordflow}{return}\ 8;\};}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{size\_t}\ getSize()\{\ \textcolor{keywordflow}{return}\ 0;\};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ init(\textcolor{keyword}{const}\ Memory\ mem);}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classar4j_1_1_type_ab0de0d1baf9fe3f86c9f6e8fedfd4e3a}{Type}}(\textcolor{keyword}{const}\ Memory\ mem\ =\ cur\_mem);\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classar4j_1_1_array}{Array}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classar4j_1_1_type_ab0de0d1baf9fe3f86c9f6e8fedfd4e3a}{Type}}\{}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \};}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classar4j_1_1_little_endian}{LittleEndian}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classar4j_1_1_type_ab0de0d1baf9fe3f86c9f6e8fedfd4e3a}{Type}}\{}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classar4j_1_1_bit}{Bit}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classar4j_1_1_type_ab0de0d1baf9fe3f86c9f6e8fedfd4e3a}{Type}}\{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{size\_t}\ getAlignment()\{\ \textcolor{keywordflow}{return}\ 1;\ \}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{size\_t}\ getSize()\{\ \textcolor{keywordflow}{return}\ 1;\ \}}
+\DoxyCodeLine{00075\ \ \ \ \ \};}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classar4j_1_1_byte}{Byte}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classar4j_1_1_type_ab0de0d1baf9fe3f86c9f6e8fedfd4e3a}{Type}}\{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{size\_t}\ getAlignment()\{\ \textcolor{keywordflow}{return}\ 8;\ \}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{size\_t}\ getSize()\{\ \textcolor{keywordflow}{return}\ 8;\ \}}
+\DoxyCodeLine{00079\ \ \ \ \ \};}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classar4j_1_1_int}{Int}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classar4j_1_1_type_ab0de0d1baf9fe3f86c9f6e8fedfd4e3a}{Type}}\{}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \};}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classar4j_1_1_float}{Float}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classar4j_1_1_type_ab0de0d1baf9fe3f86c9f6e8fedfd4e3a}{Type}}\{}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ }
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ t>}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classar4j_1_1_native_type}{NativeType}}\{}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classar4j_1_1_dynamic_type}{DynamicType}}\{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00096\ \ \ \ \ \};}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classar4j_1_1_static_type}{StaticType}}\{}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classar4j_1_1_variable}{Variable}}\{\ \ }
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classar4j_1_1_type}{Type}}\ type;}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ Memory\ memory;}
+\DoxyCodeLine{00105\ \ \ \ \ \};}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//AR4J\_TYPE\_TYPE}}
+
+\end{DoxyCode}
