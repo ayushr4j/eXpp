@@ -4,6 +4,7 @@
 #include "core/stream/bitstream.hpp"
 #include "core/stream/stream.hpp"
 #include "core/buffer/buffer.hpp"
+#include "core/type/type.hpp"
 #include <cstddef>
 #include <cstdint>
 #include <cstdlib>
@@ -89,6 +90,7 @@ void ar4j::BitWriter::writeNBits(ar4j::Buffer src, size_t n, uint32_t flags){
     int outBitOrder  = (flags & BitFlags::BitOrderInMask);
 
     int reqSize = n/8 + (n%8 > 0);
+    int offset = src.size() - reqSize;
 
     printBytes("SRC Buffer : ", src);
     
@@ -99,31 +101,54 @@ void ar4j::BitWriter::writeNBits(ar4j::Buffer src, size_t n, uint32_t flags){
 
     std::cout << "Writing Bits : ";
 
-    for(int i = n-1; i >= 0; i--){
+    int start = 0, end = n-1, dir = 1;
+    if(inEndianess == BitFlags::BigEndian){
+        int offset = src.size()*8 - n;
+        start +=  offset;
+        end += offset;
+    }
+    if(outEndianess != inEndianess){
+        int temp = start;
+        start = end; end = temp; dir = -1;
+    }
+    
+    
 
+
+    for(int i = start, k = 0; i != end + dir; i+= dir, k++){
         if(bitCount == 8){
             stream->writeNBytes(&byte, 1);
             byte = 0;
-            bitCount = 0;  
+            bitCount = 0; 
+            std::cout << " "; 
         }
+        
 
         size_t byteIndex = i/8;
-        if(inEndianess != outEndianess) byteIndex = src.size() - 1 - byteIndex;
+        size_t bitIndex = (i%8);
 
-        size_t bitIndex = i%8;
-        if(inBitOrder != outBitOrder) bitIndex = 7 - bitIndex;
-            
+        if(dir > 0){
+            bitIndex = 7-bitIndex;
+        }
+
+        if(byteIndex == reqSize - 1){
+            std::cout << "*";
+            bitIndex = (n%8) - (k%8) - 1;
+        }
+
+    
+        //std::cout << " " << byteIndex << ":" << bitIndex << " ";
+
         uint8_t mask = (1 << bitIndex);
         uint8_t bit = (src[byteIndex] & (mask)) >> bitIndex; 
             
         std::cout << (int)bit;
 
+        
         byte = ((byte << 1) | (bit));
         bitCount++;
-
-
     }
-
+    
     std::cout << "\n";
 
     return;

@@ -10,7 +10,7 @@ int main(){
 
     struct Test{
 
-        uint32_t A  = 6;
+        uint32_t A  = 0b101110101101001001;
         uint32_t B  = 2;
         uint32_t C  = 0;
         uint32_t D  = 11;
@@ -35,7 +35,7 @@ int main(){
 
     
 
-    uint8_t arr[] = { 0b11011001, 0, 0 } ; 
+    uint8_t arr[] = { 0b11110000, 0b00001111, 0b01001001, 0, 0 } ; 
     ar4j::MemoryReader memReader{ arr };
     ar4j::MemoryWriter memWriter{ arr };
     ar4j::BitReader reader{&memReader};
@@ -43,11 +43,14 @@ int main(){
 
     test.print();
 
-    writer.writeNBits(&test.A, 3, ar4j::BitFlags::BigEndianOut);
-    writer.writeNBits(&test.B, 2, ar4j::BitFlags::BigEndianOut);
-    writer.writeNBits(&test.C, 1, ar4j::BitFlags::BigEndianOut);
-    writer.writeNBits(&test.D, 5, ar4j::BitFlags::BigEndianOut);
-    writer.writeNBits(&test.E, 9, ar4j::BitFlags::BigEndianOut);
+    int outFlags = ar4j::BitFlags::LittleEndianOut;
+    int inFlags = ar4j::BitFlags::BigEndianIn;
+
+    writer.writeNBits(&test.A, 18, outFlags);
+    writer.writeNBits(&test.B, 2, outFlags);
+    writer.writeNBits(&test.C, 1, outFlags);
+    writer.writeNBits(&test.D, 5, outFlags);
+    writer.writeNBits(&test.E, 9, outFlags);
     writer.flush();
 
     test.A = 0;
@@ -59,11 +62,11 @@ int main(){
 
     std::cout << (void*) ((uint64_t)arr[0]) << " " << (void*) ((uint64_t)arr[1]) << " " << (void*) ((uint64_t)arr[2]) << "\n";
 
-    reader.readNBits(&test.A, 3, ar4j::BitFlags::BigEndianIn);
-    reader.readNBits(&test.B, 2, ar4j::BitFlags::BigEndianIn);
-    reader.readNBits(&test.C, 1, ar4j::BitFlags::BigEndianIn);
-    reader.readNBits(&test.D, 5, ar4j::BitFlags::BigEndianIn);
-    reader.readNBits(&test.E, 9, ar4j::BitFlags::BigEndianIn);
+    reader.readNBits(&test.A, 3, inFlags);
+    reader.readNBits(&test.B, 2, inFlags);
+    reader.readNBits(&test.C, 1, inFlags);
+    reader.readNBits(&test.D, 5, inFlags);
+    reader.readNBits(&test.E, 9, inFlags);
 
     test.print();
 
