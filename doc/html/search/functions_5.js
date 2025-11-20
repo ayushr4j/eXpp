@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['unlock_0',['unlock',['../classar4j_1_1sync_1_1_mutex.html#a9f67bec2483e07e7aa2dcbdf344e351b',1,'ar4j::sync::Mutex']]]
+  ['writenbits_0',['writeNBits',['../classar4j_1_1_bit_writer.html#a99ff3a230cceb3977e8214b381027da3',1,'ar4j::BitWriter']]]
 ];

@@ -1,0 +1,57 @@
+\doxysection{coroutine.\+hpp}
+\hypertarget{coroutine_8hpp_source}{}\label{coroutine_8hpp_source}\index{include/core/base/coroutine.hpp@{include/core/base/coroutine.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ AR4J\_COROUTINE}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ AR4J\_COROUTINE}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <coroutine>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }ar4j\ \{}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \ \ \ }
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ t>}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{class\ }Coroutine\{}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structar4j_1_1_coroutine_1_1promise}{promise}};}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }handle\_type\ =\ std::coroutine\_handle<promise>;}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }promise\_type\ =\ \mbox{\hyperlink{structar4j_1_1_coroutine_1_1promise}{promise}};}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structar4j_1_1_coroutine_1_1promise}{promise}}\{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ t\ value\_;}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ Coroutine<t>\ get\_return\_object()\ \{\ \textcolor{keywordflow}{return}\ \{handle\_type::from\_promise(*\textcolor{keyword}{this})\};\ \}}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ std::suspend\_always\ initial\_suspend()\ \textcolor{keyword}{noexcept}\ \{\ \textcolor{keywordflow}{return}\ \{\};\ \}}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ std::suspend\_always\ final\_suspend()\ \textcolor{keyword}{noexcept}\ \{\ \textcolor{keywordflow}{return}\ \{\};\ \}}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ return\_void()\ \{\}}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ unhandled\_exception()\ \{\}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<std::convertible\_to<t>\ From>\ \textcolor{comment}{//\ C++20\ concept}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ std::suspend\_always\ yield\_value(From\&\&\ from)}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value\_\ =\ std::forward<From>(from);\ \textcolor{comment}{//\ caching\ the\ result\ in\ promise}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{\};}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ handle\_type\ h\_;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ Coroutine(handle\_type\ h)\ :\ h\_(h)\{\}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ }
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ Coroutine<int>\ test()\{}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{co\_yield}\ 1;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//AR4J\_COROUTINE}}
+
+\end{DoxyCode}

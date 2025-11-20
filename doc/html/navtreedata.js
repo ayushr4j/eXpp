@@ -25,11 +25,7 @@
 var NAVTREE =
 [
   [ "My Project", "index.html", [
-    [ "LibR8", "md__r_e_a_d_m_e.html", null ],
     [ "Todo List", "todo.html", null ],
-    [ "Modules", "modules.html", [
-      [ "Modules List", "modules.html", "modules_dup" ]
-    ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],

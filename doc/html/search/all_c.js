@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['reader_0',['Reader',['../classar4j_1_1_reader.html',1,'ar4j']]],
-  ['readnbits_1',['readNBits',['../classar4j_1_1_bit_reader.html#aee17479fb1910b4dc3838a4d1e3ae69c',1,'ar4j::BitReader']]],
-  ['reference_2',['Reference',['../classar4j_1_1_reference.html',1,'ar4j']]],
-  ['referencecount_3',['referenceCount',['../classar4j_1_1memory_1_1_allocator_1_1_allocation.html#a02018127a5c4fe204b812d1d8c99e90a',1,'ar4j::memory::Allocator::Allocation']]]
+  ['seekable_0',['Seekable',['../classar4j_1_1_seekable.html',1,'ar4j']]],
+  ['seekablesource_1',['SeekableSource',['../classar4j_1_1_seekable_source.html',1,'ar4j']]],
+  ['size_2',['size',['../classar4j_1_1memory_1_1_allocator_1_1_allocation.html#acc2abb09820ef93497c1780e8850e0c0',1,'ar4j::memory::Allocator::Allocation']]],
+  ['stream_3',['Stream',['../classar4j_1_1_stream.html',1,'ar4j']]],
+  ['sync_4',['Sync',['../classar4j_1_1sync_1_1_sync.html',1,'ar4j::sync']]]
 ];
