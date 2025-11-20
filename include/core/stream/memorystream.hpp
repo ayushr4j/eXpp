@@ -2,7 +2,7 @@
 #define AR4J_STREAM_MEMORY_STREAM
 
 #include "core/stream/stream.hpp"
-#include "core/buffer/buffer.hpp"
+#include "core/stream/buffer/buffer.hpp"
 #include <algorithm>
 
 namespace ar4j {

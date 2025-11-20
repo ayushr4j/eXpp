@@ -6,7 +6,7 @@
 #include <cstdint>
 #include <stdint.h>
 #include "core/stream/stream.hpp"
-#include "core/buffer/buffer.hpp"
+#include "core/stream/buffer/buffer.hpp"
 
 #include <iostream>
 

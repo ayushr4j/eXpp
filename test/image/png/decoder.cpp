@@ -5,7 +5,7 @@
 #include <ios>
 #include <iostream>
 
-#include "core/buffer/buffer.hpp"
+#include "core/stream/buffer/buffer.hpp"
 #include "core/stream/bitstream.hpp"
 #include "core/stream/memorystream.hpp"
 

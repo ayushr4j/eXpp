@@ -4,7 +4,7 @@
 
 #include <cstdint>
 #include <stdint.h>
-#include "core/buffer/buffer.hpp"
+#include "core/stream/buffer/buffer.hpp"
 
 namespace ar4j {
     
