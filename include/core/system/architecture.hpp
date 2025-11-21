@@ -49,14 +49,14 @@ namespace expp {
     consteval Architecture getArchitecture(){
         Architecture cur = Architecture::OTHER;
 
-        #if defined X86
-            cur = Architecutre::x86; 
-        #elif defined X64
-            cur = Architecutre::x64;
-        #elif defined ARM 
-            cur = Architecutre::arm;
-        #elif defined ARM64
-            cur = Architecutre::arm64;
+        #if defined __i386__ || defined _M_IX86
+            cur = Architecture::x86; 
+        #elif defined __x86_64__ || defined (_M_X64) || defined _M_AMD64
+            cur = Architecture::x64;
+        #elif defined __arm__ || defined __arm || defined _M_ARM
+            cur = Architecture::arm32;
+        #elif defined __aarch64__ || defined __arm64__ || defined _M_ARM64
+            cur = Architecture::arm64;
         #endif
         return cur;
     }
