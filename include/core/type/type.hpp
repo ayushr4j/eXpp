@@ -1,11 +1,12 @@
-#ifndef AR4J_TYPE_TYPE
-#define AR4J_TYPE_TYPE
+#ifndef _expp_core_type_
+#define _expp_core_type_
 
 #include "string"
 #include <stddef.h>
 #include "core/stream/bitstream.hpp"
+#include "core/buffer/buffer.hpp"
 
-namespace ar4j {
+namespace expp {
 
     class MappedType{
     protected:
@@ -57,4 +58,4 @@ namespace ar4j {
 
 }
 
-#endif //AR4J_TYPE_TYPE
+#endif 

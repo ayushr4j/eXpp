@@ -1,9 +1,8 @@
-#ifndef AR4J_STREAM_BITSTREAM_SRC
-#define AR4J_STREAM_BITSTREAM_SRC
+
 
 #include "core/stream/bitstream.hpp"
 #include "core/stream/stream.hpp"
-#include "core/stream/buffer/buffer.hpp"
+#include "core/buffer/buffer.hpp"
 #include <cstddef>
 #include <cstdint>
 #include <cstdlib>
@@ -24,7 +23,7 @@
     BE , LSB : b(8n)   .. bi-1 bi   .. b(8n+7) |  b(8(n-1))   .. bi-1 bi   .. b((8(n-1))+7) | ... | b0 b1 b2 ... b7
 */
 
-void printBytes(const char* msg, ar4j::Buffer SRC){
+void printBytes(const char* msg, expp::Buffer SRC){
     std::cout << msg ;
     for(int i = 0; i < SRC.size(); i++){
         std::cout << (int)SRC[i] << " ";
@@ -33,7 +32,7 @@ void printBytes(const char* msg, ar4j::Buffer SRC){
 }
 
 /// @todo BitOrder change implementation figure out why in endianess does't matter fix code 
-void ar4j::BitReader::readNBits(ar4j::Buffer dst, size_t n, uint32_t flags){
+void expp::BitReader::readNBits(expp::Buffer dst, size_t n, uint32_t flags){
 
     int inEndianess  = (flags & BitFlags::EndianInMask  ) >> 1;
     int inBitOrder   = (flags & BitFlags::BitOrderInMask) >> 1;
@@ -99,7 +98,7 @@ void ar4j::BitReader::readNBits(ar4j::Buffer dst, size_t n, uint32_t flags){
 
 }
 
-void ar4j::BitReader::readNBytes(ar4j::Buffer dst, size_t n, uint32_t flags){
+void expp::BitReader::readNBytes(expp::Buffer dst, size_t n, uint32_t flags){
     
     readNBits(dst, n*8, flags);
     
@@ -108,7 +107,7 @@ void ar4j::BitReader::readNBytes(ar4j::Buffer dst, size_t n, uint32_t flags){
 
 
 /// @todo BitOrder change implementation
-void ar4j::BitWriter::writeNBits(ar4j::Buffer src, size_t n, uint32_t flags){
+void expp::BitWriter::writeNBits(expp::Buffer src, size_t n, uint32_t flags){
 
     int inEndianess  = (flags & BitFlags::EndianInMask  ) >> 1;
     int inBitOrder   = (flags & BitFlags::BitOrderInMask) >> 1;
@@ -187,7 +186,7 @@ void ar4j::BitWriter::writeNBits(ar4j::Buffer src, size_t n, uint32_t flags){
     
 }
 
-void ar4j::BitWriter::writeNBytes(ar4j::Buffer src, size_t n, uint32_t flags){
+void expp::BitWriter::writeNBytes(expp::Buffer src, size_t n, uint32_t flags){
     
     
     writeNBits(src, n*8, flags);
@@ -195,4 +194,3 @@ void ar4j::BitWriter::writeNBytes(ar4j::Buffer src, size_t n, uint32_t flags){
 
 }
 
-#endif

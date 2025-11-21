@@ -1,9 +1,10 @@
-#ifndef AR4J_SYNC
-#define AR4J_SYNC
+#ifndef _expp_core_thread_sync_
+#define _expp_core_thread_sync_
+
 
 #include <stdint.h>
 
-namespace ar4j
+namespace expp
 {
     namespace sync
     {

@@ -1,13 +1,11 @@
-#ifndef AR4J_MEMORY
-#define AR4J_MEMORY
+#ifndef _expp_core_memory_
+#define _expp_core_memory_
 
 #include <stddef.h>
-#include <core/type/reference.hpp>
 
 #include "./allocation.hpp"
 
-namespace ar4j
-{
+namespace expp{
 
     namespace memory {
         /// @brief It acts as a pointer to memory. It supports advanced memory operations such as extending, shrinking memory. splitting memory, inserting memory in between. this works by keeping list connected segments internally. and it automatically defragments them also.
@@ -48,7 +46,7 @@ namespace ar4j
     
    
     
-} // namespace ar4j
+} // namespace expp
 
 
-#endif //AR4J_MEMORY
+#endif 

@@ -4,9 +4,9 @@
 
 #include <cstdint>
 #include <stdint.h>
-#include "core/stream/buffer/buffer.hpp"
+#include "core/buffer/buffer.hpp"
 
-namespace ar4j {
+namespace expp {
     
     namespace StreamFlags{
         enum StreamFlags : uint32_t{

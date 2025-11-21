@@ -1,10 +1,10 @@
-#ifndef AR4J_FILE_FILE
-#define AR4J_FILE_FILE
+#ifndef _expp_io_file_
+#define _expp_file_
 
 #include "core/stream/stream.hpp"
 #include <cstdint>
 
-namespace ar4j {
+namespace expp {
 
     namespace file {
         

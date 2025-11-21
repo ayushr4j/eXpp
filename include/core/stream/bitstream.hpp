@@ -1,18 +1,18 @@
-#ifndef AR4J_STREAM_BITSTREAM
-#define AR4J_STREAM_BITSTREAM
+#ifndef _expp_core_stream_bitstream_
+#define _expp_core_stream_bistream_
 
 #include <bit>
 #include <cstddef>
 #include <cstdint>
 #include <stdint.h>
 #include "core/stream/stream.hpp"
-#include "core/stream/buffer/buffer.hpp"
+#include "core/buffer/buffer.hpp"
 
 #include <iostream>
 
 
 
-namespace ar4j {
+namespace expp {
 
 
     namespace BitFlags{

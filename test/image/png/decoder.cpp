@@ -5,7 +5,7 @@
 #include <ios>
 #include <iostream>
 
-#include "core/stream/buffer/buffer.hpp"
+#include "core/buffer/buffer.hpp"
 #include "core/stream/bitstream.hpp"
 #include "core/stream/memorystream.hpp"
 
@@ -29,9 +29,9 @@ int main(){
     is.read (buffer,length);
     is.close();
 
-    ar4j::Buffer buf{ buffer , length};
-    ar4j::MemoryReader memReader{ buf };
-    ar4j::BitReader reader{ &memReader };
+    expp::Buffer buf{ buffer , length};
+    expp::MemoryReader memReader{ buf };
+    expp::BitReader reader{ &memReader };
 
 
     std::cout << "PNGHeader : " << std::hex;
@@ -46,8 +46,8 @@ int main(){
     while(true){
 
         uint32_t length, chunkType, CRC;
-        reader.readNBits(&length, 32, ar4j::BitFlags::BigEndianIn);
-        reader.readNBits(&chunkType, 32, ar4j::BitFlags::BigEndianIn);
+        reader.readNBits(&length, 32, expp::BitFlags::BigEndianIn);
+        reader.readNBits(&chunkType, 32, expp::BitFlags::BigEndianIn);
 
         for(int i = 0; i < length; i++){
             uint16_t byte = 0;
@@ -55,7 +55,7 @@ int main(){
             //std::cout << (int)byte << " ";
         }
 
-        reader.readNBits(&CRC, 32, ar4j::BitFlags::BigEndianIn);
+        reader.readNBits(&CRC, 32, expp::BitFlags::BigEndianIn);
         std::cout << "Chunk Length " << length << " ChunkType " << std::hex << chunkType << std::dec << " CRC " << CRC << "\n";
         
 

@@ -1,11 +1,11 @@
-#ifndef AR4J_BUFFER_BUFFER
-#define AR4J_BUFFER_BUFFER
+#ifndef _expp_core_buffer_
+#define _expp_core_buffer_
 
 #include <cstddef>
 #include <cstdint>
 #include <stdint.h>
 
-namespace ar4j {
+namespace expp {
     
     class Buffer{
         protected:

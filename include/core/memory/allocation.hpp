@@ -1,5 +1,5 @@
-#ifndef AR4J_MEMORY_ALLOCATOR_ALLOCATION
-#define AR4J_MEMORY_ALLOCATOR_ALLOCATION
+#ifndef _expp_core_memory_allocation_
+#define _expp_core_memory_allocation_
 
 
 #include "./allocator.hpp"
@@ -8,7 +8,7 @@
 #include <stdint.h>
 #include <atomic>
 
-namespace ar4j
+namespace expp
 {
     namespace memory{
 
@@ -52,4 +52,4 @@ namespace ar4j
 } // namespace ar4j
 
 
-#endif //AR4J_MEMORY_ALLOCATOR_ALLOCATION
+#endif 

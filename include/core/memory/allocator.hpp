@@ -1,13 +1,11 @@
-#ifndef AR4J_MEMORY_ALLOCATOR
-#define AR4J_MEMORY_ALLOCATOR
+#ifndef _expp_core_memory_allocator_
+#define _expp_core_memory_allocator_
 
 #include <stddef.h>
 
-namespace ar4j
-{
+namespace expp{
 
-    namespace memory
-    {
+    namespace memory{
 
         class Memory;
         
@@ -47,4 +45,4 @@ namespace ar4j
 } // namespace name
 
 
-#endif //AR4J_MEMORY_ALLOCATOR
+#endif 

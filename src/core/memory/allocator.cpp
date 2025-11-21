@@ -1,12 +1,11 @@
-#ifndef AR4J_MEMORY_ALLOCATOR_SRC
-#define AR4J_MEMORY_ALLOCATOR_SRC
+
 
 #include "core/memory/allocator.hpp"
 #include "core/memory/memory.hpp"
 #include "stddef.h"
-#include <new>
 
-using namespace ar4j::memory;
+
+using namespace expp::memory;
 
 Allocator::Allocation* Allocator::createAllocation(size_t size, size_t alignment){
 
@@ -44,4 +43,3 @@ void Allocator::deallocate(Memory mem){
 
 }
 
-#endif //AR4J_MEMORY_ALLOCATOR_SRC

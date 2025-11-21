@@ -1,10 +1,10 @@
-#ifndef AR4J_IMAGE_PNG_CHUNKS
-#define AR4j_IMAGE_PNG_CHUNKS
+#ifndef _expp_image_png_chunks_
+#define _expp_image_png_chunks_
 
 
 #include "core/type/type.hpp"
 #include <cstdint>
-namespace ar4j {
+namespace expp {
     namespace image {
         namespace png {
             

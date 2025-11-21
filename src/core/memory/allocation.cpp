@@ -1,10 +1,9 @@
-#ifndef AR4J_MEMORY_ALLOCATION_SRC
-#define AR4J_MEMORY_ALLOCATION_SRC
+
 
 #include "core/memory/allocation.hpp"
 #include "core/memory/memory.hpp"
 
-using namespace ar4j::memory;
+using namespace expp::memory;
 
 Memory Allocator::Allocation::getReference(size_t offset, size_t size){
     Memory memory;
@@ -23,8 +22,3 @@ void Allocator::Allocation::releaseReference(Memory& mem){
 }
 
 
-
-
-
-
-#endif //AR4J_MEMORY_ALLOCATION_SRC

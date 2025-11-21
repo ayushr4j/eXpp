@@ -1,9 +1,9 @@
-#ifndef AR4J_COROUTINE
-#define AR4J_COROUTINE
+#ifndef _expp_coroutine_
+#define _expp_coroutine_
 
 #include <coroutine>
 
-namespace ar4j {
+namespace expp {
 
    
     template<typename t>
@@ -36,16 +36,7 @@ namespace ar4j {
 
 
     };
-
     
-
-
-    Coroutine<int> test(){
-
-        co_yield 1;
-
-    }
-
 }
 
-#endif //AR4J_COROUTINE
+#endif

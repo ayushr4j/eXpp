@@ -1,7 +1,7 @@
-#ifndef AR4J_THREAD
-#define AR4J_THREAD
+#ifndef _expp_core_thread_
+#define _expp_core_thread_
 
-namespace ar4j {
+namespace expp {
     namespace thread {
         
         class Task{

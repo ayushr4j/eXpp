@@ -1,5 +1,5 @@
-#ifndef AR4J_LOG
-#define AR4J_LOG
+#ifndef _expp_core_log_
+#define _expp_core_log_
 
 #include <iostream>
 
@@ -51,4 +51,4 @@ namespace ar4j{
 
 }
 
-#endif //AR4J_LOG
+#endif 

@@ -1,9 +1,9 @@
-#ifndef AR4J_IMAGE_PNG
-#define AR4J_IMAGE_PNG
+#ifndef _expp_image_png_
+#define _expp_image_png_
 
 #include "./chunks.hpp"
 
-namespace ar4j {
+namespace expp {
     namespace image {
         namespace png {
             class PNG{

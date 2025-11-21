@@ -1,10 +1,7 @@
-#ifndef AR4J_MEMORY_SRC
-#define AR4J_MEMORY_SRC
-
 #include "core/memory/memory.hpp"
 
 
-ar4j::memory::Memory::~Memory(){
+expp::memory::Memory::~Memory(){
     if(alloc != nullptr){
         alloc->releaseReference(*this);
         alloc = nullptr;
@@ -12,4 +9,3 @@ ar4j::memory::Memory::~Memory(){
 
 }
 
-#endif //AR4J_MEMORY_SRC

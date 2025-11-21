@@ -1,14 +1,12 @@
-#ifndef AR4J_MUTEX
-#define AR4J_MUTEX
+#ifndef _expp_core_thread_sync_mutex_
+#define _expp_core_thread_sync_mutex_
 
 #include "sync.hpp"
 #include <mutex>
 #include <thread>
 
-namespace ar4j
-{
-    namespace sync
-    {
+namespace expp{
+    namespace sync{
         
         /**
          * @brief Helps synchronise between multiple thread.
@@ -56,7 +54,7 @@ namespace ar4j
 
 
     } // namespace sync
-} // namespace ar4j
+} // namespace expp
 
 
-#endif //AR4J_MUTEX
+#endif 

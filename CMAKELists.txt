@@ -7,7 +7,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 
 
-set(MODULE_OUTPUT_DIR "${workspaceFolder}/modules")
 set(ARCHIVE_OUTPUT_DIRECTORY "${workspaceFolder}/lib")
 set(LIBRARY_OUTPUT_DIRECTORY "${workspaceFolder}/lib")
 set(RUNTIME_OUTPUT_DIRECTORY "${workspaceFolder}/bin")
@@ -20,11 +19,7 @@ include_directories(
 )
 
 
-add_library(base STATIC)
-target_sources(
-    base PUBLIC
-    include/core/base/coroutine.cpp
-)
+
 
 add_library(memory STATIC)
 target_sources(memory PUBLIC 
@@ -42,13 +37,6 @@ target_sources(stream PUBLIC
 add_executable(stream_test test/core/stream/bitstream.cpp)
 target_link_libraries(stream_test PRIVATE stream)
 
-add_library(type STATIC)
-target_sources(type PUBLIC 
-    src/core/type/reference.cpp
-    src/core/type/type.cpp
-    
-)
-
 
 add_library(image_png STATIC)
 target_sources(image_png PUBLIC
@@ -58,48 +46,3 @@ target_sources(image_png PUBLIC
 
 add_executable(image_png_test test/image/png/decoder.cpp)
 target_link_libraries(image_png_test PRIVATE image_png stream)
-
-
-
-
-
-
-if(False)
-
-add_library(log)
-
-
-target_sources(log
-  PUBLIC
-  FILE_SET CXX_MODULES
-        FILES log.cppm
-)
-
-# Compile base module interface to BMI
-add_custom_command(
-    OUTPUT ${CMAKE_BINARY_DIR}/base.pcm
-    COMMAND clang++ ${CLANG_MODULE_FLAGS}  ${CMAKE_SOURCE_DIR}/base.cppm -o base.pcm
-    DEPENDS ${CMAKE_SOURCE_DIR}/base.cppm
-)
-
-# Compile base.cppm -> base.o
-add_custom_command(
-    OUTPUT ${CMAKE_BINARY_DIR}/base.o
-    COMMAND clang++ ${CLANG_MODULE_FLAGS} -c ${CMAKE_SOURCE_DIR}/base.cppm -o base.o
-    DEPENDS ${CMAKE_SOURCE_DIR}/base.cppm ${CMAKE_BINARY_DIR}/base.pcm
-)
-
-add_custom_target(base_mod ALL DEPENDS ${CMAKE_BINARY_DIR}/base.o)
-
-# Compile log.cppm -> log.o (depends on base.pcm)
-add_custom_command(
-    OUTPUT ${CMAKE_BINARY_DIR}/log.o
-    COMMAND clang++ ${CLANG_MODULE_FLAGS} -c ${CMAKE_SOURCE_DIR}/log.cppm -o log.o
-    DEPENDS ${CMAKE_SOURCE_DIR}/log.cppm ${CMAKE_BINARY_DIR}/base.pcm
-)
-
-add_custom_target(log_mod ALL DEPENDS ${CMAKE_BINARY_DIR}/log.o)
-
-# Build main
-
-endif()

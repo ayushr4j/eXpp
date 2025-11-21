@@ -1,10 +1,10 @@
-#ifndef AR4J_STRING_UTILS
-#define AR4J_STRING_UTILS
+#ifndef _expp_core_utils_strings_
+#define _expp_core_utils_strings_
 
 #include <string>
 #include <vector>
 
-namespace ar4j {
+namespace expp {
 
     namespace utils{
         /**
