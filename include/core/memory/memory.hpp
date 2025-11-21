@@ -19,6 +19,7 @@ namespace expp{
 
                 friend class Allocator;
             public:
+                
                 ~Memory();
             
                 /// @brief return byte at given index in memory

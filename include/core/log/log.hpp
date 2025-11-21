@@ -9,16 +9,23 @@ namespace expp{
 
         
         /**
-         * @brief 
+         * @brief Logger class provides the base for Debug logging
          * 
+         * This class 
          */
         class Logger{
             
-            
-
             public:
 
                 virtual void log(const char* logString){
+                    std::cerr << logString;
+                }
+
+                virtual void info(const char* logString){
+                    std::cerr << logString;
+                }
+                
+                virtual void error(const char* logString){
                     std::cerr << logString;
                 }
                 

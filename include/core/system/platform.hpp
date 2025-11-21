@@ -44,6 +44,7 @@ namespace expp {
         Platform cur = Platform::Unix;
 
         #if defined(__APPLE__)
+            #define APPLE
             #include <TargetConditionals.h>
             #if TARGET_OS_OSX
                 cur = Platform::Mac;

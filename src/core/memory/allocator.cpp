@@ -4,6 +4,7 @@
 #include "core/memory/memory.hpp"
 #include "stddef.h"
 
+#include <new>  //used for in place new operator
 
 using namespace expp::memory;
 

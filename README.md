@@ -3,8 +3,31 @@ This Library provides cross platform application developement support
 
 
 
+#structure
+    core
+        system  : defines all system related parameter, compiler, targetBuild, platform, architecture.
+        log     : defines Logger base class and all logging related functions.
+        memory  :    //think more
+            allocator  : allocator base class defines allocation related interface.
+            memory     : reference to memory. contains pointer and size. subclasses may implement non linear memory or extendable memory.
+            buffer     : supposed to be temporary memory for io read/write.
+        context :
+        thread  :
+            sync :
+        stream  :
+        
+        .
+        .
+        .
+    io 
+        file
+        socket
+    image
+        png
+        jpg
+        tiff
 
-\ref core.
+
 
 
 
