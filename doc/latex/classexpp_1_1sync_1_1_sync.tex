@@ -1,0 +1,57 @@
+\doxysection{expp\+::sync\+::Sync Class Reference}
+\hypertarget{classexpp_1_1sync_1_1_sync}{}\label{classexpp_1_1sync_1_1_sync}\index{expp::sync::Sync@{expp::sync::Sync}}
+
+
+Base class for synchronization primitives.  
+
+
+
+
+{\ttfamily \#include $<$sync.\+hpp$>$}
+
+Inheritance diagram for expp\+::sync\+::Sync\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classexpp_1_1sync_1_1_sync}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{classexpp_1_1sync_1_1_sync_a1fee20d6adf17ca2fdf6e81970384bcf}{lock}} (uint64\+\_\+t timeout=0) noexcept=0
+\item 
+virtual void \mbox{\hyperlink{classexpp_1_1sync_1_1_sync_a6354e116fc98442fe2c23bc36c3267bb}{unlock}} () noexcept=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for synchronization primitives. 
+
+\label{doc-func-members}
+\Hypertarget{classexpp_1_1sync_1_1_sync_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classexpp_1_1sync_1_1_sync_a1fee20d6adf17ca2fdf6e81970384bcf}\index{expp::sync::Sync@{expp::sync::Sync}!lock@{lock}}
+\index{lock@{lock}!expp::sync::Sync@{expp::sync::Sync}}
+\doxysubsubsection{\texorpdfstring{lock()}{lock()}}
+{\footnotesize\ttfamily \label{classexpp_1_1sync_1_1_sync_a1fee20d6adf17ca2fdf6e81970384bcf} 
+virtual bool expp\+::sync\+::\+Sync\+::lock (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{timeout}{ = {\ttfamily 0}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Implemented in \mbox{\hyperlink{classexpp_1_1sync_1_1_mutex_a37b832df7afb2673de719a7b979fc139}{expp\+::sync\+::\+Mutex}}.
+
+\Hypertarget{classexpp_1_1sync_1_1_sync_a6354e116fc98442fe2c23bc36c3267bb}\index{expp::sync::Sync@{expp::sync::Sync}!unlock@{unlock}}
+\index{unlock@{unlock}!expp::sync::Sync@{expp::sync::Sync}}
+\doxysubsubsection{\texorpdfstring{unlock()}{unlock()}}
+{\footnotesize\ttfamily \label{classexpp_1_1sync_1_1_sync_a6354e116fc98442fe2c23bc36c3267bb} 
+virtual void expp\+::sync\+::\+Sync\+::unlock (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Implemented in \mbox{\hyperlink{classexpp_1_1sync_1_1_mutex_a8291b6670bf2038c38b8b9857ebbc7bf}{expp\+::sync\+::\+Mutex}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/core/thread/sync/sync.\+hpp\end{DoxyCompactItemize}

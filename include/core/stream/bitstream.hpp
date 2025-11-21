@@ -1,5 +1,5 @@
 #ifndef _expp_core_stream_bitstream_
-#define _expp_core_stream_bistream_
+#define _expp_core_stream_bitstream_
 
 #include <bit>
 #include <cstddef>

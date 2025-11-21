@@ -2,19 +2,19 @@
 \hypertarget{chunks_8hpp_source}{}\label{chunks_8hpp_source}\index{include/image/png/chunks.hpp@{include/image/png/chunks.hpp}}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ AR4J\_IMAGE\_PNG\_CHUNKS}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ AR4j\_IMAGE\_PNG\_CHUNKS}}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_expp\_image\_png\_chunks\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_expp\_image\_png\_chunks\_}}
 \DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}core/stream/bitstream.hpp"{}}}
+\DoxyCodeLine{00004\ }
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}core/type/type.hpp"{}}}
 \DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <cstdint>}}
-\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }ar4j\ \{}
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }expp\ \{}
 \DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{namespace\ }image\ \{}
 \DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \textcolor{keyword}{namespace\ }png\ \{}
 \DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00012\ }
-\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classar4j_1_1image_1_1png_1_1_chunk}{Chunk}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classar4j_1_1_mapped_type}{MappedType}}\{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classexpp_1_1image_1_1png_1_1_chunk}{Chunk}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classexpp_1_1_mapped_type}{MappedType}}\{}
 \DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
 \DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ length;}
 \DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ chunkType;}
@@ -28,17 +28,17 @@
 \DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isPrivate();}
 \DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isSafeToCopy();}
 \DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ map(\mbox{\hyperlink{classar4j_1_1_mapped_type_1_1_map}{Map}}*\ map)\{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ map(\mbox{\hyperlink{classexpp_1_1_mapped_type_1_1_map}{Map}}*\ map)\{}
 \DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mapChunk(map);}
 \DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ computeCRC();}
 \DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \};}
 \DoxyCodeLine{00031\ }
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ mapChunk(\mbox{\hyperlink{classar4j_1_1_mapped_type_1_1_map}{Map}}*\ map)\{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ mapChunk(\mbox{\hyperlink{classexpp_1_1_mapped_type_1_1_map}{Map}}*\ map)\{}
 \DoxyCodeLine{00033\ }
 \DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00035\ }
 \DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classar4j_1_1image_1_1png_1_1_i_h_d_r}{IHDR}}\ :\ \mbox{\hyperlink{classar4j_1_1image_1_1png_1_1_chunk}{Chunk}}\{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classexpp_1_1image_1_1png_1_1_i_h_d_r}{IHDR}}\ :\ \mbox{\hyperlink{classexpp_1_1image_1_1png_1_1_chunk}{Chunk}}\{}
 \DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
 \DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ width;}
 \DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ height;}
@@ -49,7 +49,7 @@
 \DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ interlaceMethod;}
 \DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
 \DoxyCodeLine{00047\ }
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ mapChunk(\mbox{\hyperlink{classar4j_1_1_mapped_type_1_1_map}{Map}}*\ map);}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ mapChunk(\mbox{\hyperlink{classexpp_1_1_mapped_type_1_1_map}{Map}}*\ map);}
 \DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
 \DoxyCodeLine{00050\ }
 \DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ }

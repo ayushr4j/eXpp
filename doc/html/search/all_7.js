@@ -1,6 +1,7 @@
 var searchData=
 [
   ['list_0',['Todo List',['../todo.html',1,'']]],
-  ['lock_1',['lock',['../classar4j_1_1sync_1_1_mutex.html#a541e55b9d7d72e9d32d5536e69cb9bd5',1,'ar4j::sync::Mutex']]],
-  ['logger_2',['Logger',['../classar4j_1_1log_1_1_logger.html',1,'ar4j::log']]]
+  ['lock_1',['lock',['../classexpp_1_1sync_1_1_mutex.html#a37b832df7afb2673de719a7b979fc139',1,'expp::sync::Mutex']]],
+  ['logger_2',['Logger',['../classexpp_1_1log_1_1_logger.html',1,'expp::log']]],
+  ['logic_3',['Core Architecture Logic',['../group___arch_core.html',1,'']]]
 ];

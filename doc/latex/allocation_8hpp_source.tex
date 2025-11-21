@@ -2,8 +2,8 @@
 \hypertarget{allocation_8hpp_source}{}\label{allocation_8hpp_source}\index{include/core/memory/allocation.hpp@{include/core/memory/allocation.hpp}}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ AR4J\_MEMORY\_ALLOCATOR\_ALLOCATION}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ AR4J\_MEMORY\_ALLOCATOR\_ALLOCATION}}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_expp\_core\_memory\_allocation\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_expp\_core\_memory\_allocation\_}}
 \DoxyCodeLine{00003\ }
 \DoxyCodeLine{00004\ }
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}./allocator.hpp"{}}}
@@ -12,31 +12,31 @@
 \DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <atomic>}}
 \DoxyCodeLine{00010\ }
-\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }ar4j}
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }expp}
 \DoxyCodeLine{00012\ \{}
 \DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{namespace\ }memory\{}
 \DoxyCodeLine{00014\ }
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classar4j_1_1memory_1_1_allocator_1_1_allocation}{Allocator::Allocation}}\{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classexpp_1_1memory_1_1_allocator_1_1_allocation}{Allocator::Allocation}}\{}
 \DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Allocator*\ \mbox{\hyperlink{classar4j_1_1memory_1_1_allocator_1_1_allocation_a73deb31498ad23edf40c0a8731ebaa6e}{alloc}}\ =\ \textcolor{keyword}{nullptr};\ \ \ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Allocator*\ \mbox{\hyperlink{classexpp_1_1memory_1_1_allocator_1_1_allocation_a02a1cc7fc33a9fd81dc8ee3077f28369}{alloc}}\ =\ \textcolor{keyword}{nullptr};\ \ \ }
 \DoxyCodeLine{00020\ }
 \DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00022\ }
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classar4j_1_1memory_1_1_allocator_1_1_allocation_acc2abb09820ef93497c1780e8850e0c0}{size}},\ alignment\ =\ 1;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classexpp_1_1memory_1_1_allocator_1_1_allocation_a757dbfe388d7d6f4624c4d3f0dfc88ca}{size}},\ alignment\ =\ 1;}
 \DoxyCodeLine{00026\ }
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ *\mbox{\hyperlink{classar4j_1_1memory_1_1_allocator_1_1_allocation_ac7a674e2c99a1b3dce4f2c62bfb76d04}{data}},\ *raw;\ \ \ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ *\mbox{\hyperlink{classexpp_1_1memory_1_1_allocator_1_1_allocation_a66b661b99abd9154cb78ace0a90b0bca}{data}},\ *raw;\ \ \ }
 \DoxyCodeLine{00029\ }
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::atomic<size\_t>\ \mbox{\hyperlink{classar4j_1_1memory_1_1_allocator_1_1_allocation_a02018127a5c4fe204b812d1d8c99e90a}{referenceCount}}\ =\ 0;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::atomic<size\_t>\ \mbox{\hyperlink{classexpp_1_1memory_1_1_allocator_1_1_allocation_aaab69cfe2e65f84ac415657be2126aee}{referenceCount}}\ =\ 0;}
 \DoxyCodeLine{00032\ }
 \DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Allocation()\{\};}
 \DoxyCodeLine{00035\ }
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Memory\ \mbox{\hyperlink{classar4j_1_1memory_1_1_allocator_1_1_allocation_a0329c85c5f35f5696839cf906f9b4ee9}{getReference}}(\textcolor{keywordtype}{size\_t}\ offset,\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classar4j_1_1memory_1_1_allocator_1_1_allocation_acc2abb09820ef93497c1780e8850e0c0}{size}});}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Memory\ \mbox{\hyperlink{classexpp_1_1memory_1_1_allocator_1_1_allocation_a0329c85c5f35f5696839cf906f9b4ee9}{getReference}}(\textcolor{keywordtype}{size\_t}\ offset,\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classexpp_1_1memory_1_1_allocator_1_1_allocation_a757dbfe388d7d6f4624c4d3f0dfc88ca}{size}});}
 \DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ releaseReference(Memory\&);}
 \DoxyCodeLine{00043\ }
 \DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }Memory;}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classar4j_1_1memory_1_1_allocator}{Allocator}};}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classexpp_1_1memory_1_1_allocator}{Allocator}};}
 \DoxyCodeLine{00046\ }
 \DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \};}
 \DoxyCodeLine{00048\ }
@@ -46,6 +46,6 @@
 \DoxyCodeLine{00052\ \}\ \textcolor{comment}{//\ namespace\ ar4j}}
 \DoxyCodeLine{00053\ }
 \DoxyCodeLine{00054\ }
-\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//AR4J\_MEMORY\_ALLOCATOR\_ALLOCATION}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif\ }}
 
 \end{DoxyCode}

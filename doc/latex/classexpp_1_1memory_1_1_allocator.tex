@@ -1,0 +1,59 @@
+\doxysection{expp\+::memory\+::Allocator Class Reference}
+\hypertarget{classexpp_1_1memory_1_1_allocator}{}\label{classexpp_1_1memory_1_1_allocator}\index{expp::memory::Allocator@{expp::memory::Allocator}}
+
+
+Allocates Contiguous \doxylink{classexpp_1_1memory_1_1_memory}{Memory} Segments and returns a Reference to it.  
+
+
+
+
+{\ttfamily \#include $<$allocator.\+hpp$>$}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classexpp_1_1memory_1_1_allocator_1_1_allocation}{Allocation}}
+\begin{DoxyCompactList}\small\item\em this is reperesents raw memory allocation and it also counts number of references to it and automatically deallocates when reference count goes to 0. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classexpp_1_1memory_1_1_allocator_ad611e47e4d7e4d9386fb3107bc02bb2b}\label{classexpp_1_1memory_1_1_allocator_ad611e47e4d7e4d9386fb3107bc02bb2b} 
+virtual \mbox{\hyperlink{classexpp_1_1memory_1_1_memory}{Memory}} {\bfseries allocate} (size\+\_\+t size, size\+\_\+t alignment=1)
+\item 
+\Hypertarget{classexpp_1_1memory_1_1_allocator_a6820bf28aff68dc97c9ffc8f3f4ec129}\label{classexpp_1_1memory_1_1_allocator_a6820bf28aff68dc97c9ffc8f3f4ec129} 
+virtual void {\bfseries deallocate} (\mbox{\hyperlink{classexpp_1_1memory_1_1_memory}{Memory}} mem)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classexpp_1_1memory_1_1_allocator_a5d6a44e90f61527a9ea318dfd6e9b8f3}\label{classexpp_1_1memory_1_1_allocator_a5d6a44e90f61527a9ea318dfd6e9b8f3} 
+virtual \mbox{\hyperlink{classexpp_1_1memory_1_1_allocator_1_1_allocation}{Allocation}} \texorpdfstring{$\ast$}{*} {\bfseries create\+Allocation} (size\+\_\+t size, size\+\_\+t alignment=1)
+\item 
+\Hypertarget{classexpp_1_1memory_1_1_allocator_a343846b94705af21fb31dae7aa28a95e}\label{classexpp_1_1memory_1_1_allocator_a343846b94705af21fb31dae7aa28a95e} 
+virtual void {\bfseries deallocate} (\mbox{\hyperlink{classexpp_1_1memory_1_1_allocator_1_1_allocation}{Allocation}} \texorpdfstring{$\ast$}{*}allocation)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classexpp_1_1memory_1_1_allocator_a90f642f290db91885e04d6fc295d684c}\label{classexpp_1_1memory_1_1_allocator_a90f642f290db91885e04d6fc295d684c} 
+class {\bfseries Allocation}
+\item 
+\Hypertarget{classexpp_1_1memory_1_1_allocator_a236d8c148bfb57377056af5ece1f8c69}\label{classexpp_1_1memory_1_1_allocator_a236d8c148bfb57377056af5ece1f8c69} 
+class {\bfseries Memory\+Object}
+\item 
+\Hypertarget{classexpp_1_1memory_1_1_allocator_a2743bf0294172086e9384cd82f12c87a}\label{classexpp_1_1memory_1_1_allocator_a2743bf0294172086e9384cd82f12c87a} 
+class {\bfseries Memory}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Allocates Contiguous \doxylink{classexpp_1_1memory_1_1_memory}{Memory} Segments and returns a Reference to it. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000001}{Todo}}]implement segmented allocations to be used for complex memory operation \end{DoxyRefDesc}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/core/memory/allocator.\+hpp\item 
+src/core/memory/allocator.\+cpp\end{DoxyCompactItemize}

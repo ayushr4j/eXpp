@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['reader_0',['Reader',['../classar4j_1_1_reader.html',1,'ar4j']]],
-  ['readnbits_1',['readNBits',['../classar4j_1_1_bit_reader.html#aee17479fb1910b4dc3838a4d1e3ae69c',1,'ar4j::BitReader']]],
-  ['referencecount_2',['referenceCount',['../classar4j_1_1memory_1_1_allocator_1_1_allocation.html#a02018127a5c4fe204b812d1d8c99e90a',1,'ar4j::memory::Allocator::Allocation']]]
+  ['reader_0',['Reader',['../classexpp_1_1_reader.html',1,'expp']]],
+  ['readnbits_1',['readNBits',['../classexpp_1_1_bit_reader.html#a02b837487034a931dd658a5a16b0ac8c',1,'expp::BitReader']]],
+  ['referencecount_2',['referenceCount',['../classexpp_1_1memory_1_1_allocator_1_1_allocation.html#aaab69cfe2e65f84ac415657be2126aee',1,'expp::memory::Allocator::Allocation']]]
 ];

@@ -2,36 +2,36 @@
 \hypertarget{memorystream_8hpp_source}{}\label{memorystream_8hpp_source}\index{include/core/stream/memorystream.hpp@{include/core/stream/memorystream.hpp}}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ AR4J\_STREAM\_MEMORY\_STREAM}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ AR4J\_STREAM\_MEMORY\_STREAM}}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_expp\_core\_stream\_memorystream\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_expp\_core\_stream\_memorystream\_}}
 \DoxyCodeLine{00003\ }
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}core/stream/stream.hpp"{}}}
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}core/buffer/buffer.hpp"{}}}
 \DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <algorithm>}}
 \DoxyCodeLine{00007\ }
-\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }ar4j\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }expp\ \{}
 \DoxyCodeLine{00009\ }
-\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{class\ }MemoryReader\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classar4j_1_1_reader}{ar4j::Reader}}\{}
-\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classar4j_1_1_buffer}{Buffer}}\ buffer;}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{class\ }MemoryReader\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classexpp_1_1_reader}{Reader}}\{}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classexpp_1_1_buffer}{Buffer}}\ buffer;}
 \DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ MemoryReader(\mbox{\hyperlink{classar4j_1_1_buffer}{Buffer}}\ buf)\ :\ buffer(buf)\{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ MemoryReader(\mbox{\hyperlink{classexpp_1_1_buffer}{Buffer}}\ buf)\ :\ buffer(buf)\{}
 \DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ readNBytes(\mbox{\hyperlink{classar4j_1_1_buffer}{ar4j::Buffer}}\ dst,\ \textcolor{keywordtype}{size\_t}\ n,\ uint32\_t\ flags)\textcolor{keyword}{\ override}\{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ readNBytes(\mbox{\hyperlink{classexpp_1_1_buffer}{Buffer}}\ dst,\ \textcolor{keywordtype}{size\_t}\ n,\ uint32\_t\ flags)\textcolor{keyword}{\ override}\{}
 \DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::copy\_n(buffer.data(),\ n,\ dst.data());}
 \DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ buffer\ =\ buffer\ +\ n;}
 \DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00021\ \ \ \ \ \};}
 \DoxyCodeLine{00022\ }
-\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{class\ }MemoryWriter\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classar4j_1_1_writer}{ar4j::Writer}}\{}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classar4j_1_1_buffer}{Buffer}}\ buffer;}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{class\ }MemoryWriter\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classexpp_1_1_writer}{Writer}}\{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classexpp_1_1_buffer}{Buffer}}\ buffer;}
 \DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ MemoryWriter(\mbox{\hyperlink{classar4j_1_1_buffer}{Buffer}}\ buf)\ :\ buffer(buf)\{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ MemoryWriter(\mbox{\hyperlink{classexpp_1_1_buffer}{Buffer}}\ buf)\ :\ buffer(buf)\{}
 \DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00029\ }
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ writeNBytes(\mbox{\hyperlink{classar4j_1_1_buffer}{ar4j::Buffer}}\ src,\ \textcolor{keywordtype}{size\_t}\ n,\ uint32\_t\ flags)\textcolor{keyword}{\ override}\{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ writeNBytes(\mbox{\hyperlink{classexpp_1_1_buffer}{Buffer}}\ src,\ \textcolor{keywordtype}{size\_t}\ n,\ uint32\_t\ flags)\textcolor{keyword}{\ override}\{}
 \DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::copy\_n(src.data(),\ n,\ buffer.data());}
 \DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ buffer\ =\ buffer\ +\ n;}
 \DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \}}

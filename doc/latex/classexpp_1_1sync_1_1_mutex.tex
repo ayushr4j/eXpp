@@ -1,0 +1,81 @@
+\doxysection{expp\+::sync\+::Mutex Class Reference}
+\hypertarget{classexpp_1_1sync_1_1_mutex}{}\label{classexpp_1_1sync_1_1_mutex}\index{expp::sync::Mutex@{expp::sync::Mutex}}
+
+
+Helps synchronise between multiple thread.  
+
+
+
+
+{\ttfamily \#include $<$mutex.\+hpp$>$}
+
+Inheritance diagram for expp\+::sync\+::Mutex\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classexpp_1_1sync_1_1_mutex}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{classexpp_1_1sync_1_1_mutex_a37b832df7afb2673de719a7b979fc139}{lock}} (uint64\+\_\+t timeout\+\_\+ms=0) noexcept
+\begin{DoxyCompactList}\small\item\em tries to lock mutex for given amount of time. if aquired returns true; if not returns false; the mutex must not be owned by current thread. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classexpp_1_1sync_1_1_mutex_a8291b6670bf2038c38b8b9857ebbc7bf}{unlock}} () noexcept
+\begin{DoxyCompactList}\small\item\em unlocks the mutex. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classexpp_1_1sync_1_1_mutex_a7323768f080aa9e0e750b49aacc63d59}\label{classexpp_1_1sync_1_1_mutex_a7323768f080aa9e0e750b49aacc63d59} 
+std\+::mutex {\bfseries mutex}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Helps synchronise between multiple thread. 
+
+\label{doc-func-members}
+\Hypertarget{classexpp_1_1sync_1_1_mutex_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classexpp_1_1sync_1_1_mutex_a37b832df7afb2673de719a7b979fc139}\index{expp::sync::Mutex@{expp::sync::Mutex}!lock@{lock}}
+\index{lock@{lock}!expp::sync::Mutex@{expp::sync::Mutex}}
+\doxysubsubsection{\texorpdfstring{lock()}{lock()}}
+{\footnotesize\ttfamily \label{classexpp_1_1sync_1_1_mutex_a37b832df7afb2673de719a7b979fc139} 
+virtual bool expp\+::sync\+::\+Mutex\+::lock (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{timeout\+\_\+ms}{ = {\ttfamily 0}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+tries to lock mutex for given amount of time. if aquired returns true; if not returns false; the mutex must not be owned by current thread. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em timeout\+\_\+ms} & timeout time in milliseconds \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classexpp_1_1sync_1_1_sync}{expp\+::sync\+::\+Sync}}.
+
+\Hypertarget{classexpp_1_1sync_1_1_mutex_a8291b6670bf2038c38b8b9857ebbc7bf}\index{expp::sync::Mutex@{expp::sync::Mutex}!unlock@{unlock}}
+\index{unlock@{unlock}!expp::sync::Mutex@{expp::sync::Mutex}}
+\doxysubsubsection{\texorpdfstring{unlock()}{unlock()}}
+{\footnotesize\ttfamily \label{classexpp_1_1sync_1_1_mutex_a8291b6670bf2038c38b8b9857ebbc7bf} 
+virtual void expp\+::sync\+::\+Mutex\+::unlock (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+unlocks the mutex. 
+
+
+
+Implements \mbox{\hyperlink{classexpp_1_1sync_1_1_sync}{expp\+::sync\+::\+Sync}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/core/thread/sync/mutex.\+hpp\end{DoxyCompactItemize}

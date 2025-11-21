@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['writenbits_0',['writeNBits',['../classar4j_1_1_bit_writer.html#a99ff3a230cceb3977e8214b381027da3',1,'ar4j::BitWriter']]],
-  ['writer_1',['Writer',['../classar4j_1_1_writer.html',1,'ar4j']]]
+  ['writenbits_0',['writeNBits',['../classexpp_1_1_bit_writer.html#af120f253c558422622527de1ef4d5078',1,'expp::BitWriter']]],
+  ['writer_1',['Writer',['../classexpp_1_1_writer.html',1,'expp']]]
 ];

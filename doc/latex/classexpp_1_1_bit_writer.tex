@@ -1,0 +1,62 @@
+\doxysection{expp\+::Bit\+Writer Class Reference}
+\hypertarget{classexpp_1_1_bit_writer}{}\label{classexpp_1_1_bit_writer}\index{expp::BitWriter@{expp::BitWriter}}
+Inheritance diagram for expp\+::Bit\+Writer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classexpp_1_1_bit_writer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classexpp_1_1_bit_writer_a6d0903e7d6539fe1783c892294583cdb}\label{classexpp_1_1_bit_writer_a6d0903e7d6539fe1783c892294583cdb} 
+{\bfseries Bit\+Writer} (\mbox{\hyperlink{classexpp_1_1_writer}{Writer}} \texorpdfstring{$\ast$}{*}stream)
+\item 
+virtual void \mbox{\hyperlink{classexpp_1_1_bit_writer_af120f253c558422622527de1ef4d5078}{write\+NBits}} (\mbox{\hyperlink{classexpp_1_1_buffer}{Buffer}} src, size\+\_\+t n, uint32\+\_\+t flags=Bit\+Flags\+::\+Default)
+\item 
+virtual void \mbox{\hyperlink{classexpp_1_1_bit_writer_a87bdd430ab18ef6b047036e9d71a1064}{write\+NBytes}} (\mbox{\hyperlink{classexpp_1_1_buffer}{Buffer}} src, size\+\_\+t n, uint32\+\_\+t flags=Stream\+Flags\+::\+Default)
+\item 
+\Hypertarget{classexpp_1_1_bit_writer_a28494ff7bb93f379e3f96e5b1163fef4}\label{classexpp_1_1_bit_writer_a28494ff7bb93f379e3f96e5b1163fef4} 
+void {\bfseries flush} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classexpp_1_1_bit_writer_af65938cadbab9550b7a3c5c708fa2ae4}\label{classexpp_1_1_bit_writer_af65938cadbab9550b7a3c5c708fa2ae4} 
+\mbox{\hyperlink{classexpp_1_1_writer}{Writer}} \texorpdfstring{$\ast$}{*} {\bfseries stream}
+\item 
+\Hypertarget{classexpp_1_1_bit_writer_a9322b59102facada970009a55e9735b8}\label{classexpp_1_1_bit_writer_a9322b59102facada970009a55e9735b8} 
+uint8\+\_\+t {\bfseries bit\+Count} = 0
+\item 
+\Hypertarget{classexpp_1_1_bit_writer_ab7b458d180b683612c4c1bdc8fef1b86}\label{classexpp_1_1_bit_writer_ab7b458d180b683612c4c1bdc8fef1b86} 
+uint8\+\_\+t {\bfseries byte} = 0
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{classexpp_1_1_bit_writer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classexpp_1_1_bit_writer_af120f253c558422622527de1ef4d5078}\index{expp::BitWriter@{expp::BitWriter}!writeNBits@{writeNBits}}
+\index{writeNBits@{writeNBits}!expp::BitWriter@{expp::BitWriter}}
+\doxysubsubsection{\texorpdfstring{writeNBits()}{writeNBits()}}
+{\footnotesize\ttfamily \label{classexpp_1_1_bit_writer_af120f253c558422622527de1ef4d5078} 
+void expp\+::\+Bit\+Writer\+::write\+NBits (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classexpp_1_1_buffer}{expp\+::\+Buffer}}}]{src}{, }\item[{size\+\_\+t}]{n}{, }\item[{uint32\+\_\+t}]{flags}{ = {\ttfamily BitFlags\+:\+:Default}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000003}{Todo}}]Bit\+Order change implementation \end{DoxyRefDesc}
+\Hypertarget{classexpp_1_1_bit_writer_a87bdd430ab18ef6b047036e9d71a1064}\index{expp::BitWriter@{expp::BitWriter}!writeNBytes@{writeNBytes}}
+\index{writeNBytes@{writeNBytes}!expp::BitWriter@{expp::BitWriter}}
+\doxysubsubsection{\texorpdfstring{writeNBytes()}{writeNBytes()}}
+{\footnotesize\ttfamily \label{classexpp_1_1_bit_writer_a87bdd430ab18ef6b047036e9d71a1064} 
+void expp\+::\+Bit\+Writer\+::write\+NBytes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classexpp_1_1_buffer}{expp\+::\+Buffer}}}]{src}{, }\item[{size\+\_\+t}]{n}{, }\item[{uint32\+\_\+t}]{flags}{ = {\ttfamily StreamFlags\+:\+:Default}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classexpp_1_1_writer}{expp\+::\+Writer}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/core/stream/bitstream.\+hpp\item 
+src/core/stream/bitstream.\+cpp\end{DoxyCompactItemize}

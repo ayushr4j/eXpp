@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['seekable_0',['Seekable',['../classar4j_1_1_seekable.html',1,'ar4j']]],
-  ['seekablesource_1',['SeekableSource',['../classar4j_1_1_seekable_source.html',1,'ar4j']]],
-  ['size_2',['size',['../classar4j_1_1memory_1_1_allocator_1_1_allocation.html#acc2abb09820ef93497c1780e8850e0c0',1,'ar4j::memory::Allocator::Allocation']]],
-  ['stream_3',['Stream',['../classar4j_1_1_stream.html',1,'ar4j']]],
-  ['sync_4',['Sync',['../classar4j_1_1sync_1_1_sync.html',1,'ar4j::sync']]]
+  ['seekable_0',['Seekable',['../classexpp_1_1_seekable.html',1,'expp']]],
+  ['size_1',['size',['../classexpp_1_1memory_1_1_allocator_1_1_allocation.html#a757dbfe388d7d6f4624c4d3f0dfc88ca',1,'expp::memory::Allocator::Allocation']]],
+  ['stream_2',['Stream',['../classexpp_1_1_stream.html',1,'expp']]],
+  ['sync_3',['Sync',['../classexpp_1_1sync_1_1_sync.html',1,'expp::sync']]]
 ];

@@ -36,15 +36,15 @@ int main(){
     
 
     uint8_t arr[] = { 0, 0, 0, 0, 0, 0 } ; 
-    ar4j::MemoryReader memReader{ arr };
-    ar4j::MemoryWriter memWriter{ arr };
-    ar4j::BitReader reader{&memReader};
-    ar4j::BitWriter writer{&memWriter};
+    expp::MemoryReader memReader{ arr };
+    expp::MemoryWriter memWriter{ arr };
+    expp::BitReader reader{&memReader};
+    expp::BitWriter writer{&memWriter};
 
     test.print();
 
-    int outFlags = ar4j::BitFlags::LittleEndianOut;
-    int inFlags = ar4j::BitFlags::LittleEndianIn;
+    int outFlags = expp::BitFlags::LittleEndianOut;
+    int inFlags = expp::BitFlags::LittleEndianIn;
 
     writer.writeNBits(&test.A, 14, outFlags);
     writer.writeNBits(&test.B, 2, outFlags);
