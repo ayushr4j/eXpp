@@ -2,12 +2,11 @@ var indexSectionsWithContent =
 {
   0: "abcdfgilmoprstuw",
   1: "abcdfilmoprstw",
-  2: "b",
+  2: "acp",
   3: "giloruw",
   4: "adrs",
-  5: "ap",
-  6: "acl",
-  7: "clmpt"
+  5: "acp",
+  6: "clmpt"
 };
 
 var indexSectionNames =
@@ -18,8 +17,7 @@ var indexSectionNames =
   3: "functions",
   4: "variables",
   5: "enums",
-  6: "groups",
-  7: "pages"
+  6: "pages"
 };
 
 var indexSectionLabels =
@@ -30,7 +28,6 @@ var indexSectionLabels =
   3: "Functions",
   4: "Variables",
   5: "Enumerations",
-  6: "Modules",
-  7: "Pages"
+  6: "Pages"
 };
 

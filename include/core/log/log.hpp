@@ -12,29 +12,34 @@ namespace expp{
         };
         
         /**
-         * @brief Logger class provides the base for Debug logging
+         * @brief Base class for Debug Logger
          * 
          * 
          */
         class Logger{
-            
+            protected:
+                static Logger* instance;
             public:
+
+                static Logger* getInstance(){ return instance; }
+                static void    setInstance(Logger* inst){ instance = inst; }
 
                 virtual void log(LogLevel level, const char* logString){
                     std::cerr << logString;
                 }
 
         };
-
-        Logger* instance = new Logger();
+        
+        
+        
 
         template <typename Arg, typename... Args>
         void log(LogLevel level, Arg arg, Args... args){
-            instance->log(level,arg,args...);
+            Logger::getInstance()->log(level,arg,args...);
         };
         template <typename Arg, typename... Args>
         void log(Arg arg, Args... args){
-            log(LogLevel::Debug, arg, args...)
+            log(LogLevel::Debug, arg, args...);
         };
 
         template <typename Arg, typename... Args>

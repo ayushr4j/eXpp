@@ -1,0 +1,68 @@
+\doxysection{platform.\+hpp}
+\hypertarget{platform_8hpp_source}{}\label{platform_8hpp_source}\index{include/core/system/platform.hpp@{include/core/system/platform.hpp}}
+\mbox{\hyperlink{platform_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ \_expp\_core\_system\_platform\_}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ \_expp\_core\_system\_platform\_}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }expp\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{platform_8hpp_a4e70d548697e1593328ab7ba916a5759}{Platform}}\ :\ uint32\_t\{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ Windows\ \ =\ 1,}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ Unix\ \ \ \ \ =\ 1\ <<\ 1,}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ UnixLike\ =\ 1\ <<\ 3,}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ Linux\ \ \ \ =\ 1\ <<\ 4\ |\ UnixLike,}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ ChromeOS\ =\ 1\ <<\ 5\ |\ Linux,\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ Android\ \ =\ 1\ <<\ 6\ |\ Linux,}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ Apple\ \ \ \ =\ 1\ <<\ 7,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ Mac\ \ \ \ \ \ =\ 1\ <<\ 8\ |\ Unix\ |\ Apple,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ IOS\ \ \ \ \ \ =\ 1\ <<\ 9\ |\ UnixLike\ |\ Apple,}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \};}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{consteval}\ \mbox{\hyperlink{platform_8hpp_a4e70d548697e1593328ab7ba916a5759}{Platform}}\ \mbox{\hyperlink{platform_8hpp_ac8a7da77eee6fe3d27a9832897527ecf}{getPlatform}}()\{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{platform_8hpp_a4e70d548697e1593328ab7ba916a5759}{Platform}}\ cur\ =\ Platform::Unix;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#if\ defined(\_\_APPLE\_\_)}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#define\ APPLE}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#include\ <TargetConditionals.h>}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#if\ TARGET\_OS\_OSX}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cur\ =\ Platform::Mac;}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#define\ MAC}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#elif\ TARGET\_OS\_IOS}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cur\ =\ Platform::IOS;}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#define\ IOS}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ macOS\ or\ iOS\ (need\ extra\ check\ below)}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#elif\ defined(\_\_linux\_\_)}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ cur\ =\ Platform::Linux;}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#define\ LINUX}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#if\ defined(\ CHROMEOS\_BUILD)}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cur\ =\ Platform::ChomreOS}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#define\ CHROMEOS}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#elif\ defined\ \_\_ANDROID\_\_}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cur\ =\ Platform::Android;}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#define\ ANDROID}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#elif\ defined(\_WIN32)\ ||\ defined(\_WIN64)}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ cur\ =\ Platform::Windows;}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#define\ WINDOWS}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ cur;}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{consteval}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{platform_8hpp_a8d53cbbea08845e940a37604aa9fa2cf}{isPlatform}}(\mbox{\hyperlink{platform_8hpp_a4e70d548697e1593328ab7ba916a5759}{Platform}}\ plat)\{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{platform_8hpp_a4e70d548697e1593328ab7ba916a5759}{Platform}}\ cur\ =\ \mbox{\hyperlink{platform_8hpp_ac8a7da77eee6fe3d27a9832897527ecf}{getPlatform}}();}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keyword}{static\_cast<}uint32\_t\textcolor{keyword}{>}(plat)\ \&\ \textcolor{keyword}{static\_cast<}uint32\_t\textcolor{keyword}{>}(cur))\ ==\ \textcolor{keyword}{static\_cast<}uint32\_t\textcolor{keyword}{>}(plat);}
+\DoxyCodeLine{00092\ \ \ \ \ \}}
+\DoxyCodeLine{00093\ \}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

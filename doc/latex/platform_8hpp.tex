@@ -1,0 +1,90 @@
+\doxysection{include/core/system/platform.hpp File Reference}
+\hypertarget{platform_8hpp}{}\label{platform_8hpp}\index{include/core/system/platform.hpp@{include/core/system/platform.hpp}}
+
+
+defines Platform Related stuffs  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{platform_8hpp_a4e70d548697e1593328ab7ba916a5759}\label{platform_8hpp_a4e70d548697e1593328ab7ba916a5759} 
+enum class \mbox{\hyperlink{platform_8hpp_a4e70d548697e1593328ab7ba916a5759}{expp\+::\+Platform}} \+: uint32\+\_\+t \{ \newline
+{\bfseries Windows} = 1
+, {\bfseries Unix} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, {\bfseries Unix\+Like} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+, {\bfseries Linux} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 4 \texorpdfstring{$\vert$}{|} Unix\+Like
+, \newline
+{\bfseries Chrome\+OS} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 5 \texorpdfstring{$\vert$}{|} Linux
+, {\bfseries Android} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 6 \texorpdfstring{$\vert$}{|} Linux
+, {\bfseries Apple} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 7
+, {\bfseries Mac} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 8 \texorpdfstring{$\vert$}{|} Unix \texorpdfstring{$\vert$}{|} Apple
+, \newline
+{\bfseries IOS} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 9 \texorpdfstring{$\vert$}{|} Unix\+Like \texorpdfstring{$\vert$}{|} Apple
+ \}
+\begin{DoxyCompactList}\small\item\em Defines all supported platforms. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+consteval \mbox{\hyperlink{platform_8hpp_a4e70d548697e1593328ab7ba916a5759}{Platform}} \mbox{\hyperlink{platform_8hpp_ac8a7da77eee6fe3d27a9832897527ecf}{expp\+::get\+Platform}} ()
+\begin{DoxyCompactList}\small\item\em Returns the platform of current build. \end{DoxyCompactList}\item 
+consteval bool \mbox{\hyperlink{platform_8hpp_a8d53cbbea08845e940a37604aa9fa2cf}{expp\+::is\+Platform}} (\mbox{\hyperlink{platform_8hpp_a4e70d548697e1593328ab7ba916a5759}{Platform}} plat)
+\begin{DoxyCompactList}\small\item\em Checks whether the current platform matches the given one. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+defines Platform Related stuffs 
+
+\begin{DoxyAuthor}{Author}
+Ayush Raj 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/11-\/21
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2025 
+\end{DoxyCopyright}
+
+
+\label{doc-func-members}
+\Hypertarget{platform_8hpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{platform_8hpp_ac8a7da77eee6fe3d27a9832897527ecf}\index{platform.hpp@{platform.hpp}!getPlatform@{getPlatform}}
+\index{getPlatform@{getPlatform}!platform.hpp@{platform.hpp}}
+\doxysubsubsection{\texorpdfstring{getPlatform()}{getPlatform()}}
+{\footnotesize\ttfamily \label{platform_8hpp_ac8a7da77eee6fe3d27a9832897527ecf} 
+Platform expp\+::get\+Platform (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [consteval]}}
+
+
+
+Returns the platform of current build. 
+
+This function is evaluated at compile time and maps the active build configuration macros (e.\+g., WINDOWS, ANDROID etc) to the corresponding {\ttfamily Platform} enum value.
+
+\begin{DoxyReturn}{Returns}
+The compile-\/time detected target platform. 
+\end{DoxyReturn}
+\Hypertarget{platform_8hpp_a8d53cbbea08845e940a37604aa9fa2cf}\index{platform.hpp@{platform.hpp}!isPlatform@{isPlatform}}
+\index{isPlatform@{isPlatform}!platform.hpp@{platform.hpp}}
+\doxysubsubsection{\texorpdfstring{isPlatform()}{isPlatform()}}
+{\footnotesize\ttfamily \label{platform_8hpp_a8d53cbbea08845e940a37604aa9fa2cf} 
+bool expp\+::is\+Platform (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{platform_8hpp_a4e70d548697e1593328ab7ba916a5759}{Platform}}}]{plat}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [consteval]}}
+
+
+
+Checks whether the current platform matches the given one. 
+
+This function is evaluated at compile time. It compares the supplied platform value against the platform of the current build, including handling grouped values such as \textquotesingle{}UNIX\textquotesingle{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em plat} & The Platform to compare against. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the current platform belongs to the same group or matches the given value; otherwise {\ttfamily false}. 
+\end{DoxyReturn}

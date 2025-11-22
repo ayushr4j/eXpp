@@ -1,0 +1,89 @@
+\doxysection{include/core/system/architecture.hpp File Reference}
+\hypertarget{architecture_8hpp}{}\label{architecture_8hpp}\index{include/core/system/architecture.hpp@{include/core/system/architecture.hpp}}
+
+
+defines Architecutre related stuffs  
+
+
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{architecture_8hpp_a5537239fdcea8cdbcf72ea2b23fda3d8}\label{architecture_8hpp_a5537239fdcea8cdbcf72ea2b23fda3d8} 
+enum class \mbox{\hyperlink{architecture_8hpp_a5537239fdcea8cdbcf72ea2b23fda3d8}{expp\+::\+Architecture}} \+: uint32\+\_\+t \{ \newline
+{\bfseries \+\_\+32bit} = 1
+, {\bfseries \+\_\+64bit} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, {\bfseries x86} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2 \texorpdfstring{$\vert$}{|} \+\_\+32bit
+, {\bfseries x64} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3 \texorpdfstring{$\vert$}{|} \+\_\+64bit
+, \newline
+{\bfseries arm} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 4
+, {\bfseries arm32} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 5 \texorpdfstring{$\vert$}{|} arm \texorpdfstring{$\vert$}{|} \+\_\+32bit
+, {\bfseries arm64} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 6 \texorpdfstring{$\vert$}{|} arm \texorpdfstring{$\vert$}{|} \+\_\+64bit
+, {\bfseries OTHER}
+ \}
+\begin{DoxyCompactList}\small\item\em Defines all supported Architectures. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+consteval \mbox{\hyperlink{architecture_8hpp_a5537239fdcea8cdbcf72ea2b23fda3d8}{Architecture}} \mbox{\hyperlink{architecture_8hpp_a45b9a4e76b51e46c65bb61d9663c68e8}{expp\+::get\+Architecture}} ()
+\begin{DoxyCompactList}\small\item\em Returns the architecture for which this code is being compiled. \end{DoxyCompactList}\item 
+consteval bool \mbox{\hyperlink{architecture_8hpp_abc9a0e89ff90d02867d87df1943f43fc}{expp\+::is\+Architecture}} (\mbox{\hyperlink{architecture_8hpp_a5537239fdcea8cdbcf72ea2b23fda3d8}{Architecture}} arch)
+\begin{DoxyCompactList}\small\item\em Checks whether the current architecture matches the given one. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+defines Architecutre related stuffs 
+
+\begin{DoxyAuthor}{Author}
+Ayush Raj 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/11-\/21
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2025 
+\end{DoxyCopyright}
+
+
+\label{doc-func-members}
+\Hypertarget{architecture_8hpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{architecture_8hpp_a45b9a4e76b51e46c65bb61d9663c68e8}\index{architecture.hpp@{architecture.hpp}!getArchitecture@{getArchitecture}}
+\index{getArchitecture@{getArchitecture}!architecture.hpp@{architecture.hpp}}
+\doxysubsubsection{\texorpdfstring{getArchitecture()}{getArchitecture()}}
+{\footnotesize\ttfamily \label{architecture_8hpp_a45b9a4e76b51e46c65bb61d9663c68e8} 
+Architecture expp\+::get\+Architecture (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [consteval]}}
+
+
+
+Returns the architecture for which this code is being compiled. 
+
+This function is evaluated at compile time and maps the active build configuration macros (e.\+g., X86, X64, ARM, ARM64, etc) to the corresponding {\ttfamily Architecture} enum value.
+
+\begin{DoxyReturn}{Returns}
+The compile-\/time detected target architecture. 
+\end{DoxyReturn}
+\Hypertarget{architecture_8hpp_abc9a0e89ff90d02867d87df1943f43fc}\index{architecture.hpp@{architecture.hpp}!isArchitecture@{isArchitecture}}
+\index{isArchitecture@{isArchitecture}!architecture.hpp@{architecture.hpp}}
+\doxysubsubsection{\texorpdfstring{isArchitecture()}{isArchitecture()}}
+{\footnotesize\ttfamily \label{architecture_8hpp_abc9a0e89ff90d02867d87df1943f43fc} 
+bool expp\+::is\+Architecture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{architecture_8hpp_a5537239fdcea8cdbcf72ea2b23fda3d8}{Architecture}}}]{arch}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [consteval]}}
+
+
+
+Checks whether the current architecture matches the given one. 
+
+This function is evaluated at compile time. It compares the supplied architecture value against the architecture of the current build, including handling grouped values such as {\ttfamily \+\_\+32bit} and {\ttfamily \+\_\+64bit}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em arch} & The architecture to compare against. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the current architecture belongs to the same group or matches the given value; otherwise {\ttfamily false}. 
+\end{DoxyReturn}

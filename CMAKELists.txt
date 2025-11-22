@@ -9,17 +9,15 @@ if (CMAKE_SYSTEM_NAME STREQUAL "Linux" AND EXISTS "/etc/cros_release")
     add_definitions(-DCHROMEOS_BUILD)
 endif()
 
-set(ARCHIVE_OUTPUT_DIRECTORY "${workspaceFolder}/lib")
-set(LIBRARY_OUTPUT_DIRECTORY "${workspaceFolder}/lib")
-set(RUNTIME_OUTPUT_DIRECTORY "${workspaceFolder}/bin")
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_CURRENT_LIST_DIR}/build/lib")
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_LIST_DIR}/build/lib")
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_LIST_DIR}/build/bin")
 
-#add_compile_definitions(_ALLOW_COMPILER_AND_STL_VERSION_MISMATCH)
 
 include_directories(
     include/
     src/
 )
-
 
 
 

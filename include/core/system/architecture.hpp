@@ -53,7 +53,7 @@ namespace expp {
             #define X86
             cur = Architecture::x86; 
         #elif defined __x86_64__ || defined (_M_X64) || defined _M_AMD64
-            #degine X64
+            #define X64
             cur = Architecture::x64;
         #elif defined __arm__ || defined __arm || defined _M_ARM
             #define ARM32
