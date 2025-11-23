@@ -8,7 +8,7 @@
 \DoxyCodeLine{00004\ }
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <cstdint>}}
 \DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}core/buffer/buffer.hpp"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}core/memory/memory.hpp"{}}}
 \DoxyCodeLine{00008\ }
 \DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }expp\ \{}
 \DoxyCodeLine{00010\ \ \ \ \ }
@@ -23,33 +23,42 @@
 \DoxyCodeLine{00019\ }
 \DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classexpp_1_1_reader}{Reader}}\{}
 \DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ readNBytes(\mbox{\hyperlink{classexpp_1_1_buffer}{Buffer}}\ dst,\ \textcolor{keywordtype}{size\_t}\ n,\ uint32\_t\ flags\ =\ StreamFlags::Default)\{\};}
-\DoxyCodeLine{00023\ \ \ \ \ \};}
-\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classexpp_1_1_writer}{Writer}}\{}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ writeNBytes(\mbox{\hyperlink{classexpp_1_1_buffer}{Buffer}}\ src,\ \textcolor{keywordtype}{size\_t}\ n,\ uint32\_t\ flags\ =\ StreamFlags::Default)\{\};}
-\DoxyCodeLine{00027\ \ \ \ \ \};}
-\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classexpp_1_1_stream}{Stream}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classexpp_1_1_reader}{Reader}},\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classexpp_1_1_writer}{Writer}}\{}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00030\ \ \ \ \ \};}
-\DoxyCodeLine{00031\ \ \ \ \ }
-\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classexpp_1_1_i_seekable}{ISeekable}}\ \{}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ seeki(\textcolor{keywordtype}{size\_t}\ offset);}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{size\_t}\ telli();}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ readNBytes(Memory\ dst,\ \textcolor{keywordtype}{size\_t}\ n,\ uint32\_t\ flags\ =\ StreamFlags::Default)\{\};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ type>}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ operator\ >>\ (type\&\ obj);}
+\DoxyCodeLine{00026\ \ \ \ \ \};}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classexpp_1_1_writer}{Writer}}\{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ writeNBytes(Memory\ src,\ \textcolor{keywordtype}{size\_t}\ n,\ uint32\_t\ flags\ =\ StreamFlags::Default)\{\};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ type>}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ operator\ <<\ (type\&\ obj);}
+\DoxyCodeLine{00033\ \ \ \ \ \};}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classexpp_1_1_stream}{Stream}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classexpp_1_1_reader}{Reader}},\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classexpp_1_1_writer}{Writer}}\{}
+\DoxyCodeLine{00035\ }
 \DoxyCodeLine{00036\ \ \ \ \ \};}
-\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classexpp_1_1_o_seekable}{OSeekable}}\ \{}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ seeko(\textcolor{keywordtype}{size\_t}\ offset);}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{size\_t}\ tello();}
-\DoxyCodeLine{00041\ \ \ \ \ \};}
-\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classexpp_1_1_seekable}{Seekable}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classexpp_1_1_i_seekable}{ISeekable}},\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classexpp_1_1_o_seekable}{OSeekable}}\{}
-\DoxyCodeLine{00043\ }
-\DoxyCodeLine{00044\ \ \ \ \ \};}
-\DoxyCodeLine{00045\ }
-\DoxyCodeLine{00046\ \}}
-\DoxyCodeLine{00047\ }
-\DoxyCodeLine{00048\ }
-\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00037\ \ \ \ \ }
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{comment}{//think\ of\ better\ name}}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classexpp_1_1_i_seekable}{ISeekable}}\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ seeki(\textcolor{keywordtype}{size\_t}\ offset);}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{size\_t}\ telli();}
+\DoxyCodeLine{00045\ \ \ \ \ \};}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classexpp_1_1_o_seekable}{OSeekable}}\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ seeko(\textcolor{keywordtype}{size\_t}\ offset);}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{size\_t}\ tello();}
+\DoxyCodeLine{00050\ \ \ \ \ \};}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classexpp_1_1_seekable}{Seekable}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classexpp_1_1_i_seekable}{ISeekable}},\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classexpp_1_1_o_seekable}{OSeekable}}\{}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

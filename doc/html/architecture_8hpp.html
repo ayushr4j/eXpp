@@ -99,28 +99,10 @@ $(function(){initNavTree('architecture_8hpp.html','',''); });
 </div>
 <p><a href="architecture_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:a5537239fdcea8cdbcf72ea2b23fda3d8" id="r_a5537239fdcea8cdbcf72ea2b23fda3d8"><td class="memItemLeft" align="right" valign="top"><a id="a5537239fdcea8cdbcf72ea2b23fda3d8" name="a5537239fdcea8cdbcf72ea2b23fda3d8"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5537239fdcea8cdbcf72ea2b23fda3d8">expp::Architecture</a> : uint32_t { <br />
-&#160;&#160;<b>_32bit</b> = 1
-, <b>_64bit</b> = 1 &lt;&lt; 1
-, <b>x86</b> = 1 &lt;&lt; 2 | _32bit
-, <b>x64</b> = 1 &lt;&lt; 3 | _64bit
-, <br />
-&#160;&#160;<b>arm</b> = 1 &lt;&lt; 4
-, <b>arm32</b> = 1 &lt;&lt; 5 | arm | _32bit
-, <b>arm64</b> = 1 &lt;&lt; 6 | arm | _64bit
-, <b>OTHER</b>
-<br />
- }</td></tr>
-<tr class="memdesc:a5537239fdcea8cdbcf72ea2b23fda3d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines all supported Architectures. <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a45b9a4e76b51e46c65bb61d9663c68e8" id="r_a45b9a4e76b51e46c65bb61d9663c68e8"><td class="memItemLeft" align="right" valign="top">consteval <a class="el" href="#a5537239fdcea8cdbcf72ea2b23fda3d8">Architecture</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45b9a4e76b51e46c65bb61d9663c68e8">expp::getArchitecture</a> ()</td></tr>
-<tr class="memdesc:a45b9a4e76b51e46c65bb61d9663c68e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the architecture for which this code is being compiled.  <br /></td></tr>
-<tr class="memitem:abc9a0e89ff90d02867d87df1943f43fc" id="r_abc9a0e89ff90d02867d87df1943f43fc"><td class="memItemLeft" align="right" valign="top">consteval bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc9a0e89ff90d02867d87df1943f43fc">expp::isArchitecture</a> (<a class="el" href="#a5537239fdcea8cdbcf72ea2b23fda3d8">Architecture</a> arch)</td></tr>
-<tr class="memdesc:abc9a0e89ff90d02867d87df1943f43fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the current architecture matches the given one.  <br /></td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:expp_3A_3AArchitecture" id="r_expp_3A_3AArchitecture"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexpp_1_1_architecture.html">expp::Architecture</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines all supported Architectures.  <a href="classexpp_1_1_architecture.html#details">More...</a><br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>defines Architecutre related stuffs </p>
@@ -128,72 +110,7 @@ Functions</h2></td></tr>
 <dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2025-11-21</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2025 </dd></dl>
-</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
-<a id="a45b9a4e76b51e46c65bb61d9663c68e8" name="a45b9a4e76b51e46c65bb61d9663c68e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a45b9a4e76b51e46c65bb61d9663c68e8">&#9670;&#160;</a></span>getArchitecture()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Architecture expp::getArchitecture </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel consteval">consteval</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the architecture for which this code is being compiled. </p>
-<p>This function is evaluated at compile time and maps the active build configuration macros (e.g., X86, X64, ARM, ARM64, etc) to the corresponding <span class="tt">Architecture</span> enum value.</p>
-<dl class="section return"><dt>Returns</dt><dd>The compile-time detected target architecture. </dd></dl>
-
-</div>
-</div>
-<a id="abc9a0e89ff90d02867d87df1943f43fc" name="abc9a0e89ff90d02867d87df1943f43fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc9a0e89ff90d02867d87df1943f43fc">&#9670;&#160;</a></span>isArchitecture()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool expp::isArchitecture </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#a5537239fdcea8cdbcf72ea2b23fda3d8">Architecture</a></td>          <td class="paramname"><span class="paramname"><em>arch</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel consteval">consteval</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Checks whether the current architecture matches the given one. </p>
-<p>This function is evaluated at compile time. It compares the supplied architecture value against the architecture of the current build, including handling grouped values such as <span class="tt">_32bit</span> and <span class="tt">_64bit</span>.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">arch</td><td>The architecture to compare against. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the current architecture belongs to the same group or matches the given value; otherwise <span class="tt">false</span>. </dd></dl>
-
-</div>
-</div>
-</div><!-- contents -->
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>

@@ -92,7 +92,7 @@ $(function(){initNavTree('classexpp_1_1log_1_1_logger.html','','classexpp_1_1log
 </div><!--header-->
 <div class="contents">
 
-<p><a class="el" href="classexpp_1_1log_1_1_logger.html" title="Logger class provides the base for Debug logging.">Logger</a> class provides the base for Debug logging.  
+<p>Base class for Debug <a class="el" href="classexpp_1_1log_1_1_logger.html" title="Base class for Debug Logger.">Logger</a>.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="log_8hpp_source.html">log.hpp</a>&gt;</code></p>
@@ -101,9 +101,24 @@ $(function(){initNavTree('classexpp_1_1log_1_1_logger.html','','classexpp_1_1log
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab20487c7c5dd98b8df0f09e911e90b90" id="r_ab20487c7c5dd98b8df0f09e911e90b90"><td class="memItemLeft" align="right" valign="top"><a id="ab20487c7c5dd98b8df0f09e911e90b90" name="ab20487c7c5dd98b8df0f09e911e90b90"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>log</b> (LogLevel level, const char *logString)</td></tr>
+<tr class="memitem:abfbf58019ea73176a7dd39fd5011e2fc" id="r_abfbf58019ea73176a7dd39fd5011e2fc"><td class="memTemplParams" colspan="2"><a id="abfbf58019ea73176a7dd39fd5011e2fc" name="abfbf58019ea73176a7dd39fd5011e2fc"></a>
+template&lt;typename Arg, typename... Args&gt; </td></tr>
+<tr class="memitem:abfbf58019ea73176a7dd39fd5011e2fc template"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><b>log</b> (LogLevel level, Arg &amp;arg, Args... args)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a87411bf8fcd77954cad40006952610ca" id="r_a87411bf8fcd77954cad40006952610ca"><td class="memItemLeft" align="right" valign="top"><a id="a87411bf8fcd77954cad40006952610ca" name="a87411bf8fcd77954cad40006952610ca"></a>
+static <a class="el" href="classexpp_1_1log_1_1_logger.html">Logger</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getInstance</b> ()</td></tr>
+<tr class="memitem:a633df221e135f4600cd2355d64fdcaba" id="r_a633df221e135f4600cd2355d64fdcaba"><td class="memItemLeft" align="right" valign="top"><a id="a633df221e135f4600cd2355d64fdcaba" name="a633df221e135f4600cd2355d64fdcaba"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>setInstance</b> (<a class="el" href="classexpp_1_1log_1_1_logger.html">Logger</a> *inst)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-static-attribs" class="groupheader"><a id="pro-static-attribs" name="pro-static-attribs"></a>
+Static Protected Attributes</h2></td></tr>
+<tr class="memitem:a7fbbcab9b90fec14911209d537366298" id="r_a7fbbcab9b90fec14911209d537366298"><td class="memItemLeft" align="right" valign="top"><a id="a7fbbcab9b90fec14911209d537366298" name="a7fbbcab9b90fec14911209d537366298"></a>
+static <a class="el" href="classexpp_1_1log_1_1_logger.html">Logger</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>instance</b></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="classexpp_1_1log_1_1_logger.html" title="Logger class provides the base for Debug logging.">Logger</a> class provides the base for Debug logging. </p>
+<div class="textblock"><p>Base class for Debug <a class="el" href="classexpp_1_1log_1_1_logger.html" title="Base class for Debug Logger.">Logger</a>. </p>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>include/core/log/<a class="el" href="log_8hpp_source.html">log.hpp</a></li>
 </ul>

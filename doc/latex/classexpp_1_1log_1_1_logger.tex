@@ -2,7 +2,7 @@
 \hypertarget{classexpp_1_1log_1_1_logger}{}\label{classexpp_1_1log_1_1_logger}\index{expp::log::Logger@{expp::log::Logger}}
 
 
-\doxylink{classexpp_1_1log_1_1_logger}{Logger} class provides the base for Debug logging.  
+Base class for Debug \doxylink{classexpp_1_1log_1_1_logger}{Logger}.  
 
 
 
@@ -14,11 +14,29 @@
 \item 
 \Hypertarget{classexpp_1_1log_1_1_logger_ab20487c7c5dd98b8df0f09e911e90b90}\label{classexpp_1_1log_1_1_logger_ab20487c7c5dd98b8df0f09e911e90b90} 
 virtual void {\bfseries log} (Log\+Level level, const char \texorpdfstring{$\ast$}{*}log\+String)
+\item 
+\Hypertarget{classexpp_1_1log_1_1_logger_abfbf58019ea73176a7dd39fd5011e2fc}\label{classexpp_1_1log_1_1_logger_abfbf58019ea73176a7dd39fd5011e2fc} 
+{\footnotesize template$<$typename Arg, typename... Args$>$ }\\void {\bfseries log} (Log\+Level level, Arg \&arg, Args... args)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classexpp_1_1log_1_1_logger_a87411bf8fcd77954cad40006952610ca}\label{classexpp_1_1log_1_1_logger_a87411bf8fcd77954cad40006952610ca} 
+static \mbox{\hyperlink{classexpp_1_1log_1_1_logger}{Logger}} \texorpdfstring{$\ast$}{*} {\bfseries get\+Instance} ()
+\item 
+\Hypertarget{classexpp_1_1log_1_1_logger_a633df221e135f4600cd2355d64fdcaba}\label{classexpp_1_1log_1_1_logger_a633df221e135f4600cd2355d64fdcaba} 
+static void {\bfseries set\+Instance} (\mbox{\hyperlink{classexpp_1_1log_1_1_logger}{Logger}} \texorpdfstring{$\ast$}{*}inst)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classexpp_1_1log_1_1_logger_a7fbbcab9b90fec14911209d537366298}\label{classexpp_1_1log_1_1_logger_a7fbbcab9b90fec14911209d537366298} 
+static \mbox{\hyperlink{classexpp_1_1log_1_1_logger}{Logger}} \texorpdfstring{$\ast$}{*} {\bfseries instance}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-\doxylink{classexpp_1_1log_1_1_logger}{Logger} class provides the base for Debug logging. 
+Base class for Debug \doxylink{classexpp_1_1log_1_1_logger}{Logger}. 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

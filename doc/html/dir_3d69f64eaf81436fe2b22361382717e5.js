@@ -1,6 +1,5 @@
 var dir_3d69f64eaf81436fe2b22361382717e5 =
 [
-    [ "buffer", "dir_c006ba07052d4c9bda0536b28c12aa28.html", "dir_c006ba07052d4c9bda0536b28c12aa28" ],
     [ "coroutine", "dir_3ab6251c15bb842426f0601bc954a443.html", "dir_3ab6251c15bb842426f0601bc954a443" ],
     [ "log", "dir_ebc4183974da10596d83fbd9697e69e1.html", "dir_ebc4183974da10596d83fbd9697e69e1" ],
     [ "memory", "dir_8a8c3d5caedc133fb4b608ab1d86ea7e.html", "dir_8a8c3d5caedc133fb4b608ab1d86ea7e" ],

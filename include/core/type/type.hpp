@@ -8,6 +8,12 @@
 
 namespace expp {
 
+    class Type{
+
+        
+
+    };
+
     class MappedType{
     protected:
         class Map{

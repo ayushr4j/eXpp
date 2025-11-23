@@ -2,34 +2,32 @@
 #define _expp_core_stream_memorystream_
 
 #include "core/stream/stream.hpp"
-#include "core/buffer/buffer.hpp"
+#include "core/memory/pointer.hpp"
 #include <algorithm>
 
 namespace expp {
 
-    class MemoryReader : public Reader{
-        Buffer buffer;
+    class MemoryInputStream : public InputStream{
+        Pointer memory;
         public:
-            MemoryReader(Buffer buf) : buffer(buf){
+            MemoryInputStream(Pointer mem) : memory(mem){
                 
             }
 
-            void readNBytes(Buffer dst, size_t n, uint32_t flags) override{
-                std::copy_n(buffer.data(), n, dst.data());
-                buffer = buffer + n;
+            void readNBytes(Pointer dst, size_t n, uint32_t flags) override{
+                //std::copy_n(memory.data(), n, dst.data());
+                //buffer = buffer + n;
             }
     };
 
-    class MemoryWriter : public Writer{
-        Buffer buffer;
+    class MemoryOutputStream : public OutputStream{
+        Pointer memory;
         public:
-            MemoryWriter(Buffer buf) : buffer(buf){
-                
-            }
+            MemoryOutputStream(Pointer mem) : memory(mem){}
 
-            void writeNBytes(Buffer src, size_t n, uint32_t flags) override{
-                std::copy_n(src.data(), n, buffer.data());
-                buffer = buffer + n;
+            void writeNBytes(Pointer src, size_t n, uint32_t flags) override{
+                //std::copy_n(src.data(), n, buffer.data());
+                //buffer = buffer + n;
             }
 
             

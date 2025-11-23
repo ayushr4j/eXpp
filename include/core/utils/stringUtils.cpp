@@ -8,7 +8,7 @@ namespace expp {
 
     namespace utils{
         /**
-        * @brief used to convert any type to its string  for serialization(escaped).
+        * @brief used to convert any type to its string for serialization(escaped).
         * 
         * @param obj 
         * @return String representation of obj

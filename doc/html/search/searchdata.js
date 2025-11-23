@@ -5,8 +5,9 @@ var indexSectionsWithContent =
   2: "acp",
   3: "giloruw",
   4: "adrs",
-  5: "acp",
-  6: "clmpt"
+  5: "p",
+  6: "m",
+  7: "lmpt"
 };
 
 var indexSectionNames =
@@ -17,7 +18,8 @@ var indexSectionNames =
   3: "functions",
   4: "variables",
   5: "enums",
-  6: "pages"
+  6: "groups",
+  7: "pages"
 };
 
 var indexSectionLabels =
@@ -28,6 +30,7 @@ var indexSectionLabels =
   3: "Functions",
   4: "Variables",
   5: "Enumerations",
-  6: "Pages"
+  6: "Modules",
+  7: "Pages"
 };
 

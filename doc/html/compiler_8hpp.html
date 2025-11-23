@@ -94,44 +94,15 @@ $(function(){initNavTree('compiler_8hpp.html','',''); });
 
 <p>defines Platform Related stuffs  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;cstdint&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
 </div>
 <p><a href="compiler_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:ad72dbcf6d0153db1b8d8a58001feed83" id="r_ad72dbcf6d0153db1b8d8a58001feed83"><td class="memItemLeft" align="right" valign="top"><a id="ad72dbcf6d0153db1b8d8a58001feed83" name="ad72dbcf6d0153db1b8d8a58001feed83"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>DEBUG</b>&#160;&#160;&#160;1</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:a06bf6a3f0191fc1160e5483b2ef80721" id="r_a06bf6a3f0191fc1160e5483b2ef80721"><td class="memItemLeft" align="right" valign="top"><a id="a06bf6a3f0191fc1160e5483b2ef80721" name="a06bf6a3f0191fc1160e5483b2ef80721"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a06bf6a3f0191fc1160e5483b2ef80721">expp::Compiler</a> : uint32_t { <br />
-&#160;&#160;<b>UNKNOWN</b> = 0
-, <b>GCC</b> = 1
-, <b>Clang</b> = 1 &lt;&lt; 2
-, <b>AppleClang</b> = 1 &lt;&lt; 3 | Clang
-, <br />
-&#160;&#160;<b>NDKClang</b> = 1 &lt;&lt; 4 | Clang
-, <b>MSVC</b> = 1 &lt;&lt; 5
-<br />
- }</td></tr>
-<tr class="memdesc:a06bf6a3f0191fc1160e5483b2ef80721"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines all supported compiler. <br /></td></tr>
-<tr class="memitem:ad53abb741014b0c407632b328107b899" id="r_ad53abb741014b0c407632b328107b899"><td class="memItemLeft" align="right" valign="top"><a id="ad53abb741014b0c407632b328107b899" name="ad53abb741014b0c407632b328107b899"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad53abb741014b0c407632b328107b899">expp::CompileMode</a> : uint8_t { <b>Debug</b> = 0
-, <b>Release</b> = 1
- }</td></tr>
-<tr class="memdesc:ad53abb741014b0c407632b328107b899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines compile modes. <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a6bb4688c8bedd396058fe802dde3e891" id="r_a6bb4688c8bedd396058fe802dde3e891"><td class="memItemLeft" align="right" valign="top">consteval <a class="el" href="#a06bf6a3f0191fc1160e5483b2ef80721">Compiler</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6bb4688c8bedd396058fe802dde3e891">expp::getCompiler</a> ()</td></tr>
-<tr class="memdesc:a6bb4688c8bedd396058fe802dde3e891"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the compiler used for this build.  <br /></td></tr>
-<tr class="memitem:ab1abfb65e10c452f0a23c6853f6c47a3" id="r_ab1abfb65e10c452f0a23c6853f6c47a3"><td class="memItemLeft" align="right" valign="top">consteval bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab1abfb65e10c452f0a23c6853f6c47a3">expp::isCompiler</a> (<a class="el" href="#a06bf6a3f0191fc1160e5483b2ef80721">Compiler</a> comp)</td></tr>
-<tr class="memdesc:ab1abfb65e10c452f0a23c6853f6c47a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the current compiler matches the given one.  <br /></td></tr>
-<tr class="memitem:a3b05b1e2b690107a351af9e2cca9bfaa" id="r_a3b05b1e2b690107a351af9e2cca9bfaa"><td class="memItemLeft" align="right" valign="top"><a id="a3b05b1e2b690107a351af9e2cca9bfaa" name="a3b05b1e2b690107a351af9e2cca9bfaa"></a>
-consteval <a class="el" href="#ad53abb741014b0c407632b328107b899">CompileMode</a>&#160;</td><td class="memItemRight" valign="bottom"><b>expp::getCompileMode</b> ()</td></tr>
-<tr class="memdesc:a3b05b1e2b690107a351af9e2cca9bfaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">gets current compilemode <br /></td></tr>
-<tr class="memitem:a74405e993ed2bfbf50e7091f8730a1c1" id="r_a74405e993ed2bfbf50e7091f8730a1c1"><td class="memItemLeft" align="right" valign="top">consteval bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a74405e993ed2bfbf50e7091f8730a1c1">expp::isCompileMode</a> (<a class="el" href="#ad53abb741014b0c407632b328107b899">CompileMode</a> mode)</td></tr>
-<tr class="memdesc:a74405e993ed2bfbf50e7091f8730a1c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check wether current compile mode matches given mode.  <br /></td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:expp_3A_3ACompiler" id="r_expp_3A_3ACompiler"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexpp_1_1_compiler.html">expp::Compiler</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines all supported compiler.  <a href="classexpp_1_1_compiler.html#details">More...</a><br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>defines Platform Related stuffs </p>
@@ -139,106 +110,7 @@ consteval <a class="el" href="#ad53abb741014b0c407632b328107b899">CompileMode</a
 <dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2025-11-21</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2025 </dd></dl>
-</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
-<a id="a6bb4688c8bedd396058fe802dde3e891" name="a6bb4688c8bedd396058fe802dde3e891"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6bb4688c8bedd396058fe802dde3e891">&#9670;&#160;</a></span>getCompiler()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Compiler expp::getCompiler </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel consteval">consteval</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the compiler used for this build. </p>
-<p>This function is evaluated at compile time and maps the active compiler macros (e.g., GCC, Clang etc) to the corresponding <span class="tt">Compiler</span> enum value.</p>
-<dl class="section return"><dt>Returns</dt><dd>The compile-time detected compiler. </dd></dl>
-
-</div>
-</div>
-<a id="a74405e993ed2bfbf50e7091f8730a1c1" name="a74405e993ed2bfbf50e7091f8730a1c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a74405e993ed2bfbf50e7091f8730a1c1">&#9670;&#160;</a></span>isCompileMode()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool expp::isCompileMode </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#ad53abb741014b0c407632b328107b899">CompileMode</a></td>          <td class="paramname"><span class="paramname"><em>mode</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel consteval">consteval</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Check wether current compile mode matches given mode. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">mode</td><td>mode to check </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>true if mode is equal to or in same group as current compileMode. </dd></dl>
-
-</div>
-</div>
-<a id="ab1abfb65e10c452f0a23c6853f6c47a3" name="ab1abfb65e10c452f0a23c6853f6c47a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab1abfb65e10c452f0a23c6853f6c47a3">&#9670;&#160;</a></span>isCompiler()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool expp::isCompiler </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#a06bf6a3f0191fc1160e5483b2ef80721">Compiler</a></td>          <td class="paramname"><span class="paramname"><em>comp</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel consteval">consteval</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Checks whether the current compiler matches the given one. </p>
-<p>This function is evaluated at compile time. It compares the supplied compiler value against the compiler of the current build, including handling grouped values such as 'UNKNOWN'.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">comp</td><td>The Compiler to compare against. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the current compiler belongs to the same group or matches the given value; otherwise <span class="tt">false</span>. </dd></dl>
-
-</div>
-</div>
-</div><!-- contents -->
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>

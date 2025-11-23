@@ -17,9 +17,6 @@ namespace expp
             protected:
                 /// @brief allocator that was used to allocate this Allocation
                 Allocator* alloc = nullptr;   
-
-                
-
                 /// size is the required size of allocation (excluding any padding, header).
                 /// alignment is the alignment requirement for this Allocation. this might be used when moving this memory to other location.
                 size_t size, alignment = 1;
@@ -43,6 +40,10 @@ namespace expp
 
                 friend class Memory;
                 friend class Allocator;
+
+            public:
+
+                Memory operator&();
 
         };
 

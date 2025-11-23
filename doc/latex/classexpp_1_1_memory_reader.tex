@@ -10,25 +10,18 @@ Inheritance diagram for expp\+::Memory\+Reader\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{classexpp_1_1_memory_reader_a8f2245f01f137fb6075413b8b5893b2a}\label{classexpp_1_1_memory_reader_a8f2245f01f137fb6075413b8b5893b2a} 
-{\bfseries Memory\+Reader} (\mbox{\hyperlink{classexpp_1_1_buffer}{Buffer}} buf)
+{\bfseries Memory\+Reader} (Buffer buf)
 \item 
-void \mbox{\hyperlink{classexpp_1_1_memory_reader_aeaf55e49d9d2aadb420960fa6a6d0d79}{read\+NBytes}} (\mbox{\hyperlink{classexpp_1_1_buffer}{Buffer}} dst, size\+\_\+t n, uint32\+\_\+t flags) override
+\Hypertarget{classexpp_1_1_memory_reader_aeaf55e49d9d2aadb420960fa6a6d0d79}\label{classexpp_1_1_memory_reader_aeaf55e49d9d2aadb420960fa6a6d0d79} 
+void {\bfseries read\+NBytes} (Buffer dst, size\+\_\+t n, uint32\+\_\+t flags) override
 \end{DoxyCompactItemize}
-
-
-\label{doc-func-members}
-\Hypertarget{classexpp_1_1_memory_reader_doc-func-members}
-\doxysubsection{Member Function Documentation}
-\Hypertarget{classexpp_1_1_memory_reader_aeaf55e49d9d2aadb420960fa6a6d0d79}\index{expp::MemoryReader@{expp::MemoryReader}!readNBytes@{readNBytes}}
-\index{readNBytes@{readNBytes}!expp::MemoryReader@{expp::MemoryReader}}
-\doxysubsubsection{\texorpdfstring{readNBytes()}{readNBytes()}}
-{\footnotesize\ttfamily \label{classexpp_1_1_memory_reader_aeaf55e49d9d2aadb420960fa6a6d0d79} 
-void expp\+::\+Memory\+Reader\+::read\+NBytes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classexpp_1_1_buffer}{Buffer}}}]{dst}{, }\item[{size\+\_\+t}]{n}{, }\item[{uint32\+\_\+t}]{flags}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
-
-
-
-Reimplemented from \mbox{\hyperlink{classexpp_1_1_reader}{expp\+::\+Reader}}.
-
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classexpp_1_1_reader}{expp\+::\+Reader}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries read\+NBytes} (\mbox{\hyperlink{classexpp_1_1memory_1_1_memory}{Memory}} dst, size\+\_\+t n, uint32\+\_\+t flags=Stream\+Flags\+::\+Default)
+\item 
+{\footnotesize template$<$typename type$>$ }\\void {\bfseries operator$>$$>$} (type \&obj)
+\end{DoxyCompactItemize}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

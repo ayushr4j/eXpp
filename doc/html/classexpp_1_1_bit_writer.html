@@ -105,10 +105,17 @@ Inheritance diagram for expp::BitWriter:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a6d0903e7d6539fe1783c892294583cdb" id="r_a6d0903e7d6539fe1783c892294583cdb"><td class="memItemLeft" align="right" valign="top"><a id="a6d0903e7d6539fe1783c892294583cdb" name="a6d0903e7d6539fe1783c892294583cdb"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>BitWriter</b> (<a class="el" href="classexpp_1_1_writer.html">Writer</a> *stream)</td></tr>
-<tr class="memitem:af120f253c558422622527de1ef4d5078" id="r_af120f253c558422622527de1ef4d5078"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af120f253c558422622527de1ef4d5078">writeNBits</a> (<a class="el" href="classexpp_1_1_buffer.html">Buffer</a> src, size_t n, uint32_t flags=BitFlags::Default)</td></tr>
-<tr class="memitem:a87bdd430ab18ef6b047036e9d71a1064" id="r_a87bdd430ab18ef6b047036e9d71a1064"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a87bdd430ab18ef6b047036e9d71a1064">writeNBytes</a> (<a class="el" href="classexpp_1_1_buffer.html">Buffer</a> src, size_t n, uint32_t flags=StreamFlags::Default)</td></tr>
+<tr class="memitem:af120f253c558422622527de1ef4d5078" id="r_af120f253c558422622527de1ef4d5078"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af120f253c558422622527de1ef4d5078">writeNBits</a> (Buffer src, size_t n, uint32_t flags=BitFlags::Default)</td></tr>
+<tr class="memitem:a87bdd430ab18ef6b047036e9d71a1064" id="r_a87bdd430ab18ef6b047036e9d71a1064"><td class="memItemLeft" align="right" valign="top"><a id="a87bdd430ab18ef6b047036e9d71a1064" name="a87bdd430ab18ef6b047036e9d71a1064"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>writeNBytes</b> (Buffer src, size_t n, uint32_t flags=StreamFlags::Default)</td></tr>
 <tr class="memitem:a28494ff7bb93f379e3f96e5b1163fef4" id="r_a28494ff7bb93f379e3f96e5b1163fef4"><td class="memItemLeft" align="right" valign="top"><a id="a28494ff7bb93f379e3f96e5b1163fef4" name="a28494ff7bb93f379e3f96e5b1163fef4"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>flush</b> ()</td></tr>
+<tr class="inherit_header pub_methods_classexpp_1_1_writer"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classexpp_1_1_writer')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="classexpp_1_1_writer.html">expp::Writer</a></td></tr>
+<tr class="memitem:a72eccf0ad775c523d5563c913da9fce7 inherit pub_methods_classexpp_1_1_writer" id="r_a72eccf0ad775c523d5563c913da9fce7"><td class="memItemLeft" align="right" valign="top">
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>writeNBytes</b> (<a class="el" href="classexpp_1_1memory_1_1_memory.html">Memory</a> src, size_t n, uint32_t flags=StreamFlags::Default)</td></tr>
+<tr class="memitem:aa800be382a8528df450bff4d4919d9e5 inherit pub_methods_classexpp_1_1_writer" id="r_aa800be382a8528df450bff4d4919d9e5"><td class="memTemplParams" colspan="2">
+template&lt;typename type&gt; </td></tr>
+<tr class="memitem:aa800be382a8528df450bff4d4919d9e5 inherit pub_methods_classexpp_1_1_writer template"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;&lt;</b> (type &amp;obj)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -132,7 +139,7 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>byte</b> = 0</td><
         <tr>
           <td class="memname">void expp::BitWriter::writeNBits </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classexpp_1_1_buffer.html">expp::Buffer</a></td>          <td class="paramname"><span class="paramname"><em>src</em></span>, </td>
+          <td class="paramtype">Buffer</td>          <td class="paramname"><span class="paramname"><em>src</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -152,42 +159,6 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>byte</b> = 0</td><
 </table>
 </div><div class="memdoc">
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">Todo</a></b></dt><dd>BitOrder change implementation </dd></dl>
-
-</div>
-</div>
-<a id="a87bdd430ab18ef6b047036e9d71a1064" name="a87bdd430ab18ef6b047036e9d71a1064"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a87bdd430ab18ef6b047036e9d71a1064">&#9670;&#160;</a></span>writeNBytes()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void expp::BitWriter::writeNBytes </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classexpp_1_1_buffer.html">expp::Buffer</a></td>          <td class="paramname"><span class="paramname"><em>src</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>n</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>flags</em></span><span class="paramdefsep"> = </span><span class="paramdefval">StreamFlags::Default</span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Reimplemented from <a class="el" href="classexpp_1_1_writer.html">expp::Writer</a>.</p>
 
 </div>
 </div>

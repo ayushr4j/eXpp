@@ -1,0 +1,15 @@
+\doxysection{expp\+::memory Namespace Reference}
+\hypertarget{namespaceexpp_1_1memory}{}\label{namespaceexpp_1_1memory}\index{expp::memory@{expp::memory}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classexpp_1_1memory_1_1_allocator}{Allocator}}
+\begin{DoxyCompactList}\small\item\em Allocates Contiguous \doxylink{classexpp_1_1memory_1_1_memory}{Memory} Segments and returns a Reference to it. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classexpp_1_1memory_1_1_memory}{Memory}}
+\begin{DoxyCompactList}\small\item\em It acts as a pointer to memory. It supports advanced memory operations such as extending, shrinking memory. splitting memory, inserting memory in between. this works by keeping list connected segments internally. and it automatically defragments them also. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classexpp_1_1memory_1_1_raw}{Raw}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+/defgroup \doxylink{classexpp_1_1memory_1_1_memory}{Memory} \doxylink{classexpp_1_1memory_1_1_memory}{Memory} /ref \doxylink{classexpp_1_1memory_1_1_memory}{Memory} class provides inteface to access memory. Subclasses of \doxylink{classexpp_1_1memory_1_1_memory}{Memory} is used for different kinds of memory. (Raw\+Memory, Allocated\+Memory, Garbage\+Collected\+Memory, File base \doxylink{classexpp_1_1memory_1_1_memory}{Memory} etc) 

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['architecture_0',['Architecture',['../architecture_8hpp.html#a5537239fdcea8cdbcf72ea2b23fda3d8',1,'expp']]]
+  ['platform_0',['Platform',['../platform_8hpp.html#a4e70d548697e1593328ab7ba916a5759',1,'expp']]]
 ];

@@ -1,0 +1,72 @@
+\doxysection{expp\+::Architecture Class Reference}
+\hypertarget{classexpp_1_1_architecture}{}\label{classexpp_1_1_architecture}\index{expp::Architecture@{expp::Architecture}}
+
+
+Defines all supported Architectures.  
+
+
+
+
+{\ttfamily \#include $<$architecture.\+hpp$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classexpp_1_1_architecture_ac5f29aa4b48cbdf051e6cc50f784c54f}\label{classexpp_1_1_architecture_ac5f29aa4b48cbdf051e6cc50f784c54f} 
+enum \+: uint32\+\_\+t \{ \newline
+{\bfseries \+\_\+32bit} = 1
+, {\bfseries \+\_\+64bit} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, {\bfseries x86} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2 \texorpdfstring{$\vert$}{|} \+\_\+32bit
+, {\bfseries x64} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3 \texorpdfstring{$\vert$}{|} \+\_\+64bit
+, \newline
+{\bfseries arm} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 4
+, {\bfseries arm32} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 5 \texorpdfstring{$\vert$}{|} arm \texorpdfstring{$\vert$}{|} \+\_\+32bit
+, {\bfseries arm64} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 6 \texorpdfstring{$\vert$}{|} arm \texorpdfstring{$\vert$}{|} \+\_\+64bit
+, {\bfseries OTHER}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classexpp_1_1_architecture_abe4cd68a0463ad6bd7523569ee4c78aa}\label{classexpp_1_1_architecture_abe4cd68a0463ad6bd7523569ee4c78aa} 
+bool {\bfseries operator==} (\mbox{\hyperlink{classexpp_1_1_architecture}{Architecture}} arch)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static consteval uint32\+\_\+t \mbox{\hyperlink{classexpp_1_1_architecture_a5d6bc1de5822180f3dd4557b0ad0c0dd}{get\+Architecture}} ()
+\begin{DoxyCompactList}\small\item\em Returns the architecture for which this code is being compiled. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classexpp_1_1_architecture_a3032a5976f1bbddc0a0a16dc47e862aa}\label{classexpp_1_1_architecture_a3032a5976f1bbddc0a0a16dc47e862aa} 
+uint32\+\_\+t {\bfseries arch} = \mbox{\hyperlink{classexpp_1_1_architecture_a5d6bc1de5822180f3dd4557b0ad0c0dd}{get\+Architecture}}()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines all supported Architectures. 
+
+\label{doc-func-members}
+\Hypertarget{classexpp_1_1_architecture_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classexpp_1_1_architecture_a5d6bc1de5822180f3dd4557b0ad0c0dd}\index{expp::Architecture@{expp::Architecture}!getArchitecture@{getArchitecture}}
+\index{getArchitecture@{getArchitecture}!expp::Architecture@{expp::Architecture}}
+\doxysubsubsection{\texorpdfstring{getArchitecture()}{getArchitecture()}}
+{\footnotesize\ttfamily \label{classexpp_1_1_architecture_a5d6bc1de5822180f3dd4557b0ad0c0dd} 
+consteval uint32\+\_\+t expp\+::\+Architecture\+::get\+Architecture (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [consteval]}}
+
+
+
+Returns the architecture for which this code is being compiled. 
+
+This function is evaluated at compile time and maps the active build configuration macros (e.\+g., X86, X64, ARM, ARM64, etc) to the corresponding {\ttfamily \doxylink{classexpp_1_1_architecture}{Architecture}} enum value.
+
+\begin{DoxyReturn}{Returns}
+The compile-\/time detected target architecture. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/core/system/\mbox{\hyperlink{architecture_8hpp}{architecture.\+hpp}}\end{DoxyCompactItemize}

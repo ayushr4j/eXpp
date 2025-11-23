@@ -5,44 +5,13 @@
 defines Platform Related stuffs  
 
 
+{\ttfamily \#include $<$cstdint$>$}\newline
 {\ttfamily \#include $<$stdint.\+h$>$}\newline
-\doxysubsubsection*{Macros}
+\doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{compiler_8hpp_ad72dbcf6d0153db1b8d8a58001feed83}\label{compiler_8hpp_ad72dbcf6d0153db1b8d8a58001feed83} 
-\#define {\bfseries DEBUG}~1
-\end{DoxyCompactItemize}
-\doxysubsubsection*{Enumerations}
-\begin{DoxyCompactItemize}
-\item 
-\Hypertarget{compiler_8hpp_a06bf6a3f0191fc1160e5483b2ef80721}\label{compiler_8hpp_a06bf6a3f0191fc1160e5483b2ef80721} 
-enum class \mbox{\hyperlink{compiler_8hpp_a06bf6a3f0191fc1160e5483b2ef80721}{expp\+::\+Compiler}} \+: uint32\+\_\+t \{ \newline
-{\bfseries UNKNOWN} = 0
-, {\bfseries GCC} = 1
-, {\bfseries Clang} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
-, {\bfseries Apple\+Clang} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3 \texorpdfstring{$\vert$}{|} Clang
-, \newline
-{\bfseries NDKClang} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 4 \texorpdfstring{$\vert$}{|} Clang
-, {\bfseries MSVC} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 5
- \}
-\begin{DoxyCompactList}\small\item\em Defines all supported compiler. \end{DoxyCompactList}\item 
-\Hypertarget{compiler_8hpp_ad53abb741014b0c407632b328107b899}\label{compiler_8hpp_ad53abb741014b0c407632b328107b899} 
-enum class \mbox{\hyperlink{compiler_8hpp_ad53abb741014b0c407632b328107b899}{expp\+::\+Compile\+Mode}} \+: uint8\+\_\+t \{ {\bfseries Debug} = 0
-, {\bfseries Release} = 1
- \}
-\begin{DoxyCompactList}\small\item\em Defines compile modes. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Functions}
-\begin{DoxyCompactItemize}
-\item 
-consteval \mbox{\hyperlink{compiler_8hpp_a06bf6a3f0191fc1160e5483b2ef80721}{Compiler}} \mbox{\hyperlink{compiler_8hpp_a6bb4688c8bedd396058fe802dde3e891}{expp\+::get\+Compiler}} ()
-\begin{DoxyCompactList}\small\item\em Returns the compiler used for this build. \end{DoxyCompactList}\item 
-consteval bool \mbox{\hyperlink{compiler_8hpp_ab1abfb65e10c452f0a23c6853f6c47a3}{expp\+::is\+Compiler}} (\mbox{\hyperlink{compiler_8hpp_a06bf6a3f0191fc1160e5483b2ef80721}{Compiler}} comp)
-\begin{DoxyCompactList}\small\item\em Checks whether the current compiler matches the given one. \end{DoxyCompactList}\item 
-\Hypertarget{compiler_8hpp_a3b05b1e2b690107a351af9e2cca9bfaa}\label{compiler_8hpp_a3b05b1e2b690107a351af9e2cca9bfaa} 
-consteval \mbox{\hyperlink{compiler_8hpp_ad53abb741014b0c407632b328107b899}{Compile\+Mode}} {\bfseries expp\+::get\+Compile\+Mode} ()
-\begin{DoxyCompactList}\small\item\em gets current compilemode \end{DoxyCompactList}\item 
-consteval bool \mbox{\hyperlink{compiler_8hpp_a74405e993ed2bfbf50e7091f8730a1c1}{expp\+::is\+Compile\+Mode}} (\mbox{\hyperlink{compiler_8hpp_ad53abb741014b0c407632b328107b899}{Compile\+Mode}} mode)
-\begin{DoxyCompactList}\small\item\em Check wether current compile mode matches given mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+class \mbox{\hyperlink{classexpp_1_1_compiler}{expp\+::\+Compiler}}
+\begin{DoxyCompactList}\small\item\em Defines all supported compiler. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -60,61 +29,3 @@ Ayush Raj
 \begin{DoxyCopyright}{Copyright}
 Copyright (c) 2025 
 \end{DoxyCopyright}
-
-
-\label{doc-func-members}
-\Hypertarget{compiler_8hpp_doc-func-members}
-\doxysubsection{Function Documentation}
-\Hypertarget{compiler_8hpp_a6bb4688c8bedd396058fe802dde3e891}\index{compiler.hpp@{compiler.hpp}!getCompiler@{getCompiler}}
-\index{getCompiler@{getCompiler}!compiler.hpp@{compiler.hpp}}
-\doxysubsubsection{\texorpdfstring{getCompiler()}{getCompiler()}}
-{\footnotesize\ttfamily \label{compiler_8hpp_a6bb4688c8bedd396058fe802dde3e891} 
-Compiler expp\+::get\+Compiler (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [consteval]}}
-
-
-
-Returns the compiler used for this build. 
-
-This function is evaluated at compile time and maps the active compiler macros (e.\+g., GCC, Clang etc) to the corresponding {\ttfamily Compiler} enum value.
-
-\begin{DoxyReturn}{Returns}
-The compile-\/time detected compiler. 
-\end{DoxyReturn}
-\Hypertarget{compiler_8hpp_a74405e993ed2bfbf50e7091f8730a1c1}\index{compiler.hpp@{compiler.hpp}!isCompileMode@{isCompileMode}}
-\index{isCompileMode@{isCompileMode}!compiler.hpp@{compiler.hpp}}
-\doxysubsubsection{\texorpdfstring{isCompileMode()}{isCompileMode()}}
-{\footnotesize\ttfamily \label{compiler_8hpp_a74405e993ed2bfbf50e7091f8730a1c1} 
-bool expp\+::is\+Compile\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{compiler_8hpp_ad53abb741014b0c407632b328107b899}{Compile\+Mode}}}]{mode}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [consteval]}}
-
-
-
-Check wether current compile mode matches given mode. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em mode} & mode to check \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-true if mode is equal to or in same group as current compile\+Mode. 
-\end{DoxyReturn}
-\Hypertarget{compiler_8hpp_ab1abfb65e10c452f0a23c6853f6c47a3}\index{compiler.hpp@{compiler.hpp}!isCompiler@{isCompiler}}
-\index{isCompiler@{isCompiler}!compiler.hpp@{compiler.hpp}}
-\doxysubsubsection{\texorpdfstring{isCompiler()}{isCompiler()}}
-{\footnotesize\ttfamily \label{compiler_8hpp_ab1abfb65e10c452f0a23c6853f6c47a3} 
-bool expp\+::is\+Compiler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{compiler_8hpp_a06bf6a3f0191fc1160e5483b2ef80721}{Compiler}}}]{comp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [consteval]}}
-
-
-
-Checks whether the current compiler matches the given one. 
-
-This function is evaluated at compile time. It compares the supplied compiler value against the compiler of the current build, including handling grouped values such as \textquotesingle{}UNKNOWN\textquotesingle{}.
-
-
-\begin{DoxyParams}{Parameters}
-{\em comp} & The Compiler to compare against. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-{\ttfamily true} if the current compiler belongs to the same group or matches the given value; otherwise {\ttfamily false}. 
-\end{DoxyReturn}

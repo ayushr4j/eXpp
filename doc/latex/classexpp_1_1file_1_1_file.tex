@@ -18,12 +18,16 @@ void {\bfseries read\+NBytes} (void \texorpdfstring{$\ast$}{*}dst, size\+\_\+t n
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classexpp_1_1_reader}{expp\+::\+Reader}}}
 \begin{DoxyCompactItemize}
 \item 
-virtual void {\bfseries read\+NBytes} (\mbox{\hyperlink{classexpp_1_1_buffer}{Buffer}} dst, size\+\_\+t n, uint32\+\_\+t flags=Stream\+Flags\+::\+Default)
+virtual void {\bfseries read\+NBytes} (\mbox{\hyperlink{classexpp_1_1memory_1_1_memory}{Memory}} dst, size\+\_\+t n, uint32\+\_\+t flags=Stream\+Flags\+::\+Default)
+\item 
+{\footnotesize template$<$typename type$>$ }\\void {\bfseries operator$>$$>$} (type \&obj)
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classexpp_1_1_writer}{expp\+::\+Writer}}}
 \begin{DoxyCompactItemize}
 \item 
-virtual void {\bfseries write\+NBytes} (\mbox{\hyperlink{classexpp_1_1_buffer}{Buffer}} src, size\+\_\+t n, uint32\+\_\+t flags=Stream\+Flags\+::\+Default)
+virtual void {\bfseries write\+NBytes} (\mbox{\hyperlink{classexpp_1_1memory_1_1_memory}{Memory}} src, size\+\_\+t n, uint32\+\_\+t flags=Stream\+Flags\+::\+Default)
+\item 
+{\footnotesize template$<$typename type$>$ }\\void {\bfseries operator$<$$<$} (type \&obj)
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classexpp_1_1_i_seekable}{expp\+::\+ISeekable}}}
 \begin{DoxyCompactItemize}

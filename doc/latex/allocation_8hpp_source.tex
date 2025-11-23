@@ -19,33 +19,34 @@
 \DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classexpp_1_1memory_1_1_allocator_1_1_allocation}{Allocator::Allocation}}\{}
 \DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
 \DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Allocator*\ \mbox{\hyperlink{classexpp_1_1memory_1_1_allocator_1_1_allocation_a02a1cc7fc33a9fd81dc8ee3077f28369}{alloc}}\ =\ \textcolor{keyword}{nullptr};\ \ \ }
-\DoxyCodeLine{00020\ }
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00022\ }
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classexpp_1_1memory_1_1_allocator_1_1_allocation_a757dbfe388d7d6f4624c4d3f0dfc88ca}{size}},\ alignment\ =\ 1;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classexpp_1_1memory_1_1_allocator_1_1_allocation_a757dbfe388d7d6f4624c4d3f0dfc88ca}{size}},\ alignment\ =\ 1;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ *\mbox{\hyperlink{classexpp_1_1memory_1_1_allocator_1_1_allocation_a66b661b99abd9154cb78ace0a90b0bca}{data}},\ *raw;\ \ \ }
 \DoxyCodeLine{00026\ }
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ *\mbox{\hyperlink{classexpp_1_1memory_1_1_allocator_1_1_allocation_a66b661b99abd9154cb78ace0a90b0bca}{data}},\ *raw;\ \ \ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::atomic<size\_t>\ \mbox{\hyperlink{classexpp_1_1memory_1_1_allocator_1_1_allocation_aaab69cfe2e65f84ac415657be2126aee}{referenceCount}}\ =\ 0;}
 \DoxyCodeLine{00029\ }
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::atomic<size\_t>\ \mbox{\hyperlink{classexpp_1_1memory_1_1_allocator_1_1_allocation_aaab69cfe2e65f84ac415657be2126aee}{referenceCount}}\ =\ 0;}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Allocation()\{\};}
 \DoxyCodeLine{00032\ }
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Allocation()\{\};}
-\DoxyCodeLine{00035\ }
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Memory\ \mbox{\hyperlink{classexpp_1_1memory_1_1_allocator_1_1_allocation_a0329c85c5f35f5696839cf906f9b4ee9}{getReference}}(\textcolor{keywordtype}{size\_t}\ offset,\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classexpp_1_1memory_1_1_allocator_1_1_allocation_a757dbfe388d7d6f4624c4d3f0dfc88ca}{size}});}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ releaseReference(Memory\&);}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Memory\ \mbox{\hyperlink{classexpp_1_1memory_1_1_allocator_1_1_allocation_a0329c85c5f35f5696839cf906f9b4ee9}{getReference}}(\textcolor{keywordtype}{size\_t}\ offset,\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classexpp_1_1memory_1_1_allocator_1_1_allocation_a757dbfe388d7d6f4624c4d3f0dfc88ca}{size}});}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ releaseReference(Memory\&);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }Memory;}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classexpp_1_1memory_1_1_allocator}{Allocator}};}
 \DoxyCodeLine{00043\ }
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }Memory;}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classexpp_1_1memory_1_1_allocator}{Allocator}};}
-\DoxyCodeLine{00046\ }
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Memory\ operator\&();}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \};}
 \DoxyCodeLine{00049\ }
 \DoxyCodeLine{00050\ }
-\DoxyCodeLine{00051\ \ \ \ \ \}}
-\DoxyCodeLine{00052\ \}\ \textcolor{comment}{//\ namespace\ ar4j}}
-\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \}}
+\DoxyCodeLine{00053\ \}\ \textcolor{comment}{//\ namespace\ ar4j}}
 \DoxyCodeLine{00054\ }
-\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif\ }}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#endif\ }}
 
 \end{DoxyCode}

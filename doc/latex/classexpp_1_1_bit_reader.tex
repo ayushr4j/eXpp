@@ -12,9 +12,17 @@ Inheritance diagram for expp\+::Bit\+Reader\+:\begin{figure}[H]
 \Hypertarget{classexpp_1_1_bit_reader_a64d44d8c8e0bbef2eda83d068167b2c7}\label{classexpp_1_1_bit_reader_a64d44d8c8e0bbef2eda83d068167b2c7} 
 {\bfseries Bit\+Reader} (\mbox{\hyperlink{classexpp_1_1_reader}{Reader}} \texorpdfstring{$\ast$}{*}stream)
 \item 
-virtual void \mbox{\hyperlink{classexpp_1_1_bit_reader_a02b837487034a931dd658a5a16b0ac8c}{read\+NBits}} (\mbox{\hyperlink{classexpp_1_1_buffer}{Buffer}} dst, size\+\_\+t n, uint32\+\_\+t flags=Bit\+Flags\+::\+Default)
+virtual void \mbox{\hyperlink{classexpp_1_1_bit_reader_a02b837487034a931dd658a5a16b0ac8c}{read\+NBits}} (Buffer dst, size\+\_\+t n, uint32\+\_\+t flags=Bit\+Flags\+::\+Default)
 \item 
-virtual void \mbox{\hyperlink{classexpp_1_1_bit_reader_a3f07310b9664f13311d5aa50d7ac9e76}{read\+NBytes}} (\mbox{\hyperlink{classexpp_1_1_buffer}{Buffer}} dst, size\+\_\+t n, uint32\+\_\+t flags=Stream\+Flags\+::\+Default)
+\Hypertarget{classexpp_1_1_bit_reader_a3f07310b9664f13311d5aa50d7ac9e76}\label{classexpp_1_1_bit_reader_a3f07310b9664f13311d5aa50d7ac9e76} 
+virtual void {\bfseries read\+NBytes} (Buffer dst, size\+\_\+t n, uint32\+\_\+t flags=Stream\+Flags\+::\+Default)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classexpp_1_1_reader}{expp\+::\+Reader}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries read\+NBytes} (\mbox{\hyperlink{classexpp_1_1memory_1_1_memory}{Memory}} dst, size\+\_\+t n, uint32\+\_\+t flags=Stream\+Flags\+::\+Default)
+\item 
+{\footnotesize template$<$typename type$>$ }\\void {\bfseries operator$>$$>$} (type \&obj)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
@@ -37,20 +45,10 @@ uint8\+\_\+t {\bfseries byte} = 0
 \index{readNBits@{readNBits}!expp::BitReader@{expp::BitReader}}
 \doxysubsubsection{\texorpdfstring{readNBits()}{readNBits()}}
 {\footnotesize\ttfamily \label{classexpp_1_1_bit_reader_a02b837487034a931dd658a5a16b0ac8c} 
-void expp\+::\+Bit\+Reader\+::read\+NBits (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classexpp_1_1_buffer}{expp\+::\+Buffer}}}]{dst}{, }\item[{size\+\_\+t}]{n}{, }\item[{uint32\+\_\+t}]{flags}{ = {\ttfamily BitFlags\+:\+:Default}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+void expp\+::\+Bit\+Reader\+::read\+NBits (\begin{DoxyParamCaption}\item[{Buffer}]{dst}{, }\item[{size\+\_\+t}]{n}{, }\item[{uint32\+\_\+t}]{flags}{ = {\ttfamily BitFlags\+:\+:Default}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 \begin{DoxyRefDesc}{Todo}
 \item[\mbox{\hyperlink{todo__todo000002}{Todo}}]Bit\+Order change implementation figure out why in endianess does\textquotesingle{}t matter fix code \end{DoxyRefDesc}
-\Hypertarget{classexpp_1_1_bit_reader_a3f07310b9664f13311d5aa50d7ac9e76}\index{expp::BitReader@{expp::BitReader}!readNBytes@{readNBytes}}
-\index{readNBytes@{readNBytes}!expp::BitReader@{expp::BitReader}}
-\doxysubsubsection{\texorpdfstring{readNBytes()}{readNBytes()}}
-{\footnotesize\ttfamily \label{classexpp_1_1_bit_reader_a3f07310b9664f13311d5aa50d7ac9e76} 
-void expp\+::\+Bit\+Reader\+::read\+NBytes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classexpp_1_1_buffer}{expp\+::\+Buffer}}}]{dst}{, }\item[{size\+\_\+t}]{n}{, }\item[{uint32\+\_\+t}]{flags}{ = {\ttfamily StreamFlags\+:\+:Default}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
-
-
-
-Reimplemented from \mbox{\hyperlink{classexpp_1_1_reader}{expp\+::\+Reader}}.
-
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

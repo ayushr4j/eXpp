@@ -12,59 +12,64 @@
 \DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{namespace\ }log\{}
 \DoxyCodeLine{00009\ }
 \DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum\ class}\ LogLevel\ :\ uint8\_t\{}
-\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \ \ \ \ Debug,\ Info,\ Warn,\ Error}
-\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classexpp_1_1log_1_1_logger}{Logger}}\{}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00022\ }
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ log(LogLevel\ level,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ logString)\{}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ logString;}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \ \ \ \ Debug,\ \ \textcolor{comment}{//debug\ only\ logs\ in\ debug\ build\ }}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ Info,\ \ \ \textcolor{comment}{//used\ to\ log\ information,\ like\ device\ info,\ some\ configuration\ etc}}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ Warn,\ \ \ \textcolor{comment}{//used\ to\ log\ warning,\ Something\ unusual\ happened\ (can\ be\ ignored).}}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ Error\ \ \ \textcolor{comment}{//used\ to\ log\ error,\ A\ failure\ occurred\ (should\ not\ be\ ignored).}}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classexpp_1_1log_1_1_logger}{Logger}}\{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classexpp_1_1log_1_1_logger}{Logger}}*\ instance;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
 \DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00028\ }
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classexpp_1_1log_1_1_logger}{Logger}}*\ instance\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classexpp_1_1log_1_1_logger}{Logger}}();}
-\DoxyCodeLine{00030\ }
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Arg,\ \textcolor{keyword}{typename}...\ Args>}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ log(LogLevel\ level,\ Arg\ arg,\ Args...\ args)\{}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ instance-\/>log(level,arg,args...);}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Arg,\ \textcolor{keyword}{typename}...\ Args>}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ log(Arg\ arg,\ Args...\ args)\{}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ log(LogLevel::Debug,\ arg,\ args...)}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classexpp_1_1log_1_1_logger}{Logger}}*\ getInstance()\{\ \textcolor{keywordflow}{return}\ instance;\ \}}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \ \ \ setInstance(\mbox{\hyperlink{classexpp_1_1log_1_1_logger}{Logger}}*\ inst)\{\ instance\ =\ inst;\ \}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ log(LogLevel\ level,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ logString);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Arg,\ \textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ log(LogLevel\ level,\ Arg\&\ arg,\ Args...\ args);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00039\ }
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Arg,\ \textcolor{keyword}{typename}...\ Args>}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ logi(Arg\ arg,\ Args...\ args)\{}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ log(LogLevel::Info,\ arg,\ args...);}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ log(LogLevel\ level,\ \ Args...\ args)\{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ Logger::getInstance()-\/>log(level,args...);}
 \DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Arg,\ \textcolor{keyword}{typename}...\ Args>}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ logd(Arg\ arg,\ Args...\ args)\{}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ log(LogLevel::Debug,\ arg,\ args...);}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ log(Args...\ args)\{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ log(LogLevel::Debug,\ args...);}
 \DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Arg,\ \textcolor{keyword}{typename}...\ Args>}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ logw(Arg\ arg,\ Args...\ args)\{}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ log(LogLevel::Warn,\ arg,\ args...);}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Exception,\ \textcolor{keyword}{typename}\ Arg,\ \textcolor{keyword}{typename}...\ Args>}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ loge(Exception,\ Arg\ arg,\ Args...\ args)\{}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ log(LogLevel::Error,\ arg,\ args...);}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00056\ }
-\DoxyCodeLine{00057\ }
-\DoxyCodeLine{00058\ }
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00060\ }
-\DoxyCodeLine{00061\ \ \ \ \ \}}
-\DoxyCodeLine{00062\ }
-\DoxyCodeLine{00063\ }
-\DoxyCodeLine{00064\ \ \ \ \ }
-\DoxyCodeLine{00065\ \ \ \ \ }
-\DoxyCodeLine{00066\ }
-\DoxyCodeLine{00067\ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ logi(Args...\ args)\{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ log(LogLevel::Info,\ args...);}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ logd(Args...\ args)\{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ log(LogLevel::Debug,\ args...);}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\ \textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ logw(Args...\ args)\{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ log(LogLevel::Warn,\ args...);}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ loge(Args...\ args)\{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ log(LogLevel::Error,\ args...);}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00067\ }
 \DoxyCodeLine{00068\ }
-\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#endif\ }}
+\DoxyCodeLine{00069\ \ \ \ \ }
+\DoxyCodeLine{00070\ \ \ \ \ }
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#endif\ }}
 
 \end{DoxyCode}

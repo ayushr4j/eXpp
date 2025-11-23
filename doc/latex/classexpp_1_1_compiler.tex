@@ -1,0 +1,89 @@
+\doxysection{expp\+::Compiler Class Reference}
+\hypertarget{classexpp_1_1_compiler}{}\label{classexpp_1_1_compiler}\index{expp::Compiler@{expp::Compiler}}
+
+
+Defines all supported compiler.  
+
+
+
+
+{\ttfamily \#include $<$compiler.\+hpp$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classexpp_1_1_compiler_a5fc2042b9c67c396d34dbaec1be248e2}\label{classexpp_1_1_compiler_a5fc2042b9c67c396d34dbaec1be248e2} 
+enum \+: uint32\+\_\+t \{ \newline
+{\bfseries UNKNOWN} = 0
+, {\bfseries GCC} = 1
+, {\bfseries Clang} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, {\bfseries Apple\+Clang} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3 \texorpdfstring{$\vert$}{|} Clang
+, \newline
+{\bfseries NDKClang} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 4 \texorpdfstring{$\vert$}{|} Clang
+, {\bfseries MSVC} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 5
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+consteval bool \mbox{\hyperlink{classexpp_1_1_compiler_a1868bfed4ece5a55c7debabf80d2e9c9}{operator==}} (\mbox{\hyperlink{classexpp_1_1_compiler}{Compiler}} comp)
+\begin{DoxyCompactList}\small\item\em Checks whether the current compiler matches the given one. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static consteval uint32\+\_\+t \mbox{\hyperlink{classexpp_1_1_compiler_a13a9157330d25b707f2af0630df4c723}{get\+Compiler}} ()
+\begin{DoxyCompactList}\small\item\em Returns the compiler used for this build. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classexpp_1_1_compiler_acf97e17fc81a0dc406c1fa64a2483622}\label{classexpp_1_1_compiler_acf97e17fc81a0dc406c1fa64a2483622} 
+uint32\+\_\+t {\bfseries compiler} = \mbox{\hyperlink{classexpp_1_1_compiler_a13a9157330d25b707f2af0630df4c723}{get\+Compiler}}()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines all supported compiler. 
+
+\label{doc-func-members}
+\Hypertarget{classexpp_1_1_compiler_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classexpp_1_1_compiler_a13a9157330d25b707f2af0630df4c723}\index{expp::Compiler@{expp::Compiler}!getCompiler@{getCompiler}}
+\index{getCompiler@{getCompiler}!expp::Compiler@{expp::Compiler}}
+\doxysubsubsection{\texorpdfstring{getCompiler()}{getCompiler()}}
+{\footnotesize\ttfamily \label{classexpp_1_1_compiler_a13a9157330d25b707f2af0630df4c723} 
+consteval uint32\+\_\+t expp\+::\+Compiler\+::get\+Compiler (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [consteval]}, {\ttfamily [protected]}}
+
+
+
+Returns the compiler used for this build. 
+
+This function is evaluated at compile time and maps the active compiler macros (e.\+g., GCC, Clang etc) to the corresponding {\ttfamily \doxylink{classexpp_1_1_compiler}{Compiler}} enum value.
+
+\begin{DoxyReturn}{Returns}
+The compile-\/time detected compiler. 
+\end{DoxyReturn}
+\Hypertarget{classexpp_1_1_compiler_a1868bfed4ece5a55c7debabf80d2e9c9}\index{expp::Compiler@{expp::Compiler}!operator==@{operator==}}
+\index{operator==@{operator==}!expp::Compiler@{expp::Compiler}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{classexpp_1_1_compiler_a1868bfed4ece5a55c7debabf80d2e9c9} 
+bool expp\+::\+Compiler\+::operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classexpp_1_1_compiler}{Compiler}}}]{comp}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [consteval]}}
+
+
+
+Checks whether the current compiler matches the given one. 
+
+This function is evaluated at compile time. It compares the supplied compiler value against the current compiler, including handling grouped values such as \textquotesingle{}Apple\+Clang\textquotesingle{} or \textquotesingle{}NDKClang\textquotesingle{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em comp} & The \doxylink{classexpp_1_1_compiler}{Compiler} to compare against. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the compiler belongs to the same group or matches the given value; otherwise {\ttfamily false}. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/core/system/\mbox{\hyperlink{compiler_8hpp}{compiler.\+hpp}}\end{DoxyCompactItemize}

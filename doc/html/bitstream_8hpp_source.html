@@ -153,8 +153,8 @@ $(function(){initNavTree('bitstream_8hpp_source.html','',''); });
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                this-&gt;stream = stream;</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            }</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classexpp_1_1_bit_reader.html#a02b837487034a931dd658a5a16b0ac8c">readNBits</a>(<a class="code hl_class" href="classexpp_1_1_buffer.html">Buffer</a> dst, <span class="keywordtype">size_t</span> n, uint32_t flags = BitFlags::Default);</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> readNBytes(<a class="code hl_class" href="classexpp_1_1_buffer.html">Buffer</a> dst, <span class="keywordtype">size_t</span> n, uint32_t flags = StreamFlags::Default);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classexpp_1_1_bit_reader.html#a02b837487034a931dd658a5a16b0ac8c">readNBits</a>(Buffer dst, <span class="keywordtype">size_t</span> n, uint32_t flags = BitFlags::Default);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> readNBytes(Buffer dst, <span class="keywordtype">size_t</span> n, uint32_t flags = StreamFlags::Default);</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            </div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    };</div>
 </div>
@@ -167,8 +167,8 @@ $(function(){initNavTree('bitstream_8hpp_source.html','',''); });
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            BitWriter(<a class="code hl_class" href="classexpp_1_1_writer.html">Writer</a>* stream){</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                this-&gt;stream = stream;</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            }</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classexpp_1_1_bit_writer.html#af120f253c558422622527de1ef4d5078">writeNBits</a>(<a class="code hl_class" href="classexpp_1_1_buffer.html">Buffer</a> src, <span class="keywordtype">size_t</span> n, uint32_t flags = BitFlags::Default);</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> writeNBytes(<a class="code hl_class" href="classexpp_1_1_buffer.html">Buffer</a> src, <span class="keywordtype">size_t</span> n, uint32_t flags = StreamFlags::Default);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classexpp_1_1_bit_writer.html#af120f253c558422622527de1ef4d5078">writeNBits</a>(Buffer src, <span class="keywordtype">size_t</span> n, uint32_t flags = BitFlags::Default);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> writeNBytes(Buffer src, <span class="keywordtype">size_t</span> n, uint32_t flags = StreamFlags::Default);</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            <span class="keywordtype">void</span> flush(){</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
@@ -192,9 +192,8 @@ $(function(){initNavTree('bitstream_8hpp_source.html','',''); });
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassexpp_1_1_bit_reader_html_a02b837487034a931dd658a5a16b0ac8c"><div class="ttname"><a href="classexpp_1_1_bit_reader.html#a02b837487034a931dd658a5a16b0ac8c">expp::BitReader::readNBits</a></div><div class="ttdeci">virtual void readNBits(Buffer dst, size_t n, uint32_t flags=BitFlags::Default)</div><div class="ttdef"><b>Definition</b> bitstream.cpp:35</div></div>
 <div class="ttc" id="aclassexpp_1_1_bit_writer_html_af120f253c558422622527de1ef4d5078"><div class="ttname"><a href="classexpp_1_1_bit_writer.html#af120f253c558422622527de1ef4d5078">expp::BitWriter::writeNBits</a></div><div class="ttdeci">virtual void writeNBits(Buffer src, size_t n, uint32_t flags=BitFlags::Default)</div><div class="ttdef"><b>Definition</b> bitstream.cpp:110</div></div>
-<div class="ttc" id="aclassexpp_1_1_buffer_html"><div class="ttname"><a href="classexpp_1_1_buffer.html">expp::Buffer</a></div><div class="ttdef"><b>Definition</b> buffer.hpp:10</div></div>
 <div class="ttc" id="aclassexpp_1_1_reader_html"><div class="ttname"><a href="classexpp_1_1_reader.html">expp::Reader</a></div><div class="ttdef"><b>Definition</b> stream.hpp:20</div></div>
-<div class="ttc" id="aclassexpp_1_1_writer_html"><div class="ttname"><a href="classexpp_1_1_writer.html">expp::Writer</a></div><div class="ttdef"><b>Definition</b> stream.hpp:24</div></div>
+<div class="ttc" id="aclassexpp_1_1_writer_html"><div class="ttname"><a href="classexpp_1_1_writer.html">expp::Writer</a></div><div class="ttdef"><b>Definition</b> stream.hpp:27</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

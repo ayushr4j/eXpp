@@ -1,0 +1,55 @@
+\doxysection{expp\+::Build\+Type Class Reference}
+\hypertarget{classexpp_1_1_build_type}{}\label{classexpp_1_1_build_type}\index{expp::BuildType@{expp::BuildType}}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classexpp_1_1_build_type_a4eff8001b02434af6464e055cb9df7a0}\label{classexpp_1_1_build_type_a4eff8001b02434af6464e055cb9df7a0} 
+enum \+: uint8\+\_\+t \{ {\bfseries Debug} = 0
+, {\bfseries Release} = 1
+ \}
+\begin{DoxyCompactList}\small\item\em Defines compile modes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+consteval bool \mbox{\hyperlink{classexpp_1_1_build_type_afd8cba8650df50fee69dc5593b607ecc}{operator==}} (\mbox{\hyperlink{classexpp_1_1_build_type}{Build\+Type}} type)
+\begin{DoxyCompactList}\small\item\em Check wether current compile mode matches given mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classexpp_1_1_build_type_a866a056faa4e0d1ae374c4a883c02f2a}\label{classexpp_1_1_build_type_a866a056faa4e0d1ae374c4a883c02f2a} 
+consteval uint32\+\_\+t {\bfseries get\+Build\+Type} ()
+\begin{DoxyCompactList}\small\item\em gets current build\+Type \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classexpp_1_1_build_type_af9019ba5996e3756c0c3737651e49a95}\label{classexpp_1_1_build_type_af9019ba5996e3756c0c3737651e49a95} 
+uint8\+\_\+t {\bfseries type} = \mbox{\hyperlink{classexpp_1_1_build_type_a866a056faa4e0d1ae374c4a883c02f2a}{get\+Build\+Type}}()
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{classexpp_1_1_build_type_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classexpp_1_1_build_type_afd8cba8650df50fee69dc5593b607ecc}\index{expp::BuildType@{expp::BuildType}!operator==@{operator==}}
+\index{operator==@{operator==}!expp::BuildType@{expp::BuildType}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{classexpp_1_1_build_type_afd8cba8650df50fee69dc5593b607ecc} 
+bool expp\+::\+Build\+Type\+::operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classexpp_1_1_build_type}{Build\+Type}}}]{type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [consteval]}}
+
+
+
+Check wether current compile mode matches given mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & mode to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if mode is equal to or in same group as current compile\+Mode. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/core/system/build\+\_\+type.\+hpp\end{DoxyCompactItemize}

@@ -2,7 +2,9 @@ var hierarchy =
 [
     [ "expp::memory::Allocator::Allocation", "classexpp_1_1memory_1_1_allocator_1_1_allocation.html", null ],
     [ "expp::memory::Allocator", "classexpp_1_1memory_1_1_allocator.html", null ],
-    [ "expp::Buffer", "classexpp_1_1_buffer.html", null ],
+    [ "expp::Architecture", "classexpp_1_1_architecture.html", null ],
+    [ "expp::BuildType", "classexpp_1_1_build_type.html", null ],
+    [ "expp::Compiler", "classexpp_1_1_compiler.html", null ],
     [ "expp::Coroutine< t >", "classexpp_1_1_coroutine.html", null ],
     [ "expp::image::png::Decoder", "classexpp_1_1image_1_1png_1_1_decoder.html", null ],
     [ "expp::ISeekable", "classexpp_1_1_i_seekable.html", [
@@ -20,11 +22,14 @@ var hierarchy =
         [ "expp::image::png::IHDR", "classexpp_1_1image_1_1png_1_1_i_h_d_r.html", null ]
       ] ]
     ] ],
-    [ "expp::memory::Memory", "classexpp_1_1memory_1_1_memory.html", null ],
+    [ "expp::memory::Memory", "classexpp_1_1memory_1_1_memory.html", [
+      [ "expp::memory::Raw", "classexpp_1_1memory_1_1_raw.html", null ]
+    ] ],
     [ "expp::OSeekable", "classexpp_1_1_o_seekable.html", [
       [ "expp::Seekable", "classexpp_1_1_seekable.html", null ]
     ] ],
     [ "expp::image::png::PNG", "classexpp_1_1image_1_1png_1_1_p_n_g.html", null ],
+    [ "expp::Pointer", "classexpp_1_1_pointer.html", null ],
     [ "expp::Coroutine< t >::promise", "structexpp_1_1_coroutine_1_1promise.html", null ],
     [ "expp::Reader", "classexpp_1_1_reader.html", [
       [ "expp::BitReader", "classexpp_1_1_bit_reader.html", null ],

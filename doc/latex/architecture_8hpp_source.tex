@@ -15,41 +15,52 @@
 \DoxyCodeLine{00020\ }
 \DoxyCodeLine{00021\ \ \ \ \ }
 \DoxyCodeLine{00022\ }
-\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{architecture_8hpp_a5537239fdcea8cdbcf72ea2b23fda3d8}{Architecture}}\ :\ uint32\_t\{}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \_32bit\ =\ 1,}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \_64bit\ =\ 1\ <<\ 1,}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ x86\ \ \ \ =\ 1\ <<\ 2\ |\ \_32bit,}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ x64\ \ \ \ =\ 1\ <<\ 3\ |\ \_64bit,}
-\DoxyCodeLine{00032\ }
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ arm\ \ \ \ =\ 1\ <<\ 4,}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ arm32\ \ =\ 1\ <<\ 5\ |\ arm\ |\ \_32bit,}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ arm64\ \ =\ 1\ <<\ 6\ |\ arm\ |\ \_64bit,}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ OTHER,}
-\DoxyCodeLine{00039\ \ \ \ \ \};}
-\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{consteval}\ \mbox{\hyperlink{architecture_8hpp_a5537239fdcea8cdbcf72ea2b23fda3d8}{Architecture}}\ \mbox{\hyperlink{architecture_8hpp_a45b9a4e76b51e46c65bb61d9663c68e8}{getArchitecture}}()\{}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{architecture_8hpp_a5537239fdcea8cdbcf72ea2b23fda3d8}{Architecture}}\ cur\ =\ Architecture::OTHER;}
-\DoxyCodeLine{00051\ }
-\DoxyCodeLine{00052\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#if\ defined\ \_\_i386\_\_\ ||\ defined\ \_M\_IX86}}
-\DoxyCodeLine{00053\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#define\ X86}}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ cur\ =\ Architecture::x86;\ }
-\DoxyCodeLine{00055\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#elif\ defined\ \_\_x86\_64\_\_\ ||\ defined\ (\_M\_X64)\ ||\ defined\ \_M\_AMD64}}
-\DoxyCodeLine{00056\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#degine\ X64}}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ cur\ =\ Architecture::x64;}
-\DoxyCodeLine{00058\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#elif\ defined\ \_\_arm\_\_\ ||\ defined\ \_\_arm\ ||\ defined\ \_M\_ARM}}
-\DoxyCodeLine{00059\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#define\ ARM32}}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ cur\ =\ Architecture::arm32;}
-\DoxyCodeLine{00061\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#elif\ defined\ \_\_aarch64\_\_\ ||\ defined\ \_\_arm64\_\_\ ||\ defined\ \_M\_ARM64}}
-\DoxyCodeLine{00062\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#define\ ARM64}}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ cur\ =\ Architecture::arm64;}
-\DoxyCodeLine{00064\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endif}}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ cur;}
-\DoxyCodeLine{00066\ \ \ \ \ \}}
-\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{consteval}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{architecture_8hpp_abc9a0e89ff90d02867d87df1943f43fc}{isArchitecture}}(\mbox{\hyperlink{architecture_8hpp_a5537239fdcea8cdbcf72ea2b23fda3d8}{Architecture}}\ arch)\{}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{architecture_8hpp_a5537239fdcea8cdbcf72ea2b23fda3d8}{Architecture}}\ cur\ =\ \mbox{\hyperlink{architecture_8hpp_a45b9a4e76b51e46c65bb61d9663c68e8}{getArchitecture}}();}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keyword}{static\_cast<}uint32\_t\textcolor{keyword}{>}(arch)\ \&\ \textcolor{keyword}{static\_cast<}uint32\_t\textcolor{keyword}{>}(cur))\ ==\ \textcolor{keyword}{static\_cast<}uint32\_t\textcolor{keyword}{>}(arch);}
-\DoxyCodeLine{00081\ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classexpp_1_1_architecture}{Architecture}}\{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ enum\ :\ uint32\_t\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \_32bit\ =\ 1,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \_64bit\ =\ 1\ <<\ 1,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ x86\ \ \ \ =\ 1\ <<\ 2\ |\ \_32bit,}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ x64\ \ \ \ =\ 1\ <<\ 3\ |\ \_64bit,}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ arm\ \ \ \ =\ 1\ <<\ 4,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ arm32\ \ =\ 1\ <<\ 5\ |\ arm\ |\ \_32bit,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ arm64\ \ =\ 1\ <<\ 6\ |\ arm\ |\ \_64bit,}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ OTHER,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ arch\ =\ \mbox{\hyperlink{classexpp_1_1_architecture_a5d6bc1de5822180f3dd4557b0ad0c0dd}{getArchitecture}}();}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ operator\ ==\ (\mbox{\hyperlink{classexpp_1_1_architecture}{Architecture}}\ arch)\{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (this-\/>arch\ \&\ arch.arch)\ ==\ this-\/>arch;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{consteval}\ uint32\_t\ \mbox{\hyperlink{classexpp_1_1_architecture_a5d6bc1de5822180f3dd4557b0ad0c0dd}{getArchitecture}}()\{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ cur\ =\ Architecture::OTHER;}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#if\ defined\ \_\_i386\_\_\ ||\ defined\ \_M\_IX86}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#define\ X86}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cur\ =\ Architecture::x86;\ }
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#elif\ defined\ \_\_x86\_64\_\_\ ||\ defined\ (\_M\_X64)\ ||\ defined\ \_M\_AMD64}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#define\ X64}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cur\ =\ Architecture::x64;}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#elif\ defined\ \_\_arm\_\_\ ||\ defined\ \_\_arm\ ||\ defined\ \_M\_ARM}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#define\ ARM32}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cur\ =\ Architecture::arm32;}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#elif\ defined\ \_\_aarch64\_\_\ ||\ defined\ \_\_arm64\_\_\ ||\ defined\ \_M\_ARM64}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#define\ ARM64}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cur\ =\ Architecture::arm64;}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ cur;}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00079\ \ \ \ \ \};}
+\DoxyCodeLine{00080\ \ \ \ \ }
+\DoxyCodeLine{00081\ \ \ \ \ }
 \DoxyCodeLine{00082\ }
 \DoxyCodeLine{00083\ }
 \DoxyCodeLine{00084\ }

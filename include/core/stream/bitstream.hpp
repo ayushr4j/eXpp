@@ -5,8 +5,8 @@
 #include <cstddef>
 #include <cstdint>
 #include <stdint.h>
+#include "core/memory/pointer.hpp"
 #include "core/stream/stream.hpp"
-#include "core/buffer/buffer.hpp"
 
 #include <iostream>
 
@@ -50,29 +50,29 @@ namespace expp {
         };
     }
     
-    class BitReader : public Reader{
+    class BitInputStream : public InputStream{
         protected:
-            Reader* stream;
+            InputStream* stream;
             uint8_t bitCount = 0, byte = 0;
         public:
-            BitReader(Reader* stream){
+            BitInputStream(InputStream* stream){
                 this->stream = stream;
             }
 
-            virtual void readNBits(Buffer dst, size_t n, uint32_t flags = BitFlags::Default);
-            virtual void readNBytes(Buffer dst, size_t n, uint32_t flags = StreamFlags::Default);
+            virtual void readNBits(Pointer dst, size_t n, uint32_t flags = BitFlags::Default);
+            virtual void readNBytes(Pointer dst, size_t n, uint32_t flags = StreamFlags::Default);
             
     };
-    class BitWriter : public Writer{
+    class BitOutputStream : public OutputStream{
         protected:
-            Writer* stream;
+            OutputStream* stream;
             uint8_t bitCount = 0, byte = 0;
         public:
-            BitWriter(Writer* stream){
+            BitOutputStream(OutputStream* stream){
                 this->stream = stream;
             }
-            virtual void writeNBits(Buffer src, size_t n, uint32_t flags = BitFlags::Default);
-            virtual void writeNBytes(Buffer src, size_t n, uint32_t flags = StreamFlags::Default);
+            virtual void writeNBits(Pointer src, size_t n, uint32_t flags = BitFlags::Default);
+            virtual void writeNBytes(Pointer src, size_t n, uint32_t flags = StreamFlags::Default);
 
             void flush(){
 

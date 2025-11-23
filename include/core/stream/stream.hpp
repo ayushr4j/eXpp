@@ -4,7 +4,7 @@
 
 #include <cstdint>
 #include <stdint.h>
-#include "core/buffer/buffer.hpp"
+#include "core/memory/pointer.hpp"
 
 namespace expp {
     
@@ -17,18 +17,27 @@ namespace expp {
     }
     
 
-    class Reader{
+    class InputStream{
         public:
-            virtual void readNBytes(Buffer dst, size_t n, uint32_t flags = StreamFlags::Default){};
+            virtual void readNBytes(Pointer dst, size_t n, uint32_t flags = StreamFlags::Default){};
+
+            template<typename type>
+            void operator >> (type& obj);
     };
-    class Writer{
+    class OutputStream{
         public:
-            virtual void writeNBytes(Buffer src, size_t n, uint32_t flags = StreamFlags::Default){};
+            virtual void writeNBytes(Pointer src, size_t n, uint32_t flags = StreamFlags::Default){};
+
+            template<typename type>
+            void operator << (type& obj);
     };
-    class Stream : public Reader, public Writer{
+    class Stream : public InputStream, public OutputStream{
 
     };
     
+
+
+    //think of better name
     class ISeekable {
         public:
             virtual void seeki(size_t offset);
