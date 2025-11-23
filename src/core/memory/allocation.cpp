@@ -5,7 +5,7 @@
 
 using namespace expp::memory;
 
-Memory Allocator::Allocation::getReference(size_t offset, size_t size){
+/*Memory Allocator::Allocation::getReference(size_t offset, size_t size){
     Memory memory;
     memory.alloc = this;
     memory.offset = offset;
@@ -19,6 +19,6 @@ void Allocator::Allocation::releaseReference(Memory& mem){
     if(referenceCount == 0 && alloc != nullptr){
         alloc->deallocate(this);
     }
-}
+}*/
 
 

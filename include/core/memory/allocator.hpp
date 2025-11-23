@@ -2,6 +2,7 @@
 #define _expp_core_memory_allocator_
 
 #include <stddef.h>
+#include "./memory.hpp"
 
 namespace expp{
 

@@ -2,8 +2,8 @@
 #define _expp_core_utils_
 
 #include "core/stream/stream.hpp"
-#include <exception>
-#include <immintrin.h>
+#include "core/exception.hpp"
+
 namespace expp {
     namespace utils{
 
@@ -15,9 +15,11 @@ namespace expp {
          * @param stream stream where object will be written to
          * @param obj object to convert
          */
-        template<typename Type>
-        void serialize(OutputStream* stream, Type* obj){
-            throw NotImplemented("This type doesn't support deserialize. implement void serialize(OutputStream* steam, Type* obj);");
+        template<typename Stream, typename Type>
+        void serialize(Stream* stream, Type* obj){
+
+
+            throw NotImplemented("This type doesn't support serialize. implement void serialize(Stream* steam, Type* obj);");
         }
 
 
@@ -32,6 +34,8 @@ namespace expp {
         void deserialize(InputStream* stream, Type* obj){
             throw NotImplemented("This type doesn't support deserialize. implement void deserialize(InputStream* steam, Type* obj);");
         }
+
+
 
     } //utils
 } //expp

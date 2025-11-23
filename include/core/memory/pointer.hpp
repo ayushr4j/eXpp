@@ -24,9 +24,11 @@ namespace expp {
                 Pointer(void* ptr, size_t s);
 
                 uint8_t& operator[](size_t s);
-                Pointer operator[](size_t offset, size_t size);
+                
 
                 Pointer operator+(size_t offset); 
+
+                
         };
     }
 

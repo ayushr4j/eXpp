@@ -10,7 +10,7 @@ using namespace expp::memory;
 
 Allocator::Allocation* Allocator::createAllocation(size_t size, size_t alignment){
 
-    size_t requiredSize = sizeof(Allocation) + alignof(Allocation) + size + alignment;  //required size for allocation object + data
+    /*size_t requiredSize = sizeof(Allocation) + alignof(Allocation) + size + alignment;  //required size for allocation object + data
 
     uint8_t* raw = new uint8_t[requiredSize];
     uint64_t addr = (uint64_t)raw;
@@ -29,18 +29,22 @@ Allocator::Allocation* Allocator::createAllocation(size_t size, size_t alignment
     alloc->alignment = alignment;
     alloc->data = ptr;
 
-    return alloc;
+    return alloc;*/
+
+    return nullptr; //for supressing error
 
 }
 
 
 
-Memory Allocator::allocate(size_t size, size_t alignment){
+/*Memory Allocator::allocate(size_t size, size_t alignment){
     auto obj = createAllocation(size,alignment);
     return obj->getReference(0,size);
+
+
 }
 
 void Allocator::deallocate(Memory mem){
 
-}
+}*/
 

@@ -2,7 +2,7 @@
 
 #include "core/stream/bitstream.hpp"
 #include "core/stream/stream.hpp"
-#include "core/buffer/buffer.hpp"
+
 #include <cstddef>
 #include <cstdint>
 #include <cstdlib>

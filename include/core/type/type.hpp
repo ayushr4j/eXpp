@@ -1,14 +1,27 @@
 #ifndef _expp_core_type_
 #define _expp_core_type_
 
+#include "core/stream/stream.hpp"
 #include "string"
 #include <stddef.h>
-#include "core/stream/bitstream.hpp"
-#include "core/buffer/buffer.hpp"
+#include "core/memory/pointer.hpp"
+
 
 namespace expp {
 
+    class Serializable{
+        enum Mode{
+            Serialize,
+            Deserialize,
+        };
+
+        virtual void serialize(Stream* stream, Mode mode);
+
+    };
+
     class Type{
+        
+
 
         
 
@@ -18,7 +31,7 @@ namespace expp {
     protected:
         class Map{
             protected:
-                virtual void mapField(std::string name, Buffer* ptr, size_t bits, uint8_t flags); //endianness, bitorder
+                virtual void mapField(std::string name, Pointer ptr, size_t bits, uint8_t flags); //endianness, bitorder
         
             public:
                 template<typename type>
@@ -44,13 +57,13 @@ namespace expp {
                 }
         };
         class InputMap : public Map{
-            BitReader* reader;
+            InputStream* stream;
             public:
                 virtual void map(void* ptr, size_t bits, uint8_t flags);
 
         };
         class OutputMapper : public Map{
-            BitWriter* writer;
+            OutputStream* writer;
             public:
                 virtual void map(void* ptr, size_t bits, uint8_t flags);
 

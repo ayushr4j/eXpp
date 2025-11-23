@@ -4,11 +4,6 @@
 #include <cstdint>
 #include <stddef.h>
 
-
-#include "./allocation.hpp"
-#include "./pointer.hpp"
-#include "./view.hpp"
-
 namespace expp{
 
     /**
@@ -33,19 +28,17 @@ namespace expp{
             protected:
                 //memory::Allocator::Allocation* alloc; allocation should inherit Memory,
                 
+                size_t size;
                 friend class Allocator;
             public:
                 Memory();
-                ~Memory();
+                virtual ~Memory(){};
             
                 /// @brief return byte at given index in memory
                 /// @param i index starts at 0. supports negative indexing. -1 = size - 1, -2 size - 2, so on
                 /// @return 
-                virtual uint8_t operator[](int64_t i);
-                virtual Memory operator[](int64_t offset, uint64_t size);
-
-
-
+                virtual uint8_t& operator[](int64_t i);
+                
                 /*bool operator == (const Memory& mem){
                     if(alloc == mem.alloc){
                         return true;

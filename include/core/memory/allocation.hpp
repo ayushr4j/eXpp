@@ -3,6 +3,7 @@
 
 
 #include "./allocator.hpp"
+#include "./memory.hpp"
 
 #include <stddef.h>
 #include <stdint.h>
@@ -13,7 +14,7 @@ namespace expp
     namespace memory{
 
         /// @brief this is reperesents raw memory allocation and it also counts number of references to it and automatically deallocates when reference count goes to 0. 
-        class Allocator::Allocation{
+        class Allocator::Allocation : public Memory{
             protected:
                 /// @brief allocator that was used to allocate this Allocation
                 Allocator* alloc = nullptr;   

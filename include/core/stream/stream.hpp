@@ -15,23 +15,27 @@ namespace expp {
         };
         
     }
-    
 
-    class InputStream{
+
+    class Stream{
+
+    };   
+
+    class InputStream : public Stream{
         public:
             virtual void readNBytes(Pointer dst, size_t n, uint32_t flags = StreamFlags::Default){};
 
             template<typename type>
             void operator >> (type& obj);
     };
-    class OutputStream{
+    class OutputStream : public Stream{
         public:
             virtual void writeNBytes(Pointer src, size_t n, uint32_t flags = StreamFlags::Default){};
 
             template<typename type>
             void operator << (type& obj);
     };
-    class Stream : public InputStream, public OutputStream{
+    class IOStream : public InputStream, public OutputStream{
 
     };
     

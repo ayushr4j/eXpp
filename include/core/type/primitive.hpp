@@ -1,7 +1,9 @@
 
-#include "/type.hpp"
+#include "./type.hpp"
 #include <bit>
 #include <cstdint>
+
+#include "core/memory/pointer.hpp"
 
 namespace expp {
 
@@ -12,9 +14,13 @@ namespace expp {
         native = msb_first, //generally its msb_first. check if other formats exist
     };
 
-    template <size_t n = 8, std::endian endian = std::endian::native, expp::bitorder bitorder = bitorder::msb_first>
-    class Byte : public Type{
-        uint8_t data[n/8 + (n%8 > 0)];
+    class Primitive : public Type{
+
+    };
+
+    template <size_t n = 8, std::endian endian = std::endian::native, expp::bitorder bitorder = bitorder::native>
+    class Byte : public Primitive{
+        Pointer data;
     };
 
     template<size_t n = 32, std::endian endian = std::endian::native, expp::bitorder bitorder = bitorder::msb_first>
@@ -31,6 +37,11 @@ namespace expp {
     class Float : public Byte<n,endian,bitorder>{
 
     };
+
+    class Bool : public Byte<8>{
+
+    };
+
 
 
 }
