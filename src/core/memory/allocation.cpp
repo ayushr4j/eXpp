@@ -1,9 +1,20 @@
 
 
 #include "core/memory/allocation.hpp"
-#include "core/memory/memory.hpp"
+#include "core/memory/allocator.hpp"
+#include "core/exception.hpp"
+#include <cstddef>
 
 using namespace expp::memory;
+
+uint8_t& Allocation::operator[](size_t i){
+    if(i >= size) throw OutOfBound(i,size);
+    return data[i];
+}
+
+Allocation::~Allocation(){
+    delete [] raw;
+}
 
 /*Memory Allocator::Allocation::getReference(size_t offset, size_t size){
     Memory memory;

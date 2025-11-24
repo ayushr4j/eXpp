@@ -1,12 +1,11 @@
 
-#include "core/memory/memory.hpp"
-namespace {
+#include "core/memory/pointer.hpp"
 
 
-    template<typename name>
-    class ObjectPointer : expp::Memory{
-        uint8_t *ptr;
-    };
-
+expp::memory::Pointer::Pointer(Memory* mem){
+    this->mem = mem;
 }
 
+expp::memory::Pointer::Pointer(void* ptr, size_t s){
+    raw = RawMemory(ptr,s);
+}

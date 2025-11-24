@@ -1,6 +1,7 @@
-#ifndef _expp_core_memory_
-#define _expp_core_memory_
+#ifndef _expp_core_memory_base_
+#define _expp_core_memory_base_
 
+#include <cstddef>
 #include <cstdint>
 #include <stddef.h>
 
@@ -10,14 +11,12 @@ namespace expp{
      * \defgroup Memory Memory
      * \ref Memory class provides inteface to access memory. Subclasses of Memory is used for different kinds of memory. (RawMemory, AllocatedMemory, GarbageCollectedMemory, File base Memory etc)\n
      * \ref Pointer class provides interface to access memory. It is contains pointer to Memory and a offset initially at 0. \n
-     * \ref MemView class is derived from pointer and i lets you access only a portion of memory. It also has a size, a offset and size (to provide a view of memory).
+     * 
      */
 
     namespace memory {
-        /// @brief It acts as a pointer to memory. It supports advanced memory operations such as extending, shrinking memory. splitting memory, inserting memory in between. this works by keeping list connected segments internally. and it automatically defragments them also.
         
-        //rename memory to pointer ?
-        
+        class Pointer;
 
         /**
          * \ingroup Memory
@@ -26,27 +25,27 @@ namespace expp{
          */
         class Memory{
             protected:
-                //memory::Allocator::Allocation* alloc; allocation should inherit Memory,
+
+                /// size is the required size of allocation (excluding any padding, header).
+                /// alignment is the alignment requirement for this Allocation. this might be used when moving this memory to other location.
+                size_t size = 0, alignment = 1;
+
                 
-                size_t size;
-                friend class Allocator;
+                friend class Pointer;
+
             public:
-                Memory();
+                
                 virtual ~Memory(){};
             
                 /// @brief return byte at given index in memory
                 /// @param i index starts at 0. supports negative indexing. -1 = size - 1, -2 size - 2, so on
                 /// @return 
-                virtual uint8_t& operator[](int64_t i);
-                
-                /*bool operator == (const Memory& mem){
-                    if(alloc == mem.alloc){
-                        return true;
-                    }
-                    return false;
-                }*/
+                uint8_t& operator[](int64_t i){ return operator[]( i + (i < 0)*(size-1+2*i)); };
+                virtual uint8_t& operator[](size_t i) = 0;
 
-            
+
+                virtual size_t getSize(){ return size; }
+                virtual size_t getAlignment(){ return alignment; }
         };
     
         

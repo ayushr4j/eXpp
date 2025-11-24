@@ -9,19 +9,23 @@
 
 namespace expp {
 
-    class Serializable{
-        enum Mode{
-            Serialize,
-            Deserialize,
-        };
+    
 
-        virtual void serialize(Stream* stream, Mode mode);
+    /*class Serializable{
 
-    };
+        public:
+
+            virtual void serialize(Serializer* serializer);
+            
+    };*/
 
     class Type{
-        
+        protected:
+            memory::Pointer* ptr;
+            friend class memory::Pointer;
+        public:
 
+            virtual void getSizeBits();
 
         
 

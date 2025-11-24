@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.28)
-project(ModTest CXX)
+project(eXpp CXX)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_CXX_STANDARD 23)
@@ -19,14 +19,24 @@ include_directories(
     src/
 )
 
+add_library(expp_base)
+target_sources(expp_base PUBLIC
+    src/core/exception.cpp
+)
 
 
 add_library(memory STATIC)
 target_sources(memory PUBLIC 
+    src/core/memory/pointer.cpp
     src/core/memory/allocator.cpp
     src/core/memory/allocation.cpp
-    src/core/memory/memory.cpp
+    
 )
+
+add_executable(memory_test test/core/memory/memory.cpp)
+target_link_libraries(memory_test PRIVATE memory expp_base)
+
+if(false)
 
 add_library(stream STATIC)
 target_sources(stream PUBLIC
@@ -46,3 +56,5 @@ target_sources(image_png PUBLIC
 
 add_executable(image_png_test test/image/png/decoder.cpp)
 target_link_libraries(image_png_test PRIVATE image_png stream)
+
+endif()

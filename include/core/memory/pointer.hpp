@@ -3,42 +3,49 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <type_traits>
 
 #include "./raw.hpp"
+
 
 namespace expp {
 
     namespace memory {
 
         class Memory;
-        class Raw;
-
+        
+        //pointer points to a region of memory. specified with offset and size.
         class Pointer{
             protected:
-                Raw raw;    //used for raw pointers.
+                RawMemory raw = {nullptr,0};    //used for raw pointers.
                 Memory* mem = &raw;
-                size_t offset, size;  
+                size_t offset, size;   
             public:
                 template<typename type>
-                Pointer(type* obj);
+                Pointer(type* obj){
+                    if constexpr (std::is_base_of_v<Memory, type>) {
+                        mem = obj;
+                    }/*else if constexpr (std::is_base_of_v<Type, type>) {
+                        
+                    }*/else{
+                        raw = {obj};
+                    }
+                };
+                
                 Pointer(void* ptr, size_t s);
 
-                uint8_t& operator[](size_t s);
-                
+                Pointer(Memory* mem);
 
-                Pointer operator+(size_t offset); 
+                uint8_t& operator[](int64_t s){ return mem->operator[](s); };
+                Pointer operator+(size_t offset);
+
+                Pointer operator&(){ return *this; }    //prevent raw pointers of pointer
 
                 
         };
     }
 
     using Pointer = memory::Pointer;
-
-    
-
-    
-
-
 
 }
 

@@ -7,6 +7,10 @@
 namespace expp {
     namespace utils{
 
+        template <typename... Args>
+        auto formatString(std::format_string<Args...> fmt, Args&&... args){
+            return std::format(fmt, std::forward<Args>(args)...);
+        }
         
         /**
          * @brief serialize converts given object to stream
