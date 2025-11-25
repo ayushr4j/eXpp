@@ -2,8 +2,6 @@
 
 #include "core/memory/allocator.hpp"
 #include "core/memory/allocation.hpp"
-#include "core/memory/memory.hpp"
-#include "core/memory/pointer.hpp"
 #include "stddef.h"
 
 using namespace expp::memory;

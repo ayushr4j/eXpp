@@ -16,13 +16,25 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_LIST_DIR}/build/bin")
 
 include_directories(
     include/
-    src/
 )
 
-add_library(expp_base)
+
+
+add_library(expp_base STATIC)
 target_sources(expp_base PUBLIC
     src/core/exception.cpp
 )
+
+
+add_library(expp_ds INTERFACE)
+target_sources(expp_ds PUBLIC
+    include/core/ds/list.hpp
+)
+
+add_executable(expp_ds_test test/core/ds/list.cpp)
+target_link_libraries(expp_ds_test PRIVATE expp_ds)
+
+if(false)
 
 
 add_library(memory STATIC)
@@ -36,7 +48,7 @@ target_sources(memory PUBLIC
 add_executable(memory_test test/core/memory/memory.cpp)
 target_link_libraries(memory_test PRIVATE memory expp_base)
 
-if(false)
+
 
 add_library(stream STATIC)
 target_sources(stream PUBLIC

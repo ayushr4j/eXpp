@@ -4,6 +4,8 @@
 
 #include "./memory.hpp"
 
+#include "core/ds/list.hpp"
+
 #include <cstddef>
 #include <cstdint>
 #include <stddef.h>
@@ -18,12 +20,11 @@ namespace expp
         
 
         /// @brief this is reperesents raw memory allocation and it also counts number of references to it and automatically deallocates when reference count goes to 0. 
-        class Allocation : public Memory{
+        class Allocation : public Memory, public ListItem<Allocation>{
             protected:
                 /// @brief allocator that was used to allocate this Allocation
                 Allocator* allocator = nullptr;   
-                Allocation* next = nullptr;
-
+                
                 /// data refers to address in this memory which fulfils given alignment requirment and is of size bytes.
                 uint8_t *data;   
 

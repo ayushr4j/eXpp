@@ -16,7 +16,8 @@ namespace expp{
         class Allocator{
             protected:
 
-                Allocation* start = nullptr;
+                Allocation allocations;
+                
                 friend class Allocation;
             public:
                 
