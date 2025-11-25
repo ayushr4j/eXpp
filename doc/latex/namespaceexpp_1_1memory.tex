@@ -3,13 +3,56 @@
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
+class \mbox{\hyperlink{classexpp_1_1memory_1_1_allocation}{Allocation}}
+\begin{DoxyCompactList}\small\item\em this is reperesents raw memory allocation and it also counts number of references to it and automatically deallocates when reference count goes to 0. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classexpp_1_1memory_1_1_allocator}{Allocator}}
-\begin{DoxyCompactList}\small\item\em Allocates Contiguous \doxylink{classexpp_1_1memory_1_1_memory}{Memory} Segments and returns a Reference to it. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \doxylink{class_base}{Base} class for \doxylink{classexpp_1_1memory_1_1_allocator}{Allocator} (allocates memory and manages it) \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classexpp_1_1memory_1_1_memory}{Memory}}
-\begin{DoxyCompactList}\small\item\em It acts as a pointer to memory. It supports advanced memory operations such as extending, shrinking memory. splitting memory, inserting memory in between. this works by keeping list connected segments internally. and it automatically defragments them also. \end{DoxyCompactList}\item 
-class \mbox{\hyperlink{classexpp_1_1memory_1_1_raw}{Raw}}
+\item 
+class \mbox{\hyperlink{classexpp_1_1memory_1_1_pointer}{Pointer}}
+\item 
+class \mbox{\hyperlink{classexpp_1_1memory_1_1_raw_memory}{Raw\+Memory}}
+\item 
+class \mbox{\hyperlink{classexpp_1_1memory_1_1_simple_allocator}{Simple\+Allocator}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespaceexpp_1_1memory_a96de4ac0d8fd24055666696ffae2a49d}{copy}} (\mbox{\hyperlink{classexpp_1_1memory_1_1_pointer}{Pointer}} src, \mbox{\hyperlink{classexpp_1_1memory_1_1_pointer}{Pointer}} dst, size\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Copies n bytes from src to dst pointer (backward copy to handle overlap) \end{DoxyCompactList}\item 
+\Hypertarget{namespaceexpp_1_1memory_a4dfff666384592bd678b50a467776379}\label{namespaceexpp_1_1memory_a4dfff666384592bd678b50a467776379} 
+\mbox{\hyperlink{classexpp_1_1memory_1_1_pointer}{Pointer}} {\bfseries allocate} ()
+\item 
+\Hypertarget{namespaceexpp_1_1memory_a905d2467ff314e6f8cc7a0937955287c}\label{namespaceexpp_1_1memory_a905d2467ff314e6f8cc7a0937955287c} 
+void {\bfseries deallocate} (\mbox{\hyperlink{classexpp_1_1memory_1_1_pointer}{Pointer}} ptr)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-/defgroup \doxylink{classexpp_1_1memory_1_1_memory}{Memory} \doxylink{classexpp_1_1memory_1_1_memory}{Memory} /ref \doxylink{classexpp_1_1memory_1_1_memory}{Memory} class provides inteface to access memory. Subclasses of \doxylink{classexpp_1_1memory_1_1_memory}{Memory} is used for different kinds of memory. (Raw\+Memory, Allocated\+Memory, Garbage\+Collected\+Memory, File base \doxylink{classexpp_1_1memory_1_1_memory}{Memory} etc) 
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000003}{Todo}}]implement more copy function to directly copy from (memory,pointer,view) to (memory,pointer,view).~\newline
+also handle overlapping copy, segmented copy, performance. \end{DoxyRefDesc}
+
+
+\label{doc-func-members}
+\Hypertarget{namespaceexpp_1_1memory_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceexpp_1_1memory_a96de4ac0d8fd24055666696ffae2a49d}\index{expp::memory@{expp::memory}!copy@{copy}}
+\index{copy@{copy}!expp::memory@{expp::memory}}
+\doxysubsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily \label{namespaceexpp_1_1memory_a96de4ac0d8fd24055666696ffae2a49d} 
+void expp\+::memory\+::copy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classexpp_1_1memory_1_1_pointer}{Pointer}}}]{src}{, }\item[{\mbox{\hyperlink{classexpp_1_1memory_1_1_pointer}{Pointer}}}]{dst}{, }\item[{size\+\_\+t}]{n}{}\end{DoxyParamCaption})}
+
+
+
+Copies n bytes from src to dst pointer (backward copy to handle overlap) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & \\
+\hline
+{\em dst} & \\
+\hline
+{\em s} & \\
+\hline
+\end{DoxyParams}

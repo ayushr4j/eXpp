@@ -7,13 +7,20 @@
 
 using namespace expp::memory;
 
+
+Allocation::Allocation(Allocator *allocator){
+                    this->allocator = allocator;
+                    this->next = allocator->start;
+                    allocator->start = this;
+                };
+
 uint8_t& Allocation::operator[](size_t i){
     if(i >= size) throw OutOfBound(i,size);
     return data[i];
 }
 
 Allocation::~Allocation(){
-    delete [] raw;
+    allocator->deallocate(this);
 }
 
 /*Memory Allocator::Allocation::getReference(size_t offset, size_t size){

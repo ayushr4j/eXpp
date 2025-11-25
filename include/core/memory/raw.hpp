@@ -10,6 +10,14 @@ namespace expp {
 
     namespace memory{
 
+
+        /**
+         * \ingroup Memory 
+         * 
+         *
+         * @brief 
+         * 
+         */
         class RawMemory : public Memory{
             uint8_t* ptr;
             public:

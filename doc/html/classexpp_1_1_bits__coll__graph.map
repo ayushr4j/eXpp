@@ -1,0 +1,14 @@
+<map id="expp::Bits&lt; n, endian &gt;" name="expp::Bits&lt; n, endian &gt;">
+<area shape="rect" id="Node000001" title=" " alt="" coords="40,431,197,457"/>
+<area shape="rect" id="Node000002" href="$classexpp_1_1_primitive.html" title=" " alt="" coords="64,355,172,381"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,395,121,431,116,429,116,398"/>
+<area shape="rect" id="Node000003" href="$classexpp_1_1_type.html" title=" " alt="" coords="76,279,161,305"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="120,318,121,355,116,354,117,323"/>
+<area shape="rect" id="Node000004" href="$classexpp_1_1memory_1_1_pointer.html" title=" " alt="" coords="42,180,195,207"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="119,220,121,279,116,278,117,225"/>
+<area shape="rect" id="Node000005" href="$classexpp_1_1memory_1_1_raw_memory.html" title=" " alt="" coords="130,81,317,108"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="197,121,134,181,130,178,200,116"/>
+<area shape="rect" id="Node000006" href="$classexpp_1_1memory_1_1_memory.html" title=" " alt="" coords="5,5,165,32"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="81,44,81,76,84,107,97,147,113,179,108,180,92,149,79,109,76,77,80,50"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="121,37,202,80,198,82,122,42"/>
+</map>

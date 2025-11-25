@@ -9,9 +9,26 @@ namespace expp{
 
     /**
      * \defgroup Memory Memory
-     * \ref Memory class provides inteface to access memory. Subclasses of Memory is used for different kinds of memory. (RawMemory, AllocatedMemory, GarbageCollectedMemory, File base Memory etc)\n
-     * \ref Pointer class provides interface to access memory. It is contains pointer to Memory and a offset initially at 0. \n
-     * 
+     * \ref Allocator : Allocates memory and keeps track of all allocation.
+     * \ref Memory : Represents memory of given size with given alignment requirment. Subclasses of Memory is used for different kinds of memory. (RawMemory, AllocatedMemory, GarbageCollectedMemory, File base Memory etc)\n
+     * \ref Pointer : Helps access memory. It is contains pointer to Memory and a offset initially at 0. \n
+     * \ref Allocation: class Memory allocated through Allocator class.
+     * \ref RawMemory : Memory not allocated through Allocator
+     *  \dot
+     *  digraph example {
+     *      
+     *      Memory [ label="Memory"];
+     *      RawMemory [ label="RawMemory"]
+     *      Pointer [ label = "Pointer" ]
+     *      Allocator [ label = "Allocator"]
+     *      Allocation [ label = "Allocation" ]
+     *      
+     *      Pointer -> Memory;
+     *      Memory -> RawMemory;
+     *      Memory -> Allocation;
+     *      Allocator -> Allocation; 
+     *  }
+     *  \enddot
      */
 
     namespace memory {
@@ -33,6 +50,9 @@ namespace expp{
                 
                 friend class Pointer;
 
+                virtual void pointerCreated(){};
+                virtual void pointerDestroyed(){};
+
             public:
                 
                 virtual ~Memory(){};
@@ -46,6 +66,9 @@ namespace expp{
 
                 virtual size_t getSize(){ return size; }
                 virtual size_t getAlignment(){ return alignment; }
+
+
+                
         };
     
         

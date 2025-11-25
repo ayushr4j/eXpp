@@ -2,55 +2,60 @@
 \hypertarget{classexpp_1_1memory_1_1_memory}{}\label{classexpp_1_1memory_1_1_memory}\index{expp::memory::Memory@{expp::memory::Memory}}
 
 
-It acts as a pointer to memory. It supports advanced memory operations such as extending, shrinking memory. splitting memory, inserting memory in between. this works by keeping list connected segments internally. and it automatically defragments them also.  
-
-
-
-
-{\ttfamily \#include $<$memory.\+hpp$>$}
-
-Inheritance diagram for expp\+::memory\+::Memory\+:\begin{figure}[H]
+Inheritance diagram for expp\+::memory\+::Memory\+:\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{classexpp_1_1memory_1_1_memory}
+\includegraphics[width=350pt]{classexpp_1_1memory_1_1_memory__inherit__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual uint8\+\_\+t \mbox{\hyperlink{classexpp_1_1memory_1_1_memory_a85a1f08bafce777161f3d897961b848a}{operator\mbox{[}$\,$\mbox{]}}} (int64\+\_\+t i)=0
+uint8\+\_\+t \& \mbox{\hyperlink{classexpp_1_1memory_1_1_memory_ad5543de173b14ec2027bd7cf863010a4}{operator\mbox{[}$\,$\mbox{]}}} (int64\+\_\+t i)
 \begin{DoxyCompactList}\small\item\em return byte at given index in memory \end{DoxyCompactList}\item 
-\Hypertarget{classexpp_1_1memory_1_1_memory_ae1aff854d5ed111c4be1d17e8eaf883f}\label{classexpp_1_1memory_1_1_memory_ae1aff854d5ed111c4be1d17e8eaf883f} 
-virtual \mbox{\hyperlink{classexpp_1_1memory_1_1_memory}{Memory}} {\bfseries operator\mbox{[}$\,$\mbox{]}} (int64\+\_\+t offset, uint64\+\_\+t size)=0
+\Hypertarget{classexpp_1_1memory_1_1_memory_a421d651f2d2f79d6a8687537307b3e2e}\label{classexpp_1_1memory_1_1_memory_a421d651f2d2f79d6a8687537307b3e2e} 
+virtual uint8\+\_\+t \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (size\+\_\+t i)=0
 \item 
-\Hypertarget{classexpp_1_1memory_1_1_memory_acf4e20929313b12fd0f7b5f6c9872324}\label{classexpp_1_1memory_1_1_memory_acf4e20929313b12fd0f7b5f6c9872324} 
-bool {\bfseries operator==} (const \mbox{\hyperlink{classexpp_1_1memory_1_1_memory}{Memory}} \&mem)
+\Hypertarget{classexpp_1_1memory_1_1_memory_a21672c0b7d0fb40348ebc46e4c2bc75a}\label{classexpp_1_1memory_1_1_memory_a21672c0b7d0fb40348ebc46e4c2bc75a} 
+virtual size\+\_\+t {\bfseries get\+Size} ()
+\item 
+\Hypertarget{classexpp_1_1memory_1_1_memory_a2fb02b60ae52f168cef3f157bf30f0e8}\label{classexpp_1_1memory_1_1_memory_a2fb02b60ae52f168cef3f157bf30f0e8} 
+virtual size\+\_\+t {\bfseries get\+Alignment} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classexpp_1_1memory_1_1_memory_ac8a7ea8ee35b72246408856e06ca172a}\label{classexpp_1_1memory_1_1_memory_ac8a7ea8ee35b72246408856e06ca172a} 
+virtual void {\bfseries pointer\+Created} ()
+\item 
+\Hypertarget{classexpp_1_1memory_1_1_memory_ad9c5038cd667846df181d6831bfec691}\label{classexpp_1_1memory_1_1_memory_ad9c5038cd667846df181d6831bfec691} 
+virtual void {\bfseries pointer\+Destroyed} ()
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classexpp_1_1memory_1_1_memory_ad4e110736e02479fc2f7730342390893}\label{classexpp_1_1memory_1_1_memory_ad4e110736e02479fc2f7730342390893} 
-\mbox{\hyperlink{classexpp_1_1memory_1_1_allocator_1_1_allocation}{memory\+::\+Allocator\+::\+Allocation}} \texorpdfstring{$\ast$}{*} {\bfseries alloc}
+size\+\_\+t \mbox{\hyperlink{classexpp_1_1memory_1_1_memory_a8d98b28a91022b15b4ffbc34872f225e}{size}} = 0
+\item 
+\Hypertarget{classexpp_1_1memory_1_1_memory_ad662de9b2281bb405a6d82256b5a5969}\label{classexpp_1_1memory_1_1_memory_ad662de9b2281bb405a6d82256b5a5969} 
+size\+\_\+t {\bfseries alignment} = 1
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classexpp_1_1memory_1_1_memory_a4f7f62a2e2ba965a2aec21613708b95b}\label{classexpp_1_1memory_1_1_memory_a4f7f62a2e2ba965a2aec21613708b95b} 
-class {\bfseries Allocator}
+\Hypertarget{classexpp_1_1memory_1_1_memory_a44775f045074547f5bdd831609e6c77c}\label{classexpp_1_1memory_1_1_memory_a44775f045074547f5bdd831609e6c77c} 
+class {\bfseries Pointer}
 \end{DoxyCompactItemize}
 
-
-\doxysubsection{Detailed Description}
-It acts as a pointer to memory. It supports advanced memory operations such as extending, shrinking memory. splitting memory, inserting memory in between. this works by keeping list connected segments internally. and it automatically defragments them also. 
 
 \label{doc-func-members}
 \Hypertarget{classexpp_1_1memory_1_1_memory_doc-func-members}
 \doxysubsection{Member Function Documentation}
-\Hypertarget{classexpp_1_1memory_1_1_memory_a85a1f08bafce777161f3d897961b848a}\index{expp::memory::Memory@{expp::memory::Memory}!operator\mbox{[}\mbox{]}@{operator[]}}
+\Hypertarget{classexpp_1_1memory_1_1_memory_ad5543de173b14ec2027bd7cf863010a4}\index{expp::memory::Memory@{expp::memory::Memory}!operator\mbox{[}\mbox{]}@{operator[]}}
 \index{operator\mbox{[}\mbox{]}@{operator[]}!expp::memory::Memory@{expp::memory::Memory}}
 \doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
-{\footnotesize\ttfamily \label{classexpp_1_1memory_1_1_memory_a85a1f08bafce777161f3d897961b848a} 
-virtual uint8\+\_\+t expp\+::memory\+::\+Memory\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{i}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily \label{classexpp_1_1memory_1_1_memory_ad5543de173b14ec2027bd7cf863010a4} 
+uint8\+\_\+t \& expp\+::memory\+::\+Memory\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{i}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -66,7 +71,17 @@ return byte at given index in memory
 \end{DoxyReturn}
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\label{doc-variable-members}
+\Hypertarget{classexpp_1_1memory_1_1_memory_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classexpp_1_1memory_1_1_memory_a8d98b28a91022b15b4ffbc34872f225e}\index{expp::memory::Memory@{expp::memory::Memory}!size@{size}}
+\index{size@{size}!expp::memory::Memory@{expp::memory::Memory}}
+\doxysubsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily \label{classexpp_1_1memory_1_1_memory_a8d98b28a91022b15b4ffbc34872f225e} 
+size\+\_\+t expp\+::memory\+::\+Memory\+::size = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+size is the required size of allocation (excluding any padding, header). alignment is the alignment requirement for this \doxylink{classexpp_1_1memory_1_1_allocation}{Allocation}. this might be used when moving this memory to other location. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-include/core/memory/memory.\+hpp\item 
-src/core/memory/memory.\+cpp\end{DoxyCompactItemize}
+include/core/memory/memory.\+hpp\end{DoxyCompactItemize}

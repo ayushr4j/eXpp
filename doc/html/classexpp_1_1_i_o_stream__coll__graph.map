@@ -1,0 +1,10 @@
+<map id="expp::IOStream" name="expp::IOStream">
+<area shape="rect" id="Node000001" title=" " alt="" coords="92,155,205,181"/>
+<area shape="rect" id="Node000002" href="$classexpp_1_1_input_stream.html" title=" " alt="" coords="5,80,134,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="96,115,137,154,132,155,93,120"/>
+<area shape="rect" id="Node000003" href="$classexpp_1_1_stream.html" title=" " alt="" coords="98,5,198,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="122,45,85,81,81,78,125,41"/>
+<area shape="rect" id="Node000004" href="$classexpp_1_1_output_stream.html" title=" " alt="" coords="158,80,296,107"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="174,40,216,79,211,80,173,45"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="204,117,163,157,160,152,199,118"/>
+</map>

@@ -1,0 +1,103 @@
+\doxysection{expp\+::memory\+::Allocation Class Reference}
+\hypertarget{classexpp_1_1memory_1_1_allocation}{}\label{classexpp_1_1memory_1_1_allocation}\index{expp::memory::Allocation@{expp::memory::Allocation}}
+
+
+this is reperesents raw memory allocation and it also counts number of references to it and automatically deallocates when reference count goes to 0.  
+
+
+
+
+{\ttfamily \#include $<$allocation.\+hpp$>$}
+
+
+
+Inheritance diagram for expp\+::memory\+::Allocation\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=207pt]{classexpp_1_1memory_1_1_allocation__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for expp\+::memory\+::Allocation\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{classexpp_1_1memory_1_1_allocation__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \& \mbox{\hyperlink{classexpp_1_1memory_1_1_allocation_a6718e443801191b6e0df45e592be60a5}{operator\mbox{[}$\,$\mbox{]}}} (size\+\_\+t i)
+\item 
+\Hypertarget{classexpp_1_1memory_1_1_allocation_a025b82fc433ca49ef0c2068e47a6a345}\label{classexpp_1_1memory_1_1_allocation_a025b82fc433ca49ef0c2068e47a6a345} 
+\mbox{\hyperlink{classexpp_1_1memory_1_1_memory}{Memory}} {\bfseries operator\&} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classexpp_1_1memory_1_1_memory}{expp\+::memory\+::\+Memory}}}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \& \mbox{\hyperlink{classexpp_1_1memory_1_1_memory_ad5543de173b14ec2027bd7cf863010a4}{operator\mbox{[}$\,$\mbox{]}}} (int64\+\_\+t i)
+\begin{DoxyCompactList}\small\item\em return byte at given index in memory \end{DoxyCompactList}\item 
+virtual size\+\_\+t {\bfseries get\+Size} ()
+\item 
+virtual size\+\_\+t {\bfseries get\+Alignment} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classexpp_1_1memory_1_1_allocation_a4c76f235a6b9fa9cba0e323af7ad0d01}\label{classexpp_1_1memory_1_1_allocation_a4c76f235a6b9fa9cba0e323af7ad0d01} 
+\mbox{\hyperlink{classexpp_1_1memory_1_1_allocator}{Allocator}} \texorpdfstring{$\ast$}{*} {\bfseries alloc} = nullptr
+\begin{DoxyCompactList}\small\item\em allocator that was used to allocate this \doxylink{classexpp_1_1memory_1_1_allocation}{Allocation} \end{DoxyCompactList}\item 
+\Hypertarget{classexpp_1_1memory_1_1_allocation_a9c8ea97c37fa83f604c60a970eb9c7d5}\label{classexpp_1_1memory_1_1_allocation_a9c8ea97c37fa83f604c60a970eb9c7d5} 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries data}
+\begin{DoxyCompactList}\small\item\em data refers to address in this memory which fulfils given alignment requirment and is of size bytes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classexpp_1_1memory_1_1_memory}{expp\+::memory\+::\+Memory}}}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{classexpp_1_1memory_1_1_memory_a8d98b28a91022b15b4ffbc34872f225e}{size}} = 0
+\item 
+size\+\_\+t {\bfseries alignment} = 1
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classexpp_1_1memory_1_1_allocation_a2743bf0294172086e9384cd82f12c87a}\label{classexpp_1_1memory_1_1_allocation_a2743bf0294172086e9384cd82f12c87a} 
+class {\bfseries Memory}
+\item 
+\Hypertarget{classexpp_1_1memory_1_1_allocation_ac0f835aff11cf44442fede2afc9aaed1}\label{classexpp_1_1memory_1_1_allocation_ac0f835aff11cf44442fede2afc9aaed1} 
+class {\bfseries Simple\+Allocator}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classexpp_1_1memory_1_1_memory}{expp\+::memory\+::\+Memory}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries pointer\+Created} ()
+\item 
+virtual void {\bfseries pointer\+Destroyed} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+this is reperesents raw memory allocation and it also counts number of references to it and automatically deallocates when reference count goes to 0. 
+
+\label{doc-func-members}
+\Hypertarget{classexpp_1_1memory_1_1_allocation_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classexpp_1_1memory_1_1_allocation_a6718e443801191b6e0df45e592be60a5}\index{expp::memory::Allocation@{expp::memory::Allocation}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!expp::memory::Allocation@{expp::memory::Allocation}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily \label{classexpp_1_1memory_1_1_allocation_a6718e443801191b6e0df45e592be60a5} 
+uint8\+\_\+t \& Allocation\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{i}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classexpp_1_1memory_1_1_memory}{expp\+::memory\+::\+Memory}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/core/memory/allocation.\+hpp\item 
+src/core/memory/allocation.\+cpp\end{DoxyCompactItemize}

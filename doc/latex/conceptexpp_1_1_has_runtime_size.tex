@@ -1,0 +1,12 @@
+\doxysection{expp\+::Has\+Runtime\+Size Concept Reference}
+\hypertarget{conceptexpp_1_1_has_runtime_size}{}\label{conceptexpp_1_1_has_runtime_size}\index{expp::HasRuntimeSize@{expp::HasRuntimeSize}}
+\doxysubsection{Concept definition}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptexpp_1_1_has_runtime_size}{expp::HasRuntimeSize}}\ =\ }
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{requires}\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\ \&T::getSizeBits\ \};}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}

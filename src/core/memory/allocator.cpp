@@ -6,37 +6,28 @@
 #include "core/memory/pointer.hpp"
 #include "stddef.h"
 
-#include <new>  //used for in place new operator on apple clang
-
 using namespace expp::memory;
 
-Pointer Allocator::allocate(size_t size, size_t alignment){
+Allocation* Allocator::allocate(size_t size, size_t alignment){
     
-    size_t requiredSize = sizeof(Allocation) + alignof(Allocation) + size + alignment;  //required size for allocation object + data
-
-    uint8_t* raw = new uint8_t[requiredSize];
-    uint64_t addr = (uint64_t)raw;
-    uint64_t offset = addr % alignof(Allocation);
-    uint8_t* ptr = raw + offset;                          
-
-    Allocation* alloc = new (ptr) Allocation();
+    size_t requiredSize = size + alignment; 
+    uint8_t* data = new uint8_t[requiredSize];
     
-    ptr = ptr + sizeof(Allocation);
-    offset = ((uint64_t)ptr) % alignment;
-    ptr = ptr + offset;
-
-    alloc->raw = raw;
-    alloc->alloc = this;
+    Allocation* alloc = new Allocation(this);
+    
     alloc->size = size;
     alloc->alignment = alignment;
-    alloc->data = ptr;
+    alloc->data = data;
 
-    return Pointer{alloc};
-
+    return alloc;
 }
 
-void Allocator::deallocate(Pointer mem){
-    //delete[] mem;
+void Allocator::deallocate(Allocation* alloc){
+    
+    alloc->size = 0;
+    alloc->alignment = 0;
+    delete [] alloc->data;
+    alloc->data = nullptr;
 }
 
 

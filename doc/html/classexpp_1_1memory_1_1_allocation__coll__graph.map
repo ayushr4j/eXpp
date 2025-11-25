@@ -1,0 +1,7 @@
+<map id="expp::memory::Allocation" name="expp::memory::Allocation">
+<area shape="rect" id="Node000001" title="this is reperesents raw memory allocation and it also counts number of references to it and automatic..." alt="" coords="92,104,262,131"/>
+<area shape="rect" id="Node000002" href="$classexpp_1_1memory_1_1_memory.html" title=" " alt="" coords="5,5,165,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,41,168,103,163,104,106,46"/>
+<area shape="rect" id="Node000003" href="$classexpp_1_1memory_1_1_allocator.html" title="Base class for Allocator (allocates memory and manages it)" alt="" coords="189,5,352,32"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="250,43,190,106,187,102,245,44"/>
+</map>

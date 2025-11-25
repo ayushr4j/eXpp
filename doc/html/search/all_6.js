@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['ihdr_0',['IHDR',['../classexpp_1_1image_1_1png_1_1_i_h_d_r.html',1,'expp::image::png']]],
-  ['inputmap_1',['InputMap',['../classexpp_1_1_mapped_type_1_1_input_map.html',1,'expp::MappedType']]],
-  ['iseekable_2',['ISeekable',['../classexpp_1_1_i_seekable.html',1,'expp']]],
-  ['isplatform_3',['isPlatform',['../platform_8hpp.html#a8d53cbbea08845e940a37604aa9fa2cf',1,'expp']]]
+  ['getarchitecture_0',['getArchitecture',['../classexpp_1_1_architecture.html#a5d6bc1de5822180f3dd4557b0ad0c0dd',1,'expp::Architecture']]],
+  ['getbuildtype_1',['getBuildType',['../classexpp_1_1_build_type.html#a866a056faa4e0d1ae374c4a883c02f2a',1,'expp::BuildType']]],
+  ['getcompiler_2',['getCompiler',['../classexpp_1_1_compiler.html#a13a9157330d25b707f2af0630df4c723',1,'expp::Compiler']]],
+  ['getplatform_3',['getPlatform',['../platform_8hpp.html#ac8a7da77eee6fe3d27a9832897527ecf',1,'expp']]]
 ];

@@ -1,0 +1,12 @@
+\doxysection{expp\+::Has\+Static\+Size Concept Reference}
+\hypertarget{conceptexpp_1_1_has_static_size}{}\label{conceptexpp_1_1_has_static_size}\index{expp::HasStaticSize@{expp::HasStaticSize}}
+\doxysubsection{Concept definition}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptexpp_1_1_has_static_size}{expp::HasStaticSize}}\ =\ }
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{requires}\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\ T::sizeBits\ \}\ -\/>\ std::convertible\_to<size\_t>;}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}

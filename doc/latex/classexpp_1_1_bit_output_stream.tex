@@ -1,0 +1,71 @@
+\doxysection{expp\+::Bit\+Output\+Stream Class Reference}
+\hypertarget{classexpp_1_1_bit_output_stream}{}\label{classexpp_1_1_bit_output_stream}\index{expp::BitOutputStream@{expp::BitOutputStream}}
+
+
+Inheritance diagram for expp\+::Bit\+Output\+Stream\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classexpp_1_1_bit_output_stream__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for expp\+::Bit\+Output\+Stream\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classexpp_1_1_bit_output_stream__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classexpp_1_1_bit_output_stream_a9d00917fe577d1a7a0fed1fe26938757}\label{classexpp_1_1_bit_output_stream_a9d00917fe577d1a7a0fed1fe26938757} 
+{\bfseries Bit\+Output\+Stream} (\mbox{\hyperlink{classexpp_1_1_output_stream}{Output\+Stream}} \texorpdfstring{$\ast$}{*}stream)
+\item 
+\Hypertarget{classexpp_1_1_bit_output_stream_a7eb21ea04270484ed638930835062e88}\label{classexpp_1_1_bit_output_stream_a7eb21ea04270484ed638930835062e88} 
+virtual void {\bfseries write\+NBits} (\mbox{\hyperlink{classexpp_1_1memory_1_1_pointer}{Pointer}} src, size\+\_\+t n, uint32\+\_\+t flags=Bit\+Flags\+::\+Default)
+\item 
+virtual void \mbox{\hyperlink{classexpp_1_1_bit_output_stream_ab525c824164f98eb5d93b6d932c94f97}{write\+NBytes}} (\mbox{\hyperlink{classexpp_1_1memory_1_1_pointer}{Pointer}} src, size\+\_\+t n, uint32\+\_\+t flags=Stream\+Flags\+::\+Default)
+\item 
+\Hypertarget{classexpp_1_1_bit_output_stream_a8947de19dd01238136f5fc32b374c7bc}\label{classexpp_1_1_bit_output_stream_a8947de19dd01238136f5fc32b374c7bc} 
+void {\bfseries flush} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classexpp_1_1_output_stream}{expp\+::\+Output\+Stream}}}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename type$>$ }\\void {\bfseries operator$<$$<$} (type \&obj)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classexpp_1_1_bit_output_stream_a640394bfb7ea9b5a22978c8f416002ef}\label{classexpp_1_1_bit_output_stream_a640394bfb7ea9b5a22978c8f416002ef} 
+\mbox{\hyperlink{classexpp_1_1_output_stream}{Output\+Stream}} \texorpdfstring{$\ast$}{*} {\bfseries stream}
+\item 
+\Hypertarget{classexpp_1_1_bit_output_stream_abf9408e3d9105e0a4fc24c9947b30ee1}\label{classexpp_1_1_bit_output_stream_abf9408e3d9105e0a4fc24c9947b30ee1} 
+uint8\+\_\+t {\bfseries bit\+Count} = 0
+\item 
+\Hypertarget{classexpp_1_1_bit_output_stream_a4e6289a5370101a9a79131ef5cbb697a}\label{classexpp_1_1_bit_output_stream_a4e6289a5370101a9a79131ef5cbb697a} 
+uint8\+\_\+t {\bfseries byte} = 0
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{classexpp_1_1_bit_output_stream_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classexpp_1_1_bit_output_stream_ab525c824164f98eb5d93b6d932c94f97}\index{expp::BitOutputStream@{expp::BitOutputStream}!writeNBytes@{writeNBytes}}
+\index{writeNBytes@{writeNBytes}!expp::BitOutputStream@{expp::BitOutputStream}}
+\doxysubsubsection{\texorpdfstring{writeNBytes()}{writeNBytes()}}
+{\footnotesize\ttfamily \label{classexpp_1_1_bit_output_stream_ab525c824164f98eb5d93b6d932c94f97} 
+virtual void expp\+::\+Bit\+Output\+Stream\+::write\+NBytes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classexpp_1_1memory_1_1_pointer}{Pointer}}}]{src}{, }\item[{size\+\_\+t}]{n}{, }\item[{uint32\+\_\+t}]{flags}{ = {\ttfamily StreamFlags\+:\+:Default}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classexpp_1_1_output_stream}{expp\+::\+Output\+Stream}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/core/stream/bitstream.\+hpp\end{DoxyCompactItemize}

@@ -95,11 +95,15 @@ $(function(){initNavTree('group___memory.html','',''); });
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:expp_3A_3Amemory_3A_3AMemory" id="r_expp_3A_3Amemory_3A_3AMemory"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexpp_1_1memory_1_1_memory.html">expp::memory::Memory</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">It acts as a pointer to memory. It supports advanced memory operations such as extending, shrinking memory. splitting memory, inserting memory in between. this works by keeping list connected segments internally. and it automatically defragments them also.  <a href="classexpp_1_1memory_1_1_memory.html#details">More...</a><br /></td></tr>
+<tr class="memitem:expp_3A_3Amemory_3A_3ARawMemory" id="r_expp_3A_3Amemory_3A_3ARawMemory"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexpp_1_1memory_1_1_raw_memory.html">expp::memory::RawMemory</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<p><a class="el" href="group___memory.html">Memory</a> class provides inteface to access memory. Subclasses of Memory is used for different kinds of memory. (RawMemory, AllocatedMemory, GarbageCollectedMemory, File base Memory etc) <a class="el" href="classexpp_1_1_pointer.html">Pointer</a> class is used to access Memory </p>
-</div><!-- contents -->
+<p>Allocator : Allocates memory <a class="el" href="group___memory.html">Memory</a> : Represents memory of given size with given alignment requirment. Subclasses of Memory is used for different kinds of memory. (RawMemory, AllocatedMemory, GarbageCollectedMemory, File base Memory etc)<br  />
+Pointer : Helps access memory. It is contains pointer to Memory and a offset initially at 0. <br  />
+Allocation: class Memory allocated through Allocator class. RawMemory : Memory not allocated through Allocator </p><div class="dotgraph">
+<img src="dot_inline_dotgraph_1.png" alt="dot_inline_dotgraph_1.png" border="0" usemap="#dot_inline_dotgraph_1.map"/>
+</div>
+ </div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>

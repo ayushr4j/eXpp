@@ -1,0 +1,33 @@
+\doxysection{include/core/system/architecture.hpp File Reference}
+\hypertarget{architecture_8hpp}{}\label{architecture_8hpp}\index{include/core/system/architecture.hpp@{include/core/system/architecture.hpp}}
+
+
+defines Architecutre related stuffs  
+
+
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Include dependency graph for architecture.\+hpp\+:
+% FIG 0
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classexpp_1_1_architecture}{expp\+::\+Architecture}}
+\begin{DoxyCompactList}\small\item\em Defines all supported Architectures. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+defines Architecutre related stuffs 
+
+\begin{DoxyAuthor}{Author}
+Ayush Raj 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/11-\/21
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2025 
+\end{DoxyCopyright}

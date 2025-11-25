@@ -1,0 +1,54 @@
+\doxysection{serialize.\+hpp}
+\hypertarget{serialize_8hpp_source}{}\label{serialize_8hpp_source}\index{include/core/type/serialize.hpp@{include/core/type/serialize.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_expp\_type\_serialize\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_expp\_type\_serialize\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}core/stream/stream.hpp"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }expp\ \{}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classexpp_1_1_serializer}{Serializer}}\{}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum}\ Mode\{}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \ \ \ \ Serialize,}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \ \ \ \ Deserialize,}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Stream>}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ serialize(Mode\ mode)\{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ serialize(\mbox{\hyperlink{classexpp_1_1_output_stream}{OutputStream}}*\ stream);}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ deserialize(\mbox{\hyperlink{classexpp_1_1_input_stream}{InputStream}}*\ stream);}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ serialize(T*\ obj)\{}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classexpp_1_1_binary_serializer}{BinarySerializer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classexpp_1_1_serializer}{Serializer}}\{}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \};}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classexpp_1_1_bit_serializer}{BitSerializer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classexpp_1_1_serializer}{Serializer}}\{}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptexpp_1_1_serializable}{Serializable}}\ =\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ (T\&\ obj,\ \mbox{\hyperlink{classexpp_1_1_serializer}{Serializer}}*\ s)\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \{\ obj.serialize(s)\ \};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ member\ serialize}}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ ||}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{requires}\ (T\&\ obj,\ \mbox{\hyperlink{classexpp_1_1_serializer}{Serializer}}*\ s)\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \{\ serialize(s,\ \&obj)\ \};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ free\ function\ serialize}}
+\DoxyCodeLine{00044\ \ \ \ \ \};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

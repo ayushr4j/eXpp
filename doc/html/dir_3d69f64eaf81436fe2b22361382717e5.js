@@ -7,5 +7,6 @@ var dir_3d69f64eaf81436fe2b22361382717e5 =
     [ "system", "dir_2f78408a9a75fb207ab9c3b406f12177.html", "dir_2f78408a9a75fb207ab9c3b406f12177" ],
     [ "thread", "dir_06f5d8edfd2049c1c4cf8f94611d8f91.html", "dir_06f5d8edfd2049c1c4cf8f94611d8f91" ],
     [ "type", "dir_1e6058d551dc1b52bca60c030126f590.html", "dir_1e6058d551dc1b52bca60c030126f590" ],
-    [ "base.hpp", "base_8hpp_source.html", null ]
+    [ "base.hpp", "base_8hpp_source.html", null ],
+    [ "exception.hpp", "exception_8hpp_source.html", null ]
 ];

@@ -88,49 +88,37 @@ $(function(){initNavTree('classexpp_1_1memory_1_1_allocator.html','','classexpp_
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">expp::memory::Allocator Class Reference</div></div>
+  <div class="headertitle"><div class="title">expp::memory::Allocator Class Reference<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Allocates Contiguous <a class="el" href="classexpp_1_1memory_1_1_memory.html" title="It acts as a pointer to memory. It supports advanced memory operations such as extending,...">Memory</a> Segments and returns a Reference to it.  
+<p><a class="el" href="class_base.html">Base</a> class for <a class="el" href="classexpp_1_1memory_1_1_allocator.html" title="Base class for Allocator (allocates memory and manages it)">Allocator</a> (allocates memory and manages it)  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="allocator_8hpp_source.html">allocator.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for expp::memory::Allocator:</div>
+<div class="dyncontent">
+<div class="center"><img src="classexpp_1_1memory_1_1_allocator__inherit__graph.png" border="0" usemap="#aexpp_1_1memory_1_1_allocator_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
+<map name="aexpp_1_1memory_1_1_allocator_inherit__map" id="aexpp_1_1memory_1_1_allocator_inherit__map">
+<area shape="rect" title="Base class for Allocator (allocates memory and manages it)" alt="" coords="25,5,189,32"/>
+<area shape="rect" href="classexpp_1_1memory_1_1_simple_allocator.html" title=" " alt="" coords="5,80,209,107"/>
+<area shape="poly" title=" " alt="" coords="109,46,109,81,105,79,105,50"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:Allocation" id="r_Allocation"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexpp_1_1memory_1_1_allocator_1_1_allocation.html">Allocation</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">this is reperesents raw memory allocation and it also counts number of references to it and automatically deallocates when reference count goes to 0.  <a href="classexpp_1_1memory_1_1_allocator_1_1_allocation.html#details">More...</a><br /></td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad611e47e4d7e4d9386fb3107bc02bb2b" id="r_ad611e47e4d7e4d9386fb3107bc02bb2b"><td class="memItemLeft" align="right" valign="top"><a id="ad611e47e4d7e4d9386fb3107bc02bb2b" name="ad611e47e4d7e4d9386fb3107bc02bb2b"></a>
-virtual <a class="el" href="classexpp_1_1memory_1_1_memory.html">Memory</a>&#160;</td><td class="memItemRight" valign="bottom"><b>allocate</b> (size_t size, size_t alignment=1)</td></tr>
-<tr class="memitem:a6820bf28aff68dc97c9ffc8f3f4ec129" id="r_a6820bf28aff68dc97c9ffc8f3f4ec129"><td class="memItemLeft" align="right" valign="top"><a id="a6820bf28aff68dc97c9ffc8f3f4ec129" name="a6820bf28aff68dc97c9ffc8f3f4ec129"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>deallocate</b> (<a class="el" href="classexpp_1_1memory_1_1_memory.html">Memory</a> mem)</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
-Protected Member Functions</h2></td></tr>
-<tr class="memitem:a5d6a44e90f61527a9ea318dfd6e9b8f3" id="r_a5d6a44e90f61527a9ea318dfd6e9b8f3"><td class="memItemLeft" align="right" valign="top"><a id="a5d6a44e90f61527a9ea318dfd6e9b8f3" name="a5d6a44e90f61527a9ea318dfd6e9b8f3"></a>
-virtual <a class="el" href="classexpp_1_1memory_1_1_allocator_1_1_allocation.html">Allocation</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>createAllocation</b> (size_t size, size_t alignment=1)</td></tr>
-<tr class="memitem:a343846b94705af21fb31dae7aa28a95e" id="r_a343846b94705af21fb31dae7aa28a95e"><td class="memItemLeft" align="right" valign="top"><a id="a343846b94705af21fb31dae7aa28a95e" name="a343846b94705af21fb31dae7aa28a95e"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>deallocate</b> (<a class="el" href="classexpp_1_1memory_1_1_allocator_1_1_allocation.html">Allocation</a> *allocation)</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-friends" class="groupheader"><a id="friends" name="friends"></a>
-Friends</h2></td></tr>
-<tr class="memitem:a90f642f290db91885e04d6fc295d684c" id="r_a90f642f290db91885e04d6fc295d684c"><td class="memItemLeft" align="right" valign="top"><a id="a90f642f290db91885e04d6fc295d684c" name="a90f642f290db91885e04d6fc295d684c"></a>
-class&#160;</td><td class="memItemRight" valign="bottom"><b>Allocation</b></td></tr>
-<tr class="memitem:a236d8c148bfb57377056af5ece1f8c69" id="r_a236d8c148bfb57377056af5ece1f8c69"><td class="memItemLeft" align="right" valign="top"><a id="a236d8c148bfb57377056af5ece1f8c69" name="a236d8c148bfb57377056af5ece1f8c69"></a>
-class&#160;</td><td class="memItemRight" valign="bottom"><b>MemoryObject</b></td></tr>
-<tr class="memitem:a2743bf0294172086e9384cd82f12c87a" id="r_a2743bf0294172086e9384cd82f12c87a"><td class="memItemLeft" align="right" valign="top"><a id="a2743bf0294172086e9384cd82f12c87a" name="a2743bf0294172086e9384cd82f12c87a"></a>
-class&#160;</td><td class="memItemRight" valign="bottom"><b>Memory</b></td></tr>
+<tr class="memitem:aa5bb0a33dfaee5a4a382ccf59d19ea71" id="r_aa5bb0a33dfaee5a4a382ccf59d19ea71"><td class="memItemLeft" align="right" valign="top"><a id="aa5bb0a33dfaee5a4a382ccf59d19ea71" name="aa5bb0a33dfaee5a4a382ccf59d19ea71"></a>
+virtual <a class="el" href="classexpp_1_1memory_1_1_memory.html">Memory</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>allocate</b> (size_t size, size_t alignment=1)=0</td></tr>
+<tr class="memitem:a7e7f5947cda10dc826aef09f86559772" id="r_a7e7f5947cda10dc826aef09f86559772"><td class="memItemLeft" align="right" valign="top"><a id="a7e7f5947cda10dc826aef09f86559772" name="a7e7f5947cda10dc826aef09f86559772"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>deallocate</b> (<a class="el" href="classexpp_1_1memory_1_1_memory.html">Memory</a> *mem)=0</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Allocates Contiguous <a class="el" href="classexpp_1_1memory_1_1_memory.html" title="It acts as a pointer to memory. It supports advanced memory operations such as extending,...">Memory</a> Segments and returns a Reference to it. </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo</a></b></dt><dd>implement segmented allocations to be used for complex memory operation </dd></dl>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+<div class="textblock"><p><a class="el" href="class_base.html">Base</a> class for <a class="el" href="classexpp_1_1memory_1_1_allocator.html" title="Base class for Allocator (allocates memory and manages it)">Allocator</a> (allocates memory and manages it) </p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo</a></b></dt><dd>seperate allocation header and actual allocation (for ease of changing memory) </dd></dl>
+</div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>include/core/memory/<a class="el" href="allocator_8hpp_source.html">allocator.hpp</a></li>
-<li>src/core/memory/<b>allocator.cpp</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -145,7 +133,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Memory</b></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>expp</b></li><li class="navelem"><b>memory</b></li><li class="navelem"><a href="classexpp_1_1memory_1_1_allocator.html">Allocator</a></li>
+    <li class="navelem"><b>expp</b></li><li class="navelem"><a href="namespaceexpp_1_1memory.html">memory</a></li><li class="navelem"><a href="classexpp_1_1memory_1_1_allocator.html">Allocator</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>

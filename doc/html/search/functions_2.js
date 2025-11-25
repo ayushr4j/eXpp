@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lock_0',['lock',['../classexpp_1_1sync_1_1_mutex.html#a37b832df7afb2673de719a7b979fc139',1,'expp::sync::Mutex']]]
+  ['isplatform_0',['isPlatform',['../platform_8hpp.html#a8d53cbbea08845e940a37604aa9fa2cf',1,'expp']]]
 ];

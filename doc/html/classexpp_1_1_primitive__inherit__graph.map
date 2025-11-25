@@ -1,0 +1,19 @@
+<map id="expp::Primitive" name="expp::Primitive">
+<area shape="rect" id="Node000001" title=" " alt="" coords="278,80,386,107"/>
+<area shape="rect" id="Node000003" href="$classexpp_1_1_bits.html" title=" " alt="" coords="77,163,188,189"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="285,115,164,165,162,160,289,111"/>
+<area shape="rect" id="Node000005" href="$classexpp_1_1_bits.html" title=" " alt="" coords="255,155,410,197"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="334,120,335,156,330,153,331,124"/>
+<area shape="rect" id="Node000009" href="$classexpp_1_1_bits.html" title=" " alt="" coords="434,163,591,189"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="375,111,487,162,482,163,374,116"/>
+<area shape="rect" id="Node000002" href="$classexpp_1_1_type.html" title=" " alt="" coords="290,5,375,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="334,46,335,81,330,78,331,50"/>
+<area shape="rect" id="Node000004" href="$classexpp_1_1_bool.html" title=" " alt="" coords="5,245,89,272"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="111,201,62,247,58,243,105,200"/>
+<area shape="rect" id="Node000006" href="$classexpp_1_1_float.html" title=" " alt="" coords="113,245,277,272"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="286,205,218,247,215,242,281,206"/>
+<area shape="rect" id="Node000007" href="$classexpp_1_1_int.html" title=" " alt="" coords="300,245,450,272"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="352,209,371,246,366,244,349,214"/>
+<area shape="rect" id="Node000008" href="$classexpp_1_1_u_int.html" title=" " alt="" coords="474,245,633,272"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="404,201,522,245,516,245,403,206"/>
+</map>

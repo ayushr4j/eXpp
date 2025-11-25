@@ -2,7 +2,6 @@
 #define _expp_core_memory_allocation_
 
 
-#include "./allocator.hpp"
 #include "./memory.hpp"
 
 #include <cstddef>
@@ -15,29 +14,27 @@ namespace expp
 {
     namespace memory{
 
+        class Allocator;
+        
+
         /// @brief this is reperesents raw memory allocation and it also counts number of references to it and automatically deallocates when reference count goes to 0. 
         class Allocation : public Memory{
             protected:
                 /// @brief allocator that was used to allocate this Allocation
-                Allocator* alloc = nullptr;   
-                
-        
-                /// raw holds the raw allocated space of this allocation. after which Memory Segment resides (may be padded to meet alignment requirement). 
+                Allocator* allocator = nullptr;   
+                Allocation* next = nullptr;
+
                 /// data refers to address in this memory which fulfils given alignment requirment and is of size bytes.
-                uint8_t *data, *raw;   
+                uint8_t *data;   
 
-                /// stores number of references created for this memory. help in automatic garbage collection
-                std::atomic<size_t> referenceCount = 0;
-
-                
-                Allocation(){};
+                Allocation(Allocator *allocator);
 
                 friend class Memory;
                 friend class Allocator;
 
             public:
 
-                ~Allocation();
+                virtual ~Allocation();
 
                 uint8_t& operator[](size_t i);
 

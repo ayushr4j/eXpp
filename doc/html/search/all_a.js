@@ -1,9 +1,10 @@
 var searchData=
 [
-  ['platform_0',['Platform',['../platform_8hpp.html#a4e70d548697e1593328ab7ba916a5759',1,'expp']]],
-  ['platform_2ehpp_1',['platform.hpp',['../platform_8hpp.html',1,'']]],
-  ['png_2',['PNG',['../classexpp_1_1image_1_1png_1_1_p_n_g.html',1,'expp::image::png']]],
-  ['pointer_3',['Pointer',['../classexpp_1_1_pointer.html',1,'expp']]],
-  ['project_4',['My Project',['../index.html',1,'']]],
-  ['promise_5',['promise',['../structexpp_1_1_coroutine_1_1promise.html',1,'expp::Coroutine']]]
+  ['map_0',['Map',['../classexpp_1_1_mapped_type_1_1_map.html',1,'expp::MappedType']]],
+  ['mappedtype_1',['MappedType',['../classexpp_1_1_mapped_type.html',1,'expp']]],
+  ['memory_2',['Memory',['../classexpp_1_1memory_1_1_memory.html',1,'expp::memory::Memory'],['../group___memory.html',1,'Memory']]],
+  ['memoryinputstream_3',['MemoryInputStream',['../classexpp_1_1_memory_input_stream.html',1,'expp']]],
+  ['memoryoutputstream_4',['MemoryOutputStream',['../classexpp_1_1_memory_output_stream.html',1,'expp']]],
+  ['mutex_5',['Mutex',['../classexpp_1_1sync_1_1_mutex.html',1,'expp::sync']]],
+  ['my_20project_6',['My Project',['../index.html',1,'']]]
 ];

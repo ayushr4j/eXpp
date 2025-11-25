@@ -30,7 +30,12 @@ namespace expp {
                     }*/else{
                         raw = {obj};
                     }
+
+                    mem->pointerCreated();
                 };
+                ~Pointer(){
+                    mem->pointerDestroyed();
+                }
                 
                 Pointer(void* ptr, size_t s);
 

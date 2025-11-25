@@ -15,10 +15,13 @@ var annotated_dup =
       [ "log", null, [
         [ "Logger", "classexpp_1_1log_1_1_logger.html", null ]
       ] ],
-      [ "memory", null, [
-        [ "Allocator", "classexpp_1_1memory_1_1_allocator.html", "classexpp_1_1memory_1_1_allocator" ],
+      [ "memory", "namespaceexpp_1_1memory.html", [
+        [ "Allocation", "classexpp_1_1memory_1_1_allocation.html", "classexpp_1_1memory_1_1_allocation" ],
+        [ "Allocator", "classexpp_1_1memory_1_1_allocator.html", null ],
         [ "Memory", "classexpp_1_1memory_1_1_memory.html", "classexpp_1_1memory_1_1_memory" ],
-        [ "Raw", "classexpp_1_1memory_1_1_raw.html", null ]
+        [ "Pointer", "classexpp_1_1memory_1_1_pointer.html", null ],
+        [ "RawMemory", "classexpp_1_1memory_1_1_raw_memory.html", null ],
+        [ "SimpleAllocator", "classexpp_1_1memory_1_1_simple_allocator.html", null ]
       ] ],
       [ "sync", null, [
         [ "Mutex", "classexpp_1_1sync_1_1_mutex.html", "classexpp_1_1sync_1_1_mutex" ],
@@ -29,20 +32,38 @@ var annotated_dup =
         [ "Thread", "classexpp_1_1thread_1_1_thread.html", null ]
       ] ],
       [ "Architecture", "classexpp_1_1_architecture.html", null ],
-      [ "BitReader", "classexpp_1_1_bit_reader.html", "classexpp_1_1_bit_reader" ],
-      [ "BitWriter", "classexpp_1_1_bit_writer.html", "classexpp_1_1_bit_writer" ],
+      [ "BinarySerializer", "classexpp_1_1_binary_serializer.html", null ],
+      [ "BitInputStream", "classexpp_1_1_bit_input_stream.html", null ],
+      [ "BitOutputStream", "classexpp_1_1_bit_output_stream.html", null ],
+      [ "Bits", "classexpp_1_1_bits.html", null ],
+      [ "BitSerializer", "classexpp_1_1_bit_serializer.html", null ],
+      [ "Bool", "classexpp_1_1_bool.html", null ],
       [ "BuildType", "classexpp_1_1_build_type.html", "classexpp_1_1_build_type" ],
       [ "Compiler", "classexpp_1_1_compiler.html", "classexpp_1_1_compiler" ],
       [ "Coroutine", "classexpp_1_1_coroutine.html", "classexpp_1_1_coroutine" ],
+      [ "Exception", "classexpp_1_1_exception.html", null ],
+      [ "Float", "classexpp_1_1_float.html", null ],
+      [ "InputStream", "classexpp_1_1_input_stream.html", null ],
+      [ "Int", "classexpp_1_1_int.html", null ],
+      [ "IOStream", "classexpp_1_1_i_o_stream.html", null ],
       [ "ISeekable", "classexpp_1_1_i_seekable.html", null ],
       [ "MappedType", "classexpp_1_1_mapped_type.html", "classexpp_1_1_mapped_type" ],
-      [ "MemoryReader", "classexpp_1_1_memory_reader.html", null ],
-      [ "MemoryWriter", "classexpp_1_1_memory_writer.html", null ],
+      [ "MemoryInputStream", "classexpp_1_1_memory_input_stream.html", null ],
+      [ "MemoryOutputStream", "classexpp_1_1_memory_output_stream.html", null ],
+      [ "NotImplemented", "classexpp_1_1_not_implemented.html", null ],
       [ "OSeekable", "classexpp_1_1_o_seekable.html", null ],
-      [ "Pointer", "classexpp_1_1_pointer.html", null ],
-      [ "Reader", "classexpp_1_1_reader.html", null ],
+      [ "OutOfBound", "classexpp_1_1_out_of_bound.html", null ],
+      [ "OutputStream", "classexpp_1_1_output_stream.html", null ],
+      [ "Primitive", "classexpp_1_1_primitive.html", null ],
       [ "Seekable", "classexpp_1_1_seekable.html", null ],
+      [ "Serializer", "classexpp_1_1_serializer.html", null ],
       [ "Stream", "classexpp_1_1_stream.html", null ],
-      [ "Writer", "classexpp_1_1_writer.html", null ]
-    ] ]
+      [ "Type", "classexpp_1_1_type.html", null ],
+      [ "UInt", "classexpp_1_1_u_int.html", null ]
+    ] ],
+    [ "A", "class_a.html", null ],
+    [ "B", "class_b.html", null ],
+    [ "Base", "class_base.html", null ],
+    [ "Derived", "class_derived.html", null ],
+    [ "TestAllocation", "class_test_allocation.html", null ]
 ];

@@ -6,42 +6,40 @@
 \DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_expp\_core\_stream\_memorystream\_}}
 \DoxyCodeLine{00003\ }
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}core/stream/stream.hpp"{}}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}core/buffer/buffer.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}core/memory/pointer.hpp"{}}}
 \DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <algorithm>}}
 \DoxyCodeLine{00007\ }
 \DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }expp\ \{}
 \DoxyCodeLine{00009\ }
-\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{class\ }MemoryReader\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classexpp_1_1_reader}{Reader}}\{}
-\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ Buffer\ buffer;}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{class\ }MemoryInputStream\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classexpp_1_1_input_stream}{InputStream}}\{}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ Pointer\ memory;}
 \DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ MemoryReader(Buffer\ buf)\ :\ buffer(buf)\{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ MemoryInputStream(Pointer\ mem)\ :\ memory(mem)\{}
 \DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ readNBytes(Buffer\ dst,\ \textcolor{keywordtype}{size\_t}\ n,\ uint32\_t\ flags)\textcolor{keyword}{\ override}\{}
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::copy\_n(buffer.data(),\ n,\ dst.data());}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ buffer\ =\ buffer\ +\ n;}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ readNBytes(Pointer\ dst,\ \textcolor{keywordtype}{size\_t}\ n,\ uint32\_t\ flags)\textcolor{keyword}{\ override}\{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::copy\_n(memory.data(),\ n,\ dst.data());}}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//buffer\ =\ buffer\ +\ n;}}
 \DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00021\ \ \ \ \ \};}
 \DoxyCodeLine{00022\ }
-\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{class\ }MemoryWriter\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classexpp_1_1_writer}{Writer}}\{}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ Buffer\ buffer;}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{class\ }MemoryOutputStream\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classexpp_1_1_output_stream}{OutputStream}}\{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ Pointer\ memory;}
 \DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ MemoryWriter(Buffer\ buf)\ :\ buffer(buf)\{}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ writeNBytes(Buffer\ src,\ \textcolor{keywordtype}{size\_t}\ n,\ uint32\_t\ flags)\textcolor{keyword}{\ override}\{}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::copy\_n(src.data(),\ n,\ buffer.data());}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ buffer\ =\ buffer\ +\ n;}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00034\ }
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00036\ \ \ \ \ \};}
-\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ MemoryOutputStream(Pointer\ mem)\ :\ memory(mem)\{\}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ writeNBytes(Pointer\ src,\ \textcolor{keywordtype}{size\_t}\ n,\ uint32\_t\ flags)\textcolor{keyword}{\ override}\{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::copy\_n(src.data(),\ n,\ buffer.data());}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//buffer\ =\ buffer\ +\ n;}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00034\ \ \ \ \ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \};}
 \DoxyCodeLine{00038\ }
-\DoxyCodeLine{00039\ \};}
-\DoxyCodeLine{00040\ }
-\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['unlock_0',['unlock',['../classexpp_1_1sync_1_1_mutex.html#a8291b6670bf2038c38b8b9857ebbc7bf',1,'expp::sync::Mutex']]]
+  ['rawmemory_0',['RawMemory',['../classexpp_1_1memory_1_1_raw_memory.html',1,'expp::memory']]]
 ];

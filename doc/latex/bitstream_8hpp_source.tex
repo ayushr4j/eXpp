@@ -9,8 +9,8 @@
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <cstddef>}}
 \DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <cstdint>}}
 \DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
-\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}core/stream/stream.hpp"{}}}
-\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}core/buffer/buffer.hpp"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}core/memory/pointer.hpp"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}core/stream/stream.hpp"{}}}
 \DoxyCodeLine{00010\ }
 \DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <iostream>}}
 \DoxyCodeLine{00012\ }
@@ -54,29 +54,29 @@
 \DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \};}
 \DoxyCodeLine{00051\ \ \ \ \ \}}
 \DoxyCodeLine{00052\ \ \ \ \ }
-\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{class\ }BitReader\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classexpp_1_1_reader}{Reader}}\{}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{class\ }BitInputStream\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classexpp_1_1_input_stream}{InputStream}}\{}
 \DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classexpp_1_1_reader}{Reader}}*\ stream;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classexpp_1_1_input_stream}{InputStream}}*\ stream;}
 \DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ bitCount\ =\ 0,\ \textcolor{keywordtype}{byte}\ =\ 0;}
 \DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ BitReader(\mbox{\hyperlink{classexpp_1_1_reader}{Reader}}*\ stream)\{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ BitInputStream(\mbox{\hyperlink{classexpp_1_1_input_stream}{InputStream}}*\ stream)\{}
 \DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>stream\ =\ stream;}
 \DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00061\ }
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classexpp_1_1_bit_reader_a02b837487034a931dd658a5a16b0ac8c}{readNBits}}(Buffer\ dst,\ \textcolor{keywordtype}{size\_t}\ n,\ uint32\_t\ flags\ =\ BitFlags::Default);}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ readNBytes(Buffer\ dst,\ \textcolor{keywordtype}{size\_t}\ n,\ uint32\_t\ flags\ =\ StreamFlags::Default);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ readNBits(Pointer\ dst,\ \textcolor{keywordtype}{size\_t}\ n,\ uint32\_t\ flags\ =\ BitFlags::Default);}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ readNBytes(Pointer\ dst,\ \textcolor{keywordtype}{size\_t}\ n,\ uint32\_t\ flags\ =\ StreamFlags::Default);}
 \DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00065\ \ \ \ \ \};}
-\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{class\ }BitWriter\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classexpp_1_1_writer}{Writer}}\{}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{class\ }BitOutputStream\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classexpp_1_1_output_stream}{OutputStream}}\{}
 \DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classexpp_1_1_writer}{Writer}}*\ stream;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classexpp_1_1_output_stream}{OutputStream}}*\ stream;}
 \DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ bitCount\ =\ 0,\ \textcolor{keywordtype}{byte}\ =\ 0;}
 \DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ BitWriter(\mbox{\hyperlink{classexpp_1_1_writer}{Writer}}*\ stream)\{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ BitOutputStream(\mbox{\hyperlink{classexpp_1_1_output_stream}{OutputStream}}*\ stream)\{}
 \DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>stream\ =\ stream;}
 \DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classexpp_1_1_bit_writer_af120f253c558422622527de1ef4d5078}{writeNBits}}(Buffer\ src,\ \textcolor{keywordtype}{size\_t}\ n,\ uint32\_t\ flags\ =\ BitFlags::Default);}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ writeNBytes(Buffer\ src,\ \textcolor{keywordtype}{size\_t}\ n,\ uint32\_t\ flags\ =\ StreamFlags::Default);}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ writeNBits(Pointer\ src,\ \textcolor{keywordtype}{size\_t}\ n,\ uint32\_t\ flags\ =\ BitFlags::Default);}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ writeNBytes(Pointer\ src,\ \textcolor{keywordtype}{size\_t}\ n,\ uint32\_t\ flags\ =\ StreamFlags::Default);}
 \DoxyCodeLine{00076\ }
 \DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ flush()\{}
 \DoxyCodeLine{00078\ }
@@ -86,7 +86,7 @@
 \DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Flushing\ "{}}\ <<\ (int)\textcolor{keywordtype}{byte}\ <<\ \textcolor{stringliteral}{"{}\ BitCount\ "{}}\ <<\ (\textcolor{keywordtype}{int})bitCount\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
 \DoxyCodeLine{00083\ }
 \DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ flushBits\ =\ 0;}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classexpp_1_1_bit_writer_af120f253c558422622527de1ef4d5078}{writeNBits}}(\&flushBits,\ 8-\/flushBits);}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ writeNBits(\&flushBits,\ 8-\/flushBits);}
 \DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }

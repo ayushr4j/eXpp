@@ -94,15 +94,65 @@ $(function(){initNavTree('namespaceexpp_1_1memory.html','',''); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:Allocation" id="r_Allocation"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexpp_1_1memory_1_1_allocation.html">Allocation</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">this is reperesents raw memory allocation and it also counts number of references to it and automatically deallocates when reference count goes to 0.  <a href="classexpp_1_1memory_1_1_allocation.html#details">More...</a><br /></td></tr>
 <tr class="memitem:Allocator" id="r_Allocator"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexpp_1_1memory_1_1_allocator.html">Allocator</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates Contiguous <a class="el" href="classexpp_1_1memory_1_1_memory.html" title="It acts as a pointer to memory. It supports advanced memory operations such as extending,...">Memory</a> Segments and returns a Reference to it.  <a href="classexpp_1_1memory_1_1_allocator.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_base.html">Base</a> class for <a class="el" href="classexpp_1_1memory_1_1_allocator.html" title="Base class for Allocator (allocates memory and manages it)">Allocator</a> (allocates memory and manages it)  <a href="classexpp_1_1memory_1_1_allocator.html#details">More...</a><br /></td></tr>
 <tr class="memitem:Memory" id="r_Memory"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexpp_1_1memory_1_1_memory.html">Memory</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">It acts as a pointer to memory. It supports advanced memory operations such as extending, shrinking memory. splitting memory, inserting memory in between. this works by keeping list connected segments internally. and it automatically defragments them also.  <a href="classexpp_1_1memory_1_1_memory.html#details">More...</a><br /></td></tr>
-<tr class="memitem:Raw" id="r_Raw"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexpp_1_1memory_1_1_raw.html">Raw</a></td></tr>
+<tr class="memitem:Pointer" id="r_Pointer"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexpp_1_1memory_1_1_pointer.html">Pointer</a></td></tr>
+<tr class="memitem:RawMemory" id="r_RawMemory"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexpp_1_1memory_1_1_raw_memory.html">RawMemory</a></td></tr>
+<tr class="memitem:SimpleAllocator" id="r_SimpleAllocator"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexpp_1_1memory_1_1_simple_allocator.html">SimpleAllocator</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a96de4ac0d8fd24055666696ffae2a49d" id="r_a96de4ac0d8fd24055666696ffae2a49d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96de4ac0d8fd24055666696ffae2a49d">copy</a> (<a class="el" href="classexpp_1_1memory_1_1_pointer.html">Pointer</a> src, <a class="el" href="classexpp_1_1memory_1_1_pointer.html">Pointer</a> dst, size_t n)</td></tr>
+<tr class="memdesc:a96de4ac0d8fd24055666696ffae2a49d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies n bytes from src to dst pointer (backward copy to handle overlap)  <br /></td></tr>
+<tr class="memitem:a4dfff666384592bd678b50a467776379" id="r_a4dfff666384592bd678b50a467776379"><td class="memItemLeft" align="right" valign="top"><a id="a4dfff666384592bd678b50a467776379" name="a4dfff666384592bd678b50a467776379"></a>
+<a class="el" href="classexpp_1_1memory_1_1_pointer.html">Pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><b>allocate</b> ()</td></tr>
+<tr class="memitem:a905d2467ff314e6f8cc7a0937955287c" id="r_a905d2467ff314e6f8cc7a0937955287c"><td class="memItemLeft" align="right" valign="top"><a id="a905d2467ff314e6f8cc7a0937955287c" name="a905d2467ff314e6f8cc7a0937955287c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>deallocate</b> (<a class="el" href="classexpp_1_1memory_1_1_pointer.html">Pointer</a> ptr)</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>/defgroup <a class="el" href="classexpp_1_1memory_1_1_memory.html" title="It acts as a pointer to memory. It supports advanced memory operations such as extending,...">Memory</a> <a class="el" href="classexpp_1_1memory_1_1_memory.html" title="It acts as a pointer to memory. It supports advanced memory operations such as extending,...">Memory</a> /ref <a class="el" href="classexpp_1_1memory_1_1_memory.html" title="It acts as a pointer to memory. It supports advanced memory operations such as extending,...">Memory</a> class provides inteface to access memory. Subclasses of <a class="el" href="classexpp_1_1memory_1_1_memory.html" title="It acts as a pointer to memory. It supports advanced memory operations such as extending,...">Memory</a> is used for different kinds of memory. (RawMemory, AllocatedMemory, GarbageCollectedMemory, File base <a class="el" href="classexpp_1_1memory_1_1_memory.html" title="It acts as a pointer to memory. It supports advanced memory operations such as extending,...">Memory</a> etc) </p>
-</div></div><!-- contents -->
+<div class="textblock"><dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">Todo</a></b></dt><dd>implement more copy function to directly copy from (memory,pointer,view) to (memory,pointer,view).<br  />
+also handle overlapping copy, segmented copy, performance. </dd></dl>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="a96de4ac0d8fd24055666696ffae2a49d" name="a96de4ac0d8fd24055666696ffae2a49d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96de4ac0d8fd24055666696ffae2a49d">&#9670;&#160;</a></span>copy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void expp::memory::copy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classexpp_1_1memory_1_1_pointer.html">Pointer</a></td>          <td class="paramname"><span class="paramname"><em>src</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classexpp_1_1memory_1_1_pointer.html">Pointer</a></td>          <td class="paramname"><span class="paramname"><em>dst</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>n</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copies n bytes from src to dst pointer (backward copy to handle overlap) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">src</td><td></td></tr>
+    <tr><td class="paramname">dst</td><td></td></tr>
+    <tr><td class="paramname">s</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>

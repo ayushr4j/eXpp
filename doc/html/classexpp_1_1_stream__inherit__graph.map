@@ -1,0 +1,20 @@
+<map id="expp::Stream" name="expp::Stream">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,132,105,159"/>
+<area shape="rect" id="Node000002" href="$classexpp_1_1_input_stream.html" title=" " alt="" coords="158,69,286,96"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,124,186,95,182,98,108,128"/>
+<area shape="rect" id="Node000006" href="$classexpp_1_1_output_stream.html" title=" " alt="" coords="153,132,291,159"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="120,143,155,144,150,146,121,148"/>
+<area shape="rect" id="Node000009" href="$classexpp_1_1file_1_1_file.html" title=" " alt="" coords="170,183,274,209"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="116,161,178,181,173,183,116,166"/>
+<area shape="rect" id="Node000003" href="$classexpp_1_1_bit_input_stream.html" title=" " alt="" coords="360,5,504,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="276,61,338,41,381,31,376,34,340,47,278,66"/>
+<area shape="rect" id="Node000004" href="$classexpp_1_1_i_o_stream.html" title=" " alt="" coords="375,107,488,133"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="301,94,377,109,372,110,301,99"/>
+<area shape="rect" id="Node000005" href="$classexpp_1_1_memory_input_stream.html" title=" " alt="" coords="344,56,519,83"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="301,75,346,74,341,76,302,80"/>
+<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="306,133,377,126,372,127,307,138"/>
+<area shape="rect" id="Node000007" href="$classexpp_1_1_bit_output_stream.html" title=" " alt="" coords="354,157,509,184"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="306,153,357,161,351,162,306,158"/>
+<area shape="rect" id="Node000008" href="$classexpp_1_1_memory_output_stream.html" title=" " alt="" coords="339,208,524,235"/>
+<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="277,162,292,168,340,194,375,208,370,207,338,198,290,173,277,167"/>
+</map>

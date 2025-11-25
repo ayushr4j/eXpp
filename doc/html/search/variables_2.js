@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['referencecount_0',['referenceCount',['../classexpp_1_1memory_1_1_allocator_1_1_allocation.html#aaab69cfe2e65f84ac415657be2126aee',1,'expp::memory::Allocator::Allocation']]]
+  ['size_0',['size',['../classexpp_1_1memory_1_1_memory.html#a8d98b28a91022b15b4ffbc34872f225e',1,'expp::memory::Memory']]]
 ];

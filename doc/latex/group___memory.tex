@@ -4,8 +4,16 @@
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{classexpp_1_1memory_1_1_memory}{expp\+::memory\+::\+Memory}}
-\begin{DoxyCompactList}\small\item\em It acts as a pointer to memory. It supports advanced memory operations such as extending, shrinking memory. splitting memory, inserting memory in between. this works by keeping list connected segments internally. and it automatically defragments them also. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classexpp_1_1memory_1_1_raw_memory}{expp\+::memory\+::\+Raw\+Memory}}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-\doxylink{group___memory}{Memory} class provides inteface to access memory. Subclasses of Memory is used for different kinds of memory. (Raw\+Memory, Allocated\+Memory, Garbage\+Collected\+Memory, File base Memory etc) \doxylink{classexpp_1_1_pointer}{Pointer} class is used to access Memory 
+Allocator \+: Allocates memory \doxylink{group___memory}{Memory} \+: Represents memory of given size with given alignment requirment. Subclasses of Memory is used for different kinds of memory. (Raw\+Memory, Allocated\+Memory, Garbage\+Collected\+Memory, File base Memory etc)~\newline
+Pointer \+: Helps access memory. It is contains pointer to Memory and a offset initially at 0. ~\newline
+Allocation\+: class Memory allocated through Allocator class. Raw\+Memory \+: Memory not allocated through Allocator 
+\begin{DoxyImageNoCaption}
+  \mbox{\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{dot_inline_dotgraph_1}}
+\end{DoxyImageNoCaption}
+ 

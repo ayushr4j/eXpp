@@ -1,0 +1,16 @@
+\doxysection{expp\+::Serializable Concept Reference}
+\hypertarget{conceptexpp_1_1_serializable}{}\label{conceptexpp_1_1_serializable}\index{expp::Serializable@{expp::Serializable}}
+\doxysubsection{Concept definition}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptexpp_1_1_serializable}{expp::Serializable}}\ =\ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ (T\&\ obj,\ \mbox{\hyperlink{classexpp_1_1_serializer}{Serializer}}*\ s)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\ obj.serialize(s)\ \};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ ||}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{requires}\ (T\&\ obj,\ Serializer*\ s)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\ serialize(s,\ \&obj)\ \};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}

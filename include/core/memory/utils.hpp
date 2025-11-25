@@ -3,6 +3,7 @@
 
 #include "core/memory/pointer.hpp"
 #include <cstdint>
+
 namespace expp {
 
     /**
@@ -22,11 +23,10 @@ namespace expp {
         * @param dst 
         * @param s 
         */
-        void copy(Pointer src, Pointer dst, size_t n){
-            for(int64_t i = n-1; i >= 0; i--){
-                dst[i] = src[i];
-            }
-        }
+        void copy(Pointer src, Pointer dst, size_t n);
+
+        Pointer allocate();
+        void deallocate(Pointer ptr);
     }
     
 
