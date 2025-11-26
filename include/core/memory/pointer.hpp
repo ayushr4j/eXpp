@@ -45,7 +45,8 @@ namespace expp {
                 Pointer operator+(size_t offset);
 
                 Pointer operator&(){ return *this; }    //prevent raw pointers of pointer
-
+                
+                Memory* operator*(){ return mem; }
         };
 
 

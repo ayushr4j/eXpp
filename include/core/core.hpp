@@ -1,4 +1,7 @@
+#ifndef _expp_core_
+#define _expp_core_
 
+#include "core/context/context.hpp"
 
 /**
      * \defgroup Core
@@ -19,3 +22,6 @@
      *  }
      *  \enddot
      */
+
+
+#endif

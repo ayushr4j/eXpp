@@ -33,7 +33,7 @@ target_sources(expp_base PUBLIC
     src/core/exception.cpp
 )
 
-add_library(memory STATIC)
+add_library(memory INTERFACE)
 target_sources(memory PUBLIC 
     src/core/memory/pointer.cpp
     src/core/memory/allocator.cpp
@@ -43,8 +43,14 @@ target_sources(memory PUBLIC
 add_executable(memory_test test/core/memory/memory.cpp)
 target_link_libraries(memory_test PRIVATE memory expp_base)
 
+add_library(context INTERFACE)
+target_sources(context PUBLIC
+    src/core/context/context.cpp
+)
+target_link_libraries(context INTERFACE memory)
 
-
+add_executable(context_test test/core/context/context.cpp)
+target_link_libraries(context_test PRIVATE context)
 
 
 if(false)

@@ -20,6 +20,9 @@ namespace expp {
         protected:
             std::string msg;
         public:
+            Exception(){}
+            Exception(const char* msg) : msg(msg){}
+
             virtual void setMessage(std::string msg){ this->msg = msg; }
             virtual std::string getMessage(){ return msg; }
 

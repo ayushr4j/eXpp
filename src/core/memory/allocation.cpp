@@ -8,7 +8,7 @@
 using namespace expp::memory;
 
 
-Allocation::Allocation(Allocator *allocator){
+Allocation::Allocation(Allocator *allocator) : allocator(allocator){
     
 };
 
@@ -26,10 +26,14 @@ Allocation::~Allocation(){
     allocator->deallocate(this);
 }
 
-void Allocation::pointerCreated(Pointer *pointer){ refCount++; }
-void Allocation::pointerDestroyed(Pointer *pointer) { 
+void Allocation::pointerCreated( [[maybe_unused]] Pointer *pointer){ refCount++; }
+void Allocation::pointerDestroyed( [[maybe_unused]] Pointer *pointer) { 
     refCount--; 
     allocator->removeAllocation(this);
+}
+
+void Allocation::deallocate(){
+    allocator->deallocate(this);             
 }
 
 

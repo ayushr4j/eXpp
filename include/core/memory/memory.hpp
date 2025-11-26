@@ -50,8 +50,8 @@ namespace expp{
                 
                 friend class Pointer;
 
-                virtual void pointerCreated(Pointer* pointer){};
-                virtual void pointerDestroyed(Pointer* pointer){};
+                virtual void pointerCreated( [[maybe_unused]] Pointer* pointer){};
+                virtual void pointerDestroyed( [[maybe_unused]] Pointer* pointer){};
 
             public:
                 
@@ -61,7 +61,7 @@ namespace expp{
                 /// @param i index starts at 0. supports negative indexing. -1 = size - 1, -2 size - 2, so on
                 /// @return 
                 
-                uint8_t& get(int64_t i){ return get(i + (i < 0)*(size-1+2*i));  }
+                uint8_t& get(int64_t i){ return get((size_t)(i + (i < 0)*(size-1+2*i)));  }
                 virtual uint8_t& get(size_t i) = 0;
 
                 virtual size_t getSize(){ return size; }

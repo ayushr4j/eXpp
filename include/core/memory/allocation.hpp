@@ -45,6 +45,8 @@ namespace expp
 
                 Pointer operator&();
 
+                virtual void deallocate();
+
         };
 
 
