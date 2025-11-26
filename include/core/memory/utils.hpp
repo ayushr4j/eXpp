@@ -25,8 +25,10 @@ namespace expp {
         */
         void copy(Pointer src, Pointer dst, size_t n);
 
-        Pointer allocate();
+        Pointer allocate(size_t s, size_t alignment = 1);
         void deallocate(Pointer ptr);
+
+        
     }
     
 

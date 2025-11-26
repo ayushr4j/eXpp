@@ -9,19 +9,30 @@ using namespace expp::memory;
 
 
 Allocation::Allocation(Allocator *allocator){
-                    this->allocator = allocator;
-                    this->next = allocator->start;
-                    allocator->start = this;
-                };
+    
+};
 
-uint8_t& Allocation::operator[](size_t i){
+uint8_t& Allocation::get(size_t i){
     if(i >= size) throw OutOfBound(i,size);
     return data[i];
 }
 
 Allocation::~Allocation(){
+
+    if(refCount > 0){
+        
+    }
+
     allocator->deallocate(this);
 }
+
+void Allocation::pointerCreated(Pointer *pointer){ refCount++; }
+void Allocation::pointerDestroyed(Pointer *pointer) { 
+    refCount--; 
+    allocator->removeAllocation(this);
+}
+
+
 
 /*Memory Allocator::Allocation::getReference(size_t offset, size_t size){
     Memory memory;

@@ -43,7 +43,7 @@ namespace expp {
         t* ptr = ptr->getNext();
         while(ptr != nullptr && ptr->getNext() != nullptr){
             ptr = ptr->getNext();
-            break;
+            
         }
         return ptr;
     }
@@ -53,7 +53,7 @@ namespace expp {
         t* ptr = ptr->getNext();
         while(i < index && ptr != nullptr && ptr->getNext() != nullptr){
             ptr = ptr->getNext();
-            break;
+            
         }
         if(i != index){
             return nullptr;
@@ -66,7 +66,7 @@ namespace expp {
         t* ptr = ptr->getNext();
         while(ptr != nullptr && ptr->getNext() != nullptr && ptr->getNext() != item){
             ptr = ptr->getNext();
-            break;
+           
         }
         if(ptr->getNext() == item){
             return ptr;

@@ -11,7 +11,7 @@ class TestAllocation : public expp::memory::Memory{
 public:
     TestAllocation(){};
     uint8_t a;
-    uint8_t& operator[](size_t i){ return  a;}
+    uint8_t& get(size_t i){ return  a;}
 };
 
 class A{
@@ -50,8 +50,8 @@ int main(){
     ptr->test(a);
     
 
-    expp::memory::Allocator *allocator = new expp::memory::SimpleAllocator();
-    expp::memory::Memory* mem =  allocator->allocate(1024,1);
+    expp::memory::Allocator *allocator = new expp::memory::Allocator();
+    expp::memory::Memory* mem = allocator->allocate(1024,1);
     expp::Pointer memory = mem;
 
     try{
@@ -67,7 +67,7 @@ int main(){
 
     expp::memory::Memory* newMem = new TestAllocation();
 
-    allocator->deallocate(mem);
-    allocator->deallocate(newMem);
+    //allocator->deallocate(mem);
+    //allocator->deallocate(newMem);
 
 }

@@ -31,23 +31,24 @@ namespace expp {
                         raw = {obj};
                     }
 
-                    mem->pointerCreated();
+                    mem->pointerCreated(this);
                 };
                 ~Pointer(){
-                    mem->pointerDestroyed();
+                    mem->pointerDestroyed(this);
                 }
                 
                 Pointer(void* ptr, size_t s);
 
                 Pointer(Memory* mem);
 
-                uint8_t& operator[](int64_t s){ return mem->operator[](s); };
+                uint8_t& operator[](int64_t s){ return mem->get(s); };
                 Pointer operator+(size_t offset);
 
                 Pointer operator&(){ return *this; }    //prevent raw pointers of pointer
 
-                
         };
+
+
     }
 
     using Pointer = memory::Pointer;

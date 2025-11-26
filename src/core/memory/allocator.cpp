@@ -17,15 +17,38 @@ Allocation* Allocator::allocate(size_t size, size_t alignment){
     alloc->alignment = alignment;
     alloc->data = data;
 
+    alloc->nextAllocation = allocations;
+    allocations = alloc;
+
     return alloc;
 }
 
-void Allocator::deallocate(Allocation* alloc){
+void Allocator::removeAllocation(Allocation* alloc) const {
+    if(allocations == alloc){
+        allocations = alloc->nextAllocation;
+        alloc->nextAllocation = nullptr;
+    }else{
+        Allocation* ptr = alloc;
+        while(ptr->nextAllocation != nullptr && ptr->nextAllocation != alloc){
+            ptr = alloc->nextAllocation;
+        }
+        if(ptr->nextAllocation == alloc){
+            ptr->nextAllocation = alloc->nextAllocation;
+            alloc->nextAllocation = nullptr;
+        }
+    }
+
+    delete alloc;
+}
+
+void Allocator::deallocate(Allocation* alloc) const{
     
     alloc->size = 0;
     alloc->alignment = 0;
     delete [] alloc->data;
     alloc->data = nullptr;
+
+    if(alloc->refCount == 0) removeAllocation(alloc);
 }
 
 

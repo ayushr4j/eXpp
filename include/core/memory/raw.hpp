@@ -35,7 +35,7 @@ namespace expp {
                     size = s;
                 }
 
-                uint8_t& operator[](size_t index){
+                uint8_t& get(size_t index){
                     return ptr[index];
                 }
                 

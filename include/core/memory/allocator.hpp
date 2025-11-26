@@ -16,13 +16,15 @@ namespace expp{
         class Allocator{
             protected:
 
-                Allocation allocations;
+                mutable Allocation* allocations;
                 
+                virtual void removeAllocation(Allocation* allocation) const;
+
                 friend class Allocation;
             public:
                 
-                virtual Allocation* allocate(size_t size, size_t alignment = 1) = 0;
-                virtual void deallocate(Allocation* mem) = 0;
+                virtual Allocation* allocate(size_t size, size_t alignment = 1);
+                virtual void deallocate(Allocation* mem) const;
 
         };
 
