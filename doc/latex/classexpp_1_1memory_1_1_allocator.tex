@@ -11,21 +11,34 @@
 
 
 
-Inheritance diagram for expp\+::memory\+::Allocator\+:\nopagebreak
+Collaboration diagram for expp\+::memory\+::Allocator\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=233pt]{classexpp_1_1memory_1_1_allocator__inherit__graph}
+\includegraphics[width=350pt]{classexpp_1_1memory_1_1_allocator__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classexpp_1_1memory_1_1_allocator_aa5bb0a33dfaee5a4a382ccf59d19ea71}\label{classexpp_1_1memory_1_1_allocator_aa5bb0a33dfaee5a4a382ccf59d19ea71} 
-virtual \mbox{\hyperlink{classexpp_1_1memory_1_1_memory}{Memory}} \texorpdfstring{$\ast$}{*} {\bfseries allocate} (size\+\_\+t size, size\+\_\+t alignment=1)=0
+\Hypertarget{classexpp_1_1memory_1_1_allocator_a7dd9b2ac93c67847f81d1592d20a2d76}\label{classexpp_1_1memory_1_1_allocator_a7dd9b2ac93c67847f81d1592d20a2d76} 
+virtual \mbox{\hyperlink{classexpp_1_1memory_1_1_allocation}{Allocation}} \texorpdfstring{$\ast$}{*} {\bfseries allocate} (size\+\_\+t size, size\+\_\+t alignment=1)=0
 \item 
-\Hypertarget{classexpp_1_1memory_1_1_allocator_a7e7f5947cda10dc826aef09f86559772}\label{classexpp_1_1memory_1_1_allocator_a7e7f5947cda10dc826aef09f86559772} 
-virtual void {\bfseries deallocate} (\mbox{\hyperlink{classexpp_1_1memory_1_1_memory}{Memory}} \texorpdfstring{$\ast$}{*}mem)=0
+\Hypertarget{classexpp_1_1memory_1_1_allocator_a08dc1e1a310544f25336043db345db26}\label{classexpp_1_1memory_1_1_allocator_a08dc1e1a310544f25336043db345db26} 
+virtual void {\bfseries deallocate} (\mbox{\hyperlink{classexpp_1_1memory_1_1_allocation}{Allocation}} \texorpdfstring{$\ast$}{*}mem)=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classexpp_1_1memory_1_1_allocator_a516e2e9fb5f55a2a9aa16d063aad587c}\label{classexpp_1_1memory_1_1_allocator_a516e2e9fb5f55a2a9aa16d063aad587c} 
+\mbox{\hyperlink{classexpp_1_1memory_1_1_allocation}{Allocation}} {\bfseries allocations}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classexpp_1_1memory_1_1_allocator_a90f642f290db91885e04d6fc295d684c}\label{classexpp_1_1memory_1_1_allocator_a90f642f290db91885e04d6fc295d684c} 
+class {\bfseries Allocation}
 \end{DoxyCompactItemize}
 
 
@@ -36,6 +49,7 @@ virtual void {\bfseries deallocate} (\mbox{\hyperlink{classexpp_1_1memory_1_1_me
 \item[\mbox{\hyperlink{todo__todo000001}{Todo}}]seperate allocation header and actual allocation (for ease of changing memory) \end{DoxyRefDesc}
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/core/memory/allocator.\+hpp\end{DoxyCompactItemize}
+include/core/memory/allocator.\+hpp\item 
+src/core/memory/allocator.\+cpp\end{DoxyCompactItemize}

@@ -1,4 +1,4 @@
-#include "core/ds/list.hpp"
+#include "core/ds/intrusive_list.hpp"
 #include "iostream"
 
 class TestList : public expp::IntrusiveList<TestList>{
@@ -7,7 +7,16 @@ class TestList : public expp::IntrusiveList<TestList>{
 
 };
 
+template<typename t>
+class Test{
+    t a;
+};
+
 int main(){
+    
+    Test<int> d;
+    Test<int*> e;
+    
     TestList list;
     TestList a; a.i = 10;
     list.append(&a);

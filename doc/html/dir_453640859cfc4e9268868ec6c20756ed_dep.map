@@ -1,6 +1,7 @@
 <map id="test/core" name="test/core">
-<area shape="rect" id="node2" href="dir_dca056fcc67208320234789efd741e65.html" title="memory" alt="" coords="107,64,176,91"/>
-<area shape="rect" id="node3" href="dir_3e7c708b5fce53d143e8f6d48d9742c5.html" title="stream" alt="" coords="200,64,261,91"/>
-<area shape="rect" id="clust2" href="dir_453640859cfc4e9268868ec6c20756ed.html" alt="" coords="27,53,272,101"/>
-<area shape="rect" id="clust1" href="dir_13e138d54eb8818da29c3992edef070a.html" title="test" alt="" coords="16,16,283,112"/>
+<area shape="rect" id="node2" href="dir_99f400b8002e322cd25b0cc541593f1c.html" title="ds" alt="" coords="107,64,146,91"/>
+<area shape="rect" id="node3" href="dir_dca056fcc67208320234789efd741e65.html" title="memory" alt="" coords="170,64,238,91"/>
+<area shape="rect" id="node4" href="dir_3e7c708b5fce53d143e8f6d48d9742c5.html" title="stream" alt="" coords="263,64,324,91"/>
+<area shape="rect" id="clust2" href="dir_453640859cfc4e9268868ec6c20756ed.html" alt="" coords="27,53,335,101"/>
+<area shape="rect" id="clust1" href="dir_13e138d54eb8818da29c3992edef070a.html" title="test" alt="" coords="16,16,345,112"/>
 </map>

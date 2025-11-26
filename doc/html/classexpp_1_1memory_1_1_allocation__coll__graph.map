@@ -1,7 +1,10 @@
 <map id="expp::memory::Allocation" name="expp::memory::Allocation">
-<area shape="rect" id="Node000001" title="this is reperesents raw memory allocation and it also counts number of references to it and automatic..." alt="" coords="92,104,262,131"/>
+<area shape="rect" id="Node000001" title="this is reperesents raw memory allocation and it also counts number of references to it and automatic..." alt="" coords="88,81,258,108"/>
+<area shape="rect" id="Node000004" href="$classexpp_1_1memory_1_1_allocator.html" title="Base class for Allocator (allocates memory and manages it)" alt="" coords="91,180,255,207"/>
+<area shape="poly" id="edge4_Node000004_Node000001" title=" " alt="" coords="133,115,121,133,118,144,121,155,132,168,146,180,141,179,128,171,117,157,113,144,117,131,129,119"/>
 <area shape="rect" id="Node000002" href="$classexpp_1_1memory_1_1_memory.html" title=" " alt="" coords="5,5,165,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,41,168,103,163,104,106,46"/>
-<area shape="rect" id="Node000003" href="$classexpp_1_1memory_1_1_allocator.html" title="Base class for Allocator (allocates memory and manages it)" alt="" coords="189,5,352,32"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="250,43,190,106,187,102,245,44"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,39,161,80,156,82,111,45"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="188,5,336,32"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="238,40,190,83,186,79,233,44"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="188,165,192,155,194,144,192,133,182,111,184,106,197,131,199,144,197,157,192,168"/>
 </map>

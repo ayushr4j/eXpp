@@ -3,10 +3,9 @@ var hierarchy =
     [ "A", "class_a.html", [
       [ "B", "class_b.html", null ]
     ] ],
-    [ "expp::memory::Allocator", "classexpp_1_1memory_1_1_allocator.html", [
-      [ "expp::memory::SimpleAllocator", "classexpp_1_1memory_1_1_simple_allocator.html", null ]
-    ] ],
+    [ "expp::memory::Allocator", "classexpp_1_1memory_1_1_allocator.html", null ],
     [ "expp::Architecture", "classexpp_1_1_architecture.html", null ],
+    [ "expp::BackwardIterator", "classexpp_1_1_backward_iterator.html", null ],
     [ "Base", "class_base.html", [
       [ "Derived", "class_derived.html", null ]
     ] ],
@@ -24,6 +23,20 @@ var hierarchy =
       [ "expp::Seekable", "classexpp_1_1_seekable.html", [
         [ "expp::file::File", "classexpp_1_1file_1_1_file.html", null ]
       ] ]
+    ] ],
+    [ "expp::Iterator", "classexpp_1_1_iterator.html", [
+      [ "expp::ListIterator", "classexpp_1_1_list_iterator.html", null ]
+    ] ],
+    [ "expp::ListInteface< t, doubleLinked, circular >", "classexpp_1_1_list_inteface.html", [
+      [ "expp::IntrusiveList< t >", "classexpp_1_1_intrusive_list.html", null ]
+    ] ],
+    [ "expp::ListInteface< TestList >", "classexpp_1_1_list_inteface.html", [
+      [ "expp::IntrusiveList< TestList >", "classexpp_1_1_intrusive_list.html", [
+        [ "TestList", "class_test_list.html", null ]
+      ] ]
+    ] ],
+    [ "ListItem", null, [
+      [ "expp::memory::Allocation", "classexpp_1_1memory_1_1_allocation.html", null ]
     ] ],
     [ "expp::log::Logger", "classexpp_1_1log_1_1_logger.html", null ],
     [ "expp::MappedType::Map", "classexpp_1_1_mapped_type_1_1_map.html", [

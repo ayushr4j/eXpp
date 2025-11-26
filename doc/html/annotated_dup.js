@@ -20,8 +20,7 @@ var annotated_dup =
         [ "Allocator", "classexpp_1_1memory_1_1_allocator.html", null ],
         [ "Memory", "classexpp_1_1memory_1_1_memory.html", "classexpp_1_1memory_1_1_memory" ],
         [ "Pointer", "classexpp_1_1memory_1_1_pointer.html", null ],
-        [ "RawMemory", "classexpp_1_1memory_1_1_raw_memory.html", null ],
-        [ "SimpleAllocator", "classexpp_1_1memory_1_1_simple_allocator.html", null ]
+        [ "RawMemory", "classexpp_1_1memory_1_1_raw_memory.html", null ]
       ] ],
       [ "sync", null, [
         [ "Mutex", "classexpp_1_1sync_1_1_mutex.html", "classexpp_1_1sync_1_1_mutex" ],
@@ -32,6 +31,7 @@ var annotated_dup =
         [ "Thread", "classexpp_1_1thread_1_1_thread.html", null ]
       ] ],
       [ "Architecture", "classexpp_1_1_architecture.html", null ],
+      [ "BackwardIterator", "classexpp_1_1_backward_iterator.html", null ],
       [ "BinarySerializer", "classexpp_1_1_binary_serializer.html", null ],
       [ "BitInputStream", "classexpp_1_1_bit_input_stream.html", null ],
       [ "BitOutputStream", "classexpp_1_1_bit_output_stream.html", null ],
@@ -45,8 +45,12 @@ var annotated_dup =
       [ "Float", "classexpp_1_1_float.html", null ],
       [ "InputStream", "classexpp_1_1_input_stream.html", null ],
       [ "Int", "classexpp_1_1_int.html", null ],
+      [ "IntrusiveList", "classexpp_1_1_intrusive_list.html", null ],
       [ "IOStream", "classexpp_1_1_i_o_stream.html", null ],
       [ "ISeekable", "classexpp_1_1_i_seekable.html", null ],
+      [ "Iterator", "classexpp_1_1_iterator.html", null ],
+      [ "ListInteface", "classexpp_1_1_list_inteface.html", null ],
+      [ "ListIterator", "classexpp_1_1_list_iterator.html", null ],
       [ "MappedType", "classexpp_1_1_mapped_type.html", "classexpp_1_1_mapped_type" ],
       [ "MemoryInputStream", "classexpp_1_1_memory_input_stream.html", null ],
       [ "MemoryOutputStream", "classexpp_1_1_memory_output_stream.html", null ],
@@ -65,5 +69,6 @@ var annotated_dup =
     [ "B", "class_b.html", null ],
     [ "Base", "class_base.html", null ],
     [ "Derived", "class_derived.html", null ],
-    [ "TestAllocation", "class_test_allocation.html", null ]
+    [ "TestAllocation", "class_test_allocation.html", null ],
+    [ "TestList", "class_test_list.html", null ]
 ];

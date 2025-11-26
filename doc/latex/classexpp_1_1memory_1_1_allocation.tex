@@ -11,20 +11,22 @@ this is reperesents raw memory allocation and it also counts number of reference
 
 
 
-Inheritance diagram for expp\+::memory\+::Allocation\+:\nopagebreak
+Inheritance diagram for expp\+::memory\+::Allocation\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=207pt]{classexpp_1_1memory_1_1_allocation__inherit__graph}
+\includegraphics[width=328pt]{classexpp_1_1memory_1_1_allocation__inherit__graph}
 \end{center}
 \end{figure}
 
 
-Collaboration diagram for expp\+::memory\+::Allocation\+:\nopagebreak
+Collaboration diagram for expp\+::memory\+::Allocation\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=340pt]{classexpp_1_1memory_1_1_allocation__coll__graph}
+\includegraphics[width=328pt]{classexpp_1_1memory_1_1_allocation__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
@@ -44,11 +46,24 @@ virtual size\+\_\+t {\bfseries get\+Size} ()
 \item 
 virtual size\+\_\+t {\bfseries get\+Alignment} ()
 \end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classexpp_1_1memory_1_1_allocation_a09fb1add8794ad03ef5de9d2e104f557}\label{classexpp_1_1memory_1_1_allocation_a09fb1add8794ad03ef5de9d2e104f557} 
+{\bfseries Allocation} (\mbox{\hyperlink{classexpp_1_1memory_1_1_allocator}{Allocator}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classexpp_1_1memory_1_1_allocation_aa23caf9cb1710a41bc3c9cd2fbd69441}{allocator}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classexpp_1_1memory_1_1_memory}{expp\+::memory\+::\+Memory}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries pointer\+Created} ()
+\item 
+virtual void {\bfseries pointer\+Destroyed} ()
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classexpp_1_1memory_1_1_allocation_a4c76f235a6b9fa9cba0e323af7ad0d01}\label{classexpp_1_1memory_1_1_allocation_a4c76f235a6b9fa9cba0e323af7ad0d01} 
-\mbox{\hyperlink{classexpp_1_1memory_1_1_allocator}{Allocator}} \texorpdfstring{$\ast$}{*} {\bfseries alloc} = nullptr
+\Hypertarget{classexpp_1_1memory_1_1_allocation_aa23caf9cb1710a41bc3c9cd2fbd69441}\label{classexpp_1_1memory_1_1_allocation_aa23caf9cb1710a41bc3c9cd2fbd69441} 
+\mbox{\hyperlink{classexpp_1_1memory_1_1_allocator}{Allocator}} \texorpdfstring{$\ast$}{*} {\bfseries allocator} = nullptr
 \begin{DoxyCompactList}\small\item\em allocator that was used to allocate this \doxylink{classexpp_1_1memory_1_1_allocation}{Allocation} \end{DoxyCompactList}\item 
 \Hypertarget{classexpp_1_1memory_1_1_allocation_a9c8ea97c37fa83f604c60a970eb9c7d5}\label{classexpp_1_1memory_1_1_allocation_a9c8ea97c37fa83f604c60a970eb9c7d5} 
 uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries data}
@@ -66,16 +81,8 @@ size\+\_\+t {\bfseries alignment} = 1
 \Hypertarget{classexpp_1_1memory_1_1_allocation_a2743bf0294172086e9384cd82f12c87a}\label{classexpp_1_1memory_1_1_allocation_a2743bf0294172086e9384cd82f12c87a} 
 class {\bfseries Memory}
 \item 
-\Hypertarget{classexpp_1_1memory_1_1_allocation_ac0f835aff11cf44442fede2afc9aaed1}\label{classexpp_1_1memory_1_1_allocation_ac0f835aff11cf44442fede2afc9aaed1} 
-class {\bfseries Simple\+Allocator}
-\end{DoxyCompactItemize}
-\doxysubsubsection*{Additional Inherited Members}
-\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classexpp_1_1memory_1_1_memory}{expp\+::memory\+::\+Memory}}}
-\begin{DoxyCompactItemize}
-\item 
-virtual void {\bfseries pointer\+Created} ()
-\item 
-virtual void {\bfseries pointer\+Destroyed} ()
+\Hypertarget{classexpp_1_1memory_1_1_allocation_a4f7f62a2e2ba965a2aec21613708b95b}\label{classexpp_1_1memory_1_1_allocation_a4f7f62a2e2ba965a2aec21613708b95b} 
+class {\bfseries Allocator}
 \end{DoxyCompactItemize}
 
 

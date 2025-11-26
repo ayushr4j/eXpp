@@ -1,0 +1,9 @@
+\doxysection{Core }
+\hypertarget{group___core}{}\label{group___core}\index{Core@{Core}}
+Allocator \+: Allocates memory and keeps track of all allocation. \doxylink{group___memory}{Memory} \+: Represents memory of given size with given alignment requirment. Subclasses of Memory is used for different kinds of memory. (Raw\+Memory, Allocated\+Memory, Garbage\+Collected\+Memory, File base Memory etc)~\newline
+Pointer \+: Helps access memory. It is contains pointer to Memory and a offset initially at 0. ~\newline
+Allocation\+: class Memory allocated through Allocator class. Raw\+Memory \+: Memory not allocated through Allocator 
+\begin{DoxyImageNoCaption}
+  \mbox{\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{dot_inline_dotgraph_1}}
+\end{DoxyImageNoCaption}
+ 

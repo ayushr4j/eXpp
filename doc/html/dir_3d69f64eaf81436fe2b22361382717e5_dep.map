@@ -1,12 +1,13 @@
 <map id="include/core" name="include/core">
 <area shape="rect" id="node2" href="dir_3ab6251c15bb842426f0601bc954a443.html" title="coroutine" alt="" coords="107,64,181,91"/>
-<area shape="rect" id="node3" href="dir_ebc4183974da10596d83fbd9697e69e1.html" title="log" alt="" coords="205,64,243,91"/>
-<area shape="rect" id="node4" href="dir_8a8c3d5caedc133fb4b608ab1d86ea7e.html" title="memory" alt="" coords="267,64,336,91"/>
-<area shape="rect" id="node5" href="dir_d699c8250279a185c8cb5ab1e7a772e4.html" title="stream" alt="" coords="360,64,421,91"/>
-<area shape="rect" id="node6" href="dir_2f78408a9a75fb207ab9c3b406f12177.html" title="system" alt="" coords="445,64,510,91"/>
-<area shape="rect" id="node7" href="dir_06f5d8edfd2049c1c4cf8f94611d8f91.html" title="thread" alt="" coords="534,64,591,91"/>
-<area shape="rect" id="node8" href="dir_1e6058d551dc1b52bca60c030126f590.html" title="type" alt="" coords="616,64,662,91"/>
-<area shape="rect" id="node9" href="dir_9e3c081da26bdde9c5aec25c2fcc2ede.html" title="utils" alt="" coords="685,64,731,91"/>
-<area shape="rect" id="clust2" href="dir_3d69f64eaf81436fe2b22361382717e5.html" alt="" coords="27,53,741,101"/>
-<area shape="rect" id="clust1" href="dir_d44c64559bbebec7f509842c48db8b23.html" title="include" alt="" coords="16,16,752,112"/>
+<area shape="rect" id="node3" href="dir_1f9312bab74a6ff1dae53bbd12e9f5d2.html" title="ds" alt="" coords="205,64,243,91"/>
+<area shape="rect" id="node4" href="dir_ebc4183974da10596d83fbd9697e69e1.html" title="log" alt="" coords="267,64,306,91"/>
+<area shape="rect" id="node5" href="dir_8a8c3d5caedc133fb4b608ab1d86ea7e.html" title="memory" alt="" coords="330,64,398,91"/>
+<area shape="rect" id="node6" href="dir_d699c8250279a185c8cb5ab1e7a772e4.html" title="stream" alt="" coords="423,64,484,91"/>
+<area shape="rect" id="node7" href="dir_2f78408a9a75fb207ab9c3b406f12177.html" title="system" alt="" coords="508,64,572,91"/>
+<area shape="rect" id="node8" href="dir_06f5d8edfd2049c1c4cf8f94611d8f91.html" title="thread" alt="" coords="597,64,654,91"/>
+<area shape="rect" id="node9" href="dir_1e6058d551dc1b52bca60c030126f590.html" title="type" alt="" coords="678,64,724,91"/>
+<area shape="rect" id="node10" href="dir_9e3c081da26bdde9c5aec25c2fcc2ede.html" title="utils" alt="" coords="748,64,793,91"/>
+<area shape="rect" id="clust2" href="dir_3d69f64eaf81436fe2b22361382717e5.html" alt="" coords="27,53,804,101"/>
+<area shape="rect" id="clust1" href="dir_d44c64559bbebec7f509842c48db8b23.html" title="include" alt="" coords="16,16,815,112"/>
 </map>

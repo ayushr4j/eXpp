@@ -1,0 +1,149 @@
+\doxysection{intrusive\+\_\+list.\+hpp}
+\hypertarget{intrusive__list_8hpp_source}{}\label{intrusive__list_8hpp_source}\index{include/core/ds/intrusive\_list.hpp@{include/core/ds/intrusive\_list.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_expp\_ds\_intrusive\_list\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_expp\_ds\_intrusive\_list\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}./list.hpp"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }expp\ \{}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ t>}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classexpp_1_1_intrusive_list}{IntrusiveList}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classexpp_1_1_list_inteface}{ListInteface}}<t>\{}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ t*\ nextListItem\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ t*\ getNext()\{\ \textcolor{keywordflow}{return}\ nextListItem;\ \}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ removeItem(t*\ item);}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ t*\ itemAt(\textcolor{keywordtype}{size\_t}\ index);}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ t*\ getLast();}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ t*\ getFirst();}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ t*\ itemBefore(t*\ item);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ append(t*\ item);}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ prepend(t*\ item);}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ insertAt(\textcolor{keywordtype}{size\_t}\ index,\ t*\ item);}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ insertAfter(t*\ existingItem,\ t*\ newItem);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ insertBefore(t*\ existingItem,\ t*\ newItem);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ remove(t*\ item);}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ remove(\textcolor{keywordtype}{size\_t}\ index);}
+\DoxyCodeLine{00033\ \ \ \ \ \};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{comment}{//impl}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ t>}
+\DoxyCodeLine{00038\ \ \ \ \ t*\ IntrusiveList<t>::getFirst()\{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>getNext();}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ t>}
+\DoxyCodeLine{00042\ \ \ \ \ t*\ IntrusiveList<t>::getLast()\{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ t*\ ptr\ =\ ptr-\/>getNext();}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(ptr\ !=\ \textcolor{keyword}{nullptr}\ \&\&\ ptr-\/>getNext()\ !=\ \textcolor{keyword}{nullptr})\{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ ptr\ =\ ptr-\/>getNext();}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ptr;}
+\DoxyCodeLine{00049\ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ t>}
+\DoxyCodeLine{00051\ \ \ \ \ t*\ IntrusiveList<t>::itemAt(\textcolor{keywordtype}{size\_t}\ index)\{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ i\ =\ 0;}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ t*\ ptr\ =\ ptr-\/>getNext();}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(i\ <\ index\ \&\&\ ptr\ !=\ nullptr\ \&\&\ ptr-\/>getNext()\ !=\ \textcolor{keyword}{nullptr})\{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ ptr\ =\ ptr-\/>getNext();}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i\ !=\ index)\{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ptr;}
+\DoxyCodeLine{00062\ \ \ \ \ \};}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ t>}
+\DoxyCodeLine{00064\ \ \ \ \ t*\ IntrusiveList<t>::itemBefore(t*\ item)\{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ i\ =\ 0;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ t*\ ptr\ =\ ptr-\/>getNext();}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(ptr\ !=\ \textcolor{keyword}{nullptr}\ \&\&\ ptr-\/>getNext()\ !=\ \textcolor{keyword}{nullptr}\ \&\&\ ptr-\/>getNext()\ !=\ item)\{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ ptr\ =\ ptr-\/>getNext();}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(ptr-\/>getNext()\ ==\ item)\{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ptr;}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00075\ \ \ \ \ \};}
+\DoxyCodeLine{00076\ \ \ \ \ }
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ t>}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ IntrusiveList<t>::append(t*\ item)\{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ t*\ ptr\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(ptr-\/>nextListItem\ !=\ \textcolor{keyword}{nullptr})\{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ ptr\ =\ ptr-\/>nextListItem;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ ptr-\/>nextListItem\ =\ item;}
+\DoxyCodeLine{00085\ \ \ \ \ \};\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ t>}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{void}\ IntrusiveList<t>::prepend(t*\ item)\{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ item-\/>nextListItem\ =\ this-\/>nextListItem;}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ this-\/>nextListItem\ =\ item;}
+\DoxyCodeLine{00090\ \ \ \ \ \}}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ t>}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{void}\ IntrusiveList<t>::insertAt(\textcolor{keywordtype}{size\_t}\ index,\ t*\ item)\{}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \}}
+\DoxyCodeLine{00095\ \ \ \ \ }
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ t>}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ IntrusiveList<t>::removeItem(t*\ item)\{}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ t*\ next\ =\ item-\/>getNext();}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ item-\/>nextListItem\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(getNext()\ ==\ item)\{\ \ \textcolor{comment}{//\ if\ first\ item\ is\ match}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ nextListItem\ =\ next;}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ t*\ before\ =\ itemBefore(*item);}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(before\ !=\ \textcolor{keyword}{nullptr})\{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ before-\/>nextListItem\ =\ next;}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00110\ \ \ \ \ \}}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ t>}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{void}\ IntrusiveList<t>::remove(\textcolor{keywordtype}{size\_t}\ index)\{}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(index\ ==\ 0)\{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(nextListItem\ ==\ \textcolor{keyword}{nullptr})\{\ \textcolor{keywordflow}{return};\ \}\ \ \textcolor{comment}{//list\ contains\ no\ element}}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ t*\ next\ =\ nextListItem;}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ nextListItem\ =\ nextListItem-\/>nextListItem;}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ next-\/>nextListItem\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ t*\ item\ =\ itemAt(index-\/1);}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(item\ !=\ \textcolor{keyword}{nullptr})\{}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ t*\ toRemove\ =\ item-\/>nextListItem;}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(toRemove\ ==\ \textcolor{keyword}{nullptr})\{\ }
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};\ \textcolor{comment}{//\ nothing\ to\ remove;}}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ t*\ next\ =\ toRemove-\/>nextListItem;}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ item-\/>nextListItem\ =\ next;}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ toRemove-\/>nextListItem\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \ \ \};}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \}}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

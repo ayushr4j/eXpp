@@ -101,9 +101,11 @@ Inheritance diagram for expp::memory::Allocation:</div>
 <div class="dyncontent">
 <div class="center"><img src="classexpp_1_1memory_1_1_allocation__inherit__graph.png" border="0" usemap="#aexpp_1_1memory_1_1_allocation_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
 <map name="aexpp_1_1memory_1_1_allocation_inherit__map" id="aexpp_1_1memory_1_1_allocation_inherit__map">
-<area shape="rect" title="this is reperesents raw memory allocation and it also counts number of references to it and automatic..." alt="" coords="5,80,175,107"/>
-<area shape="rect" href="classexpp_1_1memory_1_1_memory.html" title=" " alt="" coords="10,5,170,32"/>
-<area shape="poly" title=" " alt="" coords="92,46,92,81,88,79,88,50"/>
+<area shape="rect" title="this is reperesents raw memory allocation and it also counts number of references to it and automatic..." alt="" coords="88,80,258,107"/>
+<area shape="rect" href="classexpp_1_1memory_1_1_memory.html" title=" " alt="" coords="5,5,165,32"/>
+<area shape="poly" title=" " alt="" coords="113,40,160,79,155,80,111,45"/>
+<area shape="rect" title=" " alt="" coords="188,5,336,32"/>
+<area shape="poly" title=" " alt="" coords="237,41,190,82,187,77,232,43"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -111,11 +113,14 @@ Collaboration diagram for expp::memory::Allocation:</div>
 <div class="dyncontent">
 <div class="center"><img src="classexpp_1_1memory_1_1_allocation__coll__graph.png" border="0" usemap="#aexpp_1_1memory_1_1_allocation_coll__map" loading="lazy" alt="Collaboration graph"/></div>
 <map name="aexpp_1_1memory_1_1_allocation_coll__map" id="aexpp_1_1memory_1_1_allocation_coll__map">
-<area shape="rect" title="this is reperesents raw memory allocation and it also counts number of references to it and automatic..." alt="" coords="92,104,262,131"/>
+<area shape="rect" title="this is reperesents raw memory allocation and it also counts number of references to it and automatic..." alt="" coords="88,81,258,108"/>
+<area shape="rect" href="classexpp_1_1memory_1_1_allocator.html" title="Base class for Allocator (allocates memory and manages it)" alt="" coords="91,180,255,207"/>
+<area shape="poly" title=" " alt="" coords="133,115,121,133,118,144,121,155,132,168,146,180,141,179,128,171,117,157,113,144,117,131,129,119"/>
 <area shape="rect" href="classexpp_1_1memory_1_1_memory.html" title=" " alt="" coords="5,5,165,32"/>
-<area shape="poly" title=" " alt="" coords="109,41,168,103,163,104,106,46"/>
-<area shape="rect" href="classexpp_1_1memory_1_1_allocator.html" title="Base class for Allocator (allocates memory and manages it)" alt="" coords="189,5,352,32"/>
-<area shape="poly" title=" " alt="" coords="250,43,190,106,187,102,245,44"/>
+<area shape="poly" title=" " alt="" coords="112,39,161,80,156,82,111,45"/>
+<area shape="rect" title=" " alt="" coords="188,5,336,32"/>
+<area shape="poly" title=" " alt="" coords="238,40,190,83,186,79,233,44"/>
+<area shape="poly" title=" " alt="" coords="188,165,192,155,194,144,192,133,182,111,184,106,197,131,199,144,197,157,192,168"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -132,11 +137,21 @@ virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><b>getSize</b>
 <tr class="memitem:a2fb02b60ae52f168cef3f157bf30f0e8 inherit pub_methods_classexpp_1_1memory_1_1_memory" id="r_a2fb02b60ae52f168cef3f157bf30f0e8"><td class="memItemLeft" align="right" valign="top">
 virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><b>getAlignment</b> ()</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a09fb1add8794ad03ef5de9d2e104f557" id="r_a09fb1add8794ad03ef5de9d2e104f557"><td class="memItemLeft" align="right" valign="top"><a id="a09fb1add8794ad03ef5de9d2e104f557" name="a09fb1add8794ad03ef5de9d2e104f557"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Allocation</b> (<a class="el" href="classexpp_1_1memory_1_1_allocator.html">Allocator</a> *<a class="el" href="#aa23caf9cb1710a41bc3c9cd2fbd69441">allocator</a>)</td></tr>
+<tr class="inherit_header pro_methods_classexpp_1_1memory_1_1_memory"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_classexpp_1_1memory_1_1_memory')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Member Functions inherited from <a class="el" href="classexpp_1_1memory_1_1_memory.html">expp::memory::Memory</a></td></tr>
+<tr class="memitem:ac8a7ea8ee35b72246408856e06ca172a inherit pro_methods_classexpp_1_1memory_1_1_memory" id="r_ac8a7ea8ee35b72246408856e06ca172a"><td class="memItemLeft" align="right" valign="top">
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>pointerCreated</b> ()</td></tr>
+<tr class="memitem:ad9c5038cd667846df181d6831bfec691 inherit pro_methods_classexpp_1_1memory_1_1_memory" id="r_ad9c5038cd667846df181d6831bfec691"><td class="memItemLeft" align="right" valign="top">
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>pointerDestroyed</b> ()</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a4c76f235a6b9fa9cba0e323af7ad0d01" id="r_a4c76f235a6b9fa9cba0e323af7ad0d01"><td class="memItemLeft" align="right" valign="top"><a id="a4c76f235a6b9fa9cba0e323af7ad0d01" name="a4c76f235a6b9fa9cba0e323af7ad0d01"></a>
-<a class="el" href="classexpp_1_1memory_1_1_allocator.html">Allocator</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>alloc</b> = nullptr</td></tr>
-<tr class="memdesc:a4c76f235a6b9fa9cba0e323af7ad0d01"><td class="mdescLeft">&#160;</td><td class="mdescRight">allocator that was used to allocate this <a class="el" href="classexpp_1_1memory_1_1_allocation.html" title="this is reperesents raw memory allocation and it also counts number of references to it and automatic...">Allocation</a> <br /></td></tr>
+<tr class="memitem:aa23caf9cb1710a41bc3c9cd2fbd69441" id="r_aa23caf9cb1710a41bc3c9cd2fbd69441"><td class="memItemLeft" align="right" valign="top"><a id="aa23caf9cb1710a41bc3c9cd2fbd69441" name="aa23caf9cb1710a41bc3c9cd2fbd69441"></a>
+<a class="el" href="classexpp_1_1memory_1_1_allocator.html">Allocator</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>allocator</b> = nullptr</td></tr>
+<tr class="memdesc:aa23caf9cb1710a41bc3c9cd2fbd69441"><td class="mdescLeft">&#160;</td><td class="mdescRight">allocator that was used to allocate this <a class="el" href="classexpp_1_1memory_1_1_allocation.html" title="this is reperesents raw memory allocation and it also counts number of references to it and automatic...">Allocation</a> <br /></td></tr>
 <tr class="memitem:a9c8ea97c37fa83f604c60a970eb9c7d5" id="r_a9c8ea97c37fa83f604c60a970eb9c7d5"><td class="memItemLeft" align="right" valign="top"><a id="a9c8ea97c37fa83f604c60a970eb9c7d5" name="a9c8ea97c37fa83f604c60a970eb9c7d5"></a>
 uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><b>data</b></td></tr>
 <tr class="memdesc:a9c8ea97c37fa83f604c60a970eb9c7d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">data refers to address in this memory which fulfils given alignment requirment and is of size bytes. <br /></td></tr>
@@ -149,16 +164,8 @@ size_t&#160;</td><td class="memItemRight" valign="bottom"><b>alignment</b> = 1</
 Friends</h2></td></tr>
 <tr class="memitem:a2743bf0294172086e9384cd82f12c87a" id="r_a2743bf0294172086e9384cd82f12c87a"><td class="memItemLeft" align="right" valign="top"><a id="a2743bf0294172086e9384cd82f12c87a" name="a2743bf0294172086e9384cd82f12c87a"></a>
 class&#160;</td><td class="memItemRight" valign="bottom"><b>Memory</b></td></tr>
-<tr class="memitem:ac0f835aff11cf44442fede2afc9aaed1" id="r_ac0f835aff11cf44442fede2afc9aaed1"><td class="memItemLeft" align="right" valign="top"><a id="ac0f835aff11cf44442fede2afc9aaed1" name="ac0f835aff11cf44442fede2afc9aaed1"></a>
-class&#160;</td><td class="memItemRight" valign="bottom"><b>SimpleAllocator</b></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pro_methods_classexpp_1_1memory_1_1_memory"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_classexpp_1_1memory_1_1_memory')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Member Functions inherited from <a class="el" href="classexpp_1_1memory_1_1_memory.html">expp::memory::Memory</a></td></tr>
-<tr class="memitem:ac8a7ea8ee35b72246408856e06ca172a inherit pro_methods_classexpp_1_1memory_1_1_memory" id="r_ac8a7ea8ee35b72246408856e06ca172a"><td class="memItemLeft" align="right" valign="top">
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>pointerCreated</b> ()</td></tr>
-<tr class="memitem:ad9c5038cd667846df181d6831bfec691 inherit pro_methods_classexpp_1_1memory_1_1_memory" id="r_ad9c5038cd667846df181d6831bfec691"><td class="memItemLeft" align="right" valign="top">
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>pointerDestroyed</b> ()</td></tr>
+<tr class="memitem:a4f7f62a2e2ba965a2aec21613708b95b" id="r_a4f7f62a2e2ba965a2aec21613708b95b"><td class="memItemLeft" align="right" valign="top"><a id="a4f7f62a2e2ba965a2aec21613708b95b" name="a4f7f62a2e2ba965a2aec21613708b95b"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>Allocator</b></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>this is reperesents raw memory allocation and it also counts number of references to it and automatically deallocates when reference count goes to 0. </p>

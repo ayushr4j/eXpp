@@ -1,5 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$classexpp_1_1memory_1_1_allocator.html" title="Base class for Allocator (allocates memory and manages it)" alt="" coords="5,5,169,32"/>
-<area shape="rect" id="Node000001" href="$classexpp_1_1memory_1_1_simple_allocator.html" title=" " alt="" coords="217,5,420,32"/>
-<area shape="poly" id="edge19_Node000000_Node000001" title=" " alt="" coords="184,16,219,19,214,19,184,21"/>
+<area shape="rect" id="Node000000" href="$classexpp_1_1_list_inteface.html" title=" " alt="" coords="5,5,131,48"/>
+<area shape="rect" id="Node000001" href="$classexpp_1_1_intrusive_list.html" title=" " alt="" coords="179,5,307,48"/>
+<area shape="poly" id="edge17_Node000000_Node000001" title=" " alt="" coords="146,24,181,26,176,27,146,29"/>
+<area shape="rect" id="Node000002" href="$class_test_list.html" title=" " alt="" coords="355,13,422,40"/>
+<area shape="poly" id="edge18_Node000001_Node000002" title=" " alt="" coords="322,24,357,27,352,27,322,29"/>
 </map>
