@@ -9,7 +9,7 @@ namespace expp {
     class Context{
         protected:
             memory::Allocator* allocator = new memory::Allocator();
-            Context* prev = nullptr;
+            thread_local static Context* prev;
             friend void pushContext(Context& ctx);
             friend void popContext();
         public:
@@ -17,7 +17,7 @@ namespace expp {
     
     };
 
-    thread_local static Context* context = new Context();
+    extern thread_local Context* context ;
     void pushContext(Context& ctx);
     void popContext();
 

@@ -53,3 +53,13 @@ void Allocator::deallocate(Allocation* alloc) const{
 
 
 
+thread_local expp::memory::Allocator* expp::memory::currentAllocator = new expp::memory::Allocator();
+thread_local expp::memory::Allocator* expp::memory::Allocator::prev = nullptr;
+
+void expp::memory::pushAllocator(expp::memory::Allocator& alloc){
+        alloc.prev = currentAllocator;
+        currentAllocator = &alloc;        
+}
+void expp::memory::popAllocator(){
+    currentAllocator = currentAllocator->prev;
+}
