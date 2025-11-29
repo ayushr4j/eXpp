@@ -1,10 +1,11 @@
 #ifndef _expp_core_thread_
 #define _expp_core_thread_
 
+#include <concepts>
 namespace expp {
     namespace thread {
         
-        class Task{
+       /* class Task{
 
             public:
                 virtual void operator()(){
@@ -15,11 +16,17 @@ namespace expp {
 
                 }
 
-        };
+        };*/
 
         class Thread{
-
+            
         };
+
+
+        
+
+        
+
 
         
 

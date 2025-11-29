@@ -33,6 +33,14 @@ target_sources(expp_base PUBLIC
     src/core/exception.cpp
 )
 
+add_library(coroutine INTERFACE)
+target_sources(coroutine PUBLIC 
+    src/core/coroutine/coroutine.cpp
+)
+add_executable(coroutine_test test/core/coroutine/coroutine.cpp)
+target_link_libraries(coroutine_test PRIVATE coroutine)
+
+
 add_library(memory INTERFACE)
 target_sources(memory PUBLIC 
     src/core/memory/pointer.cpp
